@@ -83,11 +83,14 @@ footer :target {
 }
 
 .hero {
-	background-image: url('./images/hero_image.jpg');
-	background-size: cover;
-	background-position: 50% 35%;
-	position: relative;
-	height: 250px;
+    background-image: url("./images/hero_image.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display:inline-block;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 66.286%;
 }
 
 .page-body {
@@ -144,6 +147,11 @@ footer :target {
 .gist .blob-wrapper.data {
    max-height: 200px;
    overflow: auto;
+}
+
+.gist .blob-code-inner {
+	white-space: pre-wrap !important;
+  	word-break: break-all !important;
 }
 
 .article-title {
@@ -237,6 +245,10 @@ h1.article-title { /* come back and fix */
 
 .github a:hover {
 	color: black;
+}
+
+.linkedin a:hover {
+	color: #007bb6;
 }
 
 .hidden-li {
@@ -361,7 +373,7 @@ h1.article-title { /* come back and fix */
 }
 
 /* desktop changes */
-@media (min-width: 570px) {
+@media (min-device-width: 400px) {
 	#hamburger {
 		display: none;
 	}
@@ -371,7 +383,7 @@ h1.article-title { /* come back and fix */
 	}
 
 	.top-bar {
-		width: 40%;
+		width: 43%;
 		background-color: #c4c4c4;
 		box-shadow: 0 0 0;
 	}
@@ -383,7 +395,7 @@ h1.article-title { /* come back and fix */
 	.menu-bar {
 		position: relative;
 		opacity: 1;
-		width: 60%;
+		width: 57%;
 		height: 100px;
 		top: 0;
 		box-shadow: 0 0 0;
