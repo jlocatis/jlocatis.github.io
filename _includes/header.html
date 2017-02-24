@@ -1,18 +1,37 @@
-<header>
-  <p><a href="/">{{ site.title }}</a></p>
-  <p>{{ site.blurb }}</p>
+<div id="page-top">
+  <div class="top-bar">
+    <div id="top-name"><a href="./index.html">{{ site.title }}</a></div>
+    <div id="top-title">{{ site.blurb }}</div>
+  </div>
 
-  <ul>
-    <li><a href="http://twitter.com/sumeetjain">Twitter</a></li>
-    <li><a href="http://github.com/sumeetjain">GitHub</a></li>
-    <li><a href="{{ "/feed.xml" }}">RSS</a></li>
-  </ul>
+  <label id="hamburger"><i class="fa fa-bars fa-2x" aria-hidden="true"></i></label>
+  <div class="menu-bar">
+    <div id="menu-items">
+      <div id="nav-left">
+        <div id="left-container">
+          <span class="icon_link twitter"><a href="https://twitter.com/JamieLocatis" target="_blank">
+            <span class="fa-stack">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+            </span>
+          </a></span>
+          <span class="icon_link github"><a href="https://github.com/jlocatis" target="_blank"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a></span>
+          <span class="icon_link rss"><a href="#">          
+            <span class="fa-stack">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+            </span>
+          </a></span>
+        </div>
+      </div>
+      <div id="nav-right">
+        <div id="right-container">
+          <a href="./article_index.html" class="nav-link">ARTICLES</a>
+          <a href="./about.html" class="nav-link">ABOUT</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-  <ul>
-    {% for the_page in site.pages %}
-      {% if the_page.title %}
-      <li><a href="{{ the_page.url }}">{{ the_page.title }}</a></li>
-      {% endif %}
-    {% endfor %}
-  </ul>
-</header>
+<div class="clear"></div>
