@@ -2,12 +2,17 @@
 layout: default
 ---
 
-<h1>{{ page.title }}</h1>
-
-<span>{{ page.date | date: "%b %-d, %Y" }}</span>
+<div class="page-body">
+	<h1 class="article-title">{{ page.title }}</h1>
+	<div id="posted-date">{{ page.date | date: "%b %-d, %Y" }}</div>
+	<hr>
+	<div class="article-content">
 
 {{ content }}
 
-<a href="http://twitter.com/share?url={{ page.url | absolute_url }}">
-  Share this on Twitter!
-</a>
+	</div>
+	<div id="share_box">
+		<div><img src="{{ "/assets/images/twitter_logo.png" | relative_url }}" alt="Share on Twitter!" width="100"></div>
+		<div>If you liked this article and think others should read it, please <a href="https://twitter.com/intent/tweet?text=Read+this+awesome+article!&via=jamielocatis&hashtags=example,awesome,nothing" target="_blank">share it on Twitter!</a></div>
+	</div>
+</div>

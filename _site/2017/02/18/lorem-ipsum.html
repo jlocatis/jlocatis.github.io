@@ -4,9 +4,9 @@
 	<head>
 	<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
 	<title>Jamie Locatis</title>
-	<link rel="stylesheet" type="text/css" href="./assets/style.css">
+	<link rel="stylesheet" href=/assets/style.css>
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-	<script type="text/javascript" src="./assets/scripts.js"></script>
+	<script type="text/javascript" src="/assets/scripts.js"></script>
 	<script src="https://use.fontawesome.com/28ea288129.js"></script>
 </head>
 
@@ -14,7 +14,7 @@
 
 	<div id="page-top">
   <div class="top-bar">
-    <div id="top-name"><a href="./index.html">Jamie Locatis</a></div>
+    <div id="top-name"><a href="/index.html" | relative_url }}">Jamie Locatis</a></div>
     <div id="top-title">Student @ Omaha Code School</div>
   </div>
 
@@ -40,8 +40,8 @@
       </div>
       <div id="nav-right">
         <div id="right-container">
-          <a href="./article_index.html" class="nav-link">ARTICLES</a>
-          <a href="./about.html" class="nav-link">ABOUT</a>
+          <a href="/article_index.html" | relative_url }}" class="nav-link">ARTICLES</a>
+          <a href="/about.html" | relative_url }}" class="nav-link">ABOUT</a>
         </div>
       </div>
     </div>
@@ -50,9 +50,11 @@
 
 <div class="clear"></div>
 
-	<h1>Lorem Ipsum</h1>
-
-<span>Feb 18, 2017</span>
+	<div class="page-body">
+	<h1 class="article-title">Lorem Ipsum</h1>
+	<div id="posted-date">Feb 18, 2017</div>
+	<hr>
+	<div class="article-content">
 
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -62,9 +64,12 @@ cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
 
-<a href="http://twitter.com/share?url=http://localhost:4000/2017/02/18/lorem-ipsum.html">
-  Share this on Twitter!
-</a>
+	</div>
+	<div id="share_box">
+		<div><img src="/assets/images/twitter_logo.png" alt="Share on Twitter!" width="100"></div>
+		<div>If you liked this article and think others should read it, please <a href="https://twitter.com/intent/tweet?text=Read+this+awesome+article!&via=jamielocatis&hashtags=example,awesome,nothing" target="_blank">share it on Twitter!</a></div>
+	</div>
+</div>
 
 	<div class="page-footer">
 	<div id="footer">&copy;2017 Jamie Locatis</div>
