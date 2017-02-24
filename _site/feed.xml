@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-02-24T14:29:04-06:00</updated><id>http://localhost:4000/</id><title type="html">Jamie Locatis</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-02-24T14:39:47-06:00</updated><id>http://localhost:4000/</id><title type="html">Jamie Locatis</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
 </subtitle><entry><title type="html">Build Your Own Where’s Waldo Game!</title><link href="http://localhost:4000/2017/02/24/build-wheres-waldo.html" rel="alternate" type="text/html" title="Build Your Own Where's Waldo Game!" /><published>2017-02-24T00:00:00-06:00</published><updated>2017-02-24T00:00:00-06:00</updated><id>http://localhost:4000/2017/02/24/build-wheres-waldo</id><content type="html" xml:base="http://localhost:4000/2017/02/24/build-wheres-waldo.html">&lt;p&gt;This tutorial will walk you through the steps of creating an interactive Where's Waldo game for the web. You will be able to select you're own Where's Waldo image, and build your program around this image.&lt;/p&gt;
 
 &lt;div class=&quot;img-container&quot;&gt;&lt;img src=&quot;/assets/images/waldo/waldo_front.jpg&quot; alt=&quot;My Where's Waldo game&quot; class=&quot;article-image&quot; /&gt;&lt;/div&gt;
@@ -10,22 +10,26 @@
 
 &lt;ul&gt;
 	&lt;li&gt;These first steps can be accomplished on your own before we get into the nitty-gritty:&lt;/li&gt;
-	&lt;li&gt;&lt;ul&gt;	
-		&lt;li&gt;Search the internet for a Waldo image to use. (And yes you will need to solve it first so you know where Waldo is!)&lt;/li&gt;
-		&lt;li&gt;Build this image into a basic HTML page for now. (If you don't know HTML, go check out some tutorials and come back to this later!) Don't worry too much about the CSS styling of the page. Portions of your program may eventually rely on a little bit of CSS so I would reccommend for now just creating an empty stylesheet and integrating that into your HTML page.&lt;/li&gt;
-	&lt;/ul&gt;&lt;/li&gt;
+	&lt;li class=&quot;hidden-li&quot;&gt;
+		&lt;ul&gt;	
+			&lt;li&gt;Search the internet for a Waldo image to use. (And yes you will need to solve it first so you know where Waldo is!)&lt;/li&gt;
+			&lt;li&gt;Build this image into a basic HTML page for now. (If you don't know HTML, go check out some tutorials and come back to this later!) Don't worry too much about the CSS styling of the page. Portions of your program may eventually rely on a little bit of CSS so I would reccommend for now just creating an empty stylesheet and integrating that into your HTML page.&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/li&gt;
 	&lt;li&gt;After the above is done, we can start accomplishing these goals:&lt;/li&gt;
-	&lt;li&gt;&lt;ul&gt;
-		&lt;li&gt;Build a way for the user's click location within the image to be calculated.&lt;/li&gt;
-		&lt;li&gt;Send that information to a server.&lt;/li&gt;
-		&lt;li&gt;Once on the server-side, check the click location against Waldo's actual location.&lt;/li&gt;
-		&lt;li&gt;Send either true or false back to the client.&lt;/li&gt;
-		&lt;li&gt;Either display some sort of message indicating to the user they haven't found Waldo yet, or end the game if true is returned.&lt;/li&gt;
-		&lt;li&gt;If true, tell the user they're successful.&lt;/li&gt;
-		&lt;li&gt;Add a live timer to the page so we can provide a little pressure to the user, and give them a score at the end.&lt;/li&gt;
-		&lt;li&gt;Build a way for these timed scores to be stored in a high scores list on the server.&lt;/li&gt;
-		&lt;li&gt;Add the high scores list functionality to the game (including allowing the user to save their name with their score).&lt;/li&gt;
-		&lt;/ul&gt;&lt;/li&gt;
+	&lt;li class=&quot;hidden-li&quot;&gt;	
+		&lt;ul&gt;
+			&lt;li&gt;Build a way for the user's click location within the image to be calculated.&lt;/li&gt;
+			&lt;li&gt;Send that information to a server.&lt;/li&gt;
+			&lt;li&gt;Once on the server-side, check the click location against Waldo's actual location.&lt;/li&gt;
+			&lt;li&gt;Send either true or false back to the client.&lt;/li&gt;
+			&lt;li&gt;Either display some sort of message indicating to the user they haven't found Waldo yet, or end the game if true is returned.&lt;/li&gt;
+			&lt;li&gt;If true, tell the user they're successful.&lt;/li&gt;
+			&lt;li&gt;Add a live timer to the page so we can provide a little pressure to the user, and give them a score at the end.&lt;/li&gt;
+			&lt;li&gt;Build a way for these timed scores to be stored in a high scores list on the server.&lt;/li&gt;
+			&lt;li&gt;Add the high scores list functionality to the game (including allowing the user to save their name with their score).&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/li&gt;
 	&lt;/ul&gt;
 
 &lt;p&gt;Sounds easy enough right!? Let's get started...&lt;/p&gt;

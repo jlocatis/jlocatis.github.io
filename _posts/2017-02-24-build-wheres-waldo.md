@@ -13,22 +13,26 @@ title: Build Your Own Where's Waldo Game!
 
 <ul>
 	<li>These first steps can be accomplished on your own before we get into the nitty-gritty:</li>
-	<li><ul>	
-		<li>Search the internet for a Waldo image to use. (And yes you will need to solve it first so you know where Waldo is!)</li>
-		<li>Build this image into a basic HTML page for now. (If you don't know HTML, go check out some tutorials and come back to this later!) Don't worry too much about the CSS styling of the page. Portions of your program may eventually rely on a little bit of CSS so I would reccommend for now just creating an empty stylesheet and integrating that into your HTML page.</li>
-	</ul></li>
+	<li class="hidden-li">
+		<ul>	
+			<li>Search the internet for a Waldo image to use. (And yes you will need to solve it first so you know where Waldo is!)</li>
+			<li>Build this image into a basic HTML page for now. (If you don't know HTML, go check out some tutorials and come back to this later!) Don't worry too much about the CSS styling of the page. Portions of your program may eventually rely on a little bit of CSS so I would reccommend for now just creating an empty stylesheet and integrating that into your HTML page.</li>
+		</ul>
+	</li>
 	<li>After the above is done, we can start accomplishing these goals:</li>
-	<li><ul>
-		<li>Build a way for the user's click location within the image to be calculated.</li>
-		<li>Send that information to a server.</li>
-		<li>Once on the server-side, check the click location against Waldo's actual location.</li>
-		<li>Send either true or false back to the client.</li>
-		<li>Either display some sort of message indicating to the user they haven't found Waldo yet, or end the game if true is returned.</li>
-		<li>If true, tell the user they're successful.</li>
-		<li>Add a live timer to the page so we can provide a little pressure to the user, and give them a score at the end.</li>
-		<li>Build a way for these timed scores to be stored in a high scores list on the server.</li>
-		<li>Add the high scores list functionality to the game (including allowing the user to save their name with their score).</li>
-		</ul></li>
+	<li class="hidden-li">	
+		<ul>
+			<li>Build a way for the user's click location within the image to be calculated.</li>
+			<li>Send that information to a server.</li>
+			<li>Once on the server-side, check the click location against Waldo's actual location.</li>
+			<li>Send either true or false back to the client.</li>
+			<li>Either display some sort of message indicating to the user they haven't found Waldo yet, or end the game if true is returned.</li>
+			<li>If true, tell the user they're successful.</li>
+			<li>Add a live timer to the page so we can provide a little pressure to the user, and give them a score at the end.</li>
+			<li>Build a way for these timed scores to be stored in a high scores list on the server.</li>
+			<li>Add the high scores list functionality to the game (including allowing the user to save their name with their score).</li>
+		</ul>
+	</li>
 	</ul>
 
 <p>Sounds easy enough right!? Let's get started...</p>
