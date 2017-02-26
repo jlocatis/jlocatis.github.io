@@ -278,6 +278,14 @@ h1.article-title { /* come back and fix */
 	list-style: none;
 }
 
+.article-content a {
+	color: #c4c4c4;
+}
+
+.article-content a:hover {
+	text-decoration: underline;
+}
+
 #top-name {
 	font-family: 'Open Sans', sans-serif;
 	padding-top: 25px;
