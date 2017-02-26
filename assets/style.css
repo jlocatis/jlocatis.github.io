@@ -93,7 +93,7 @@ input[type=checkbox]:checked + div {
 }
 
 .menu-bar-sticky {
-	background-color: #585859;
+	background-color: #c4c4c4;
 	position: fixed;
 	display: block;
 	width: 100%;
@@ -103,7 +103,6 @@ input[type=checkbox]:checked + div {
 	top: 0px;
 	left: 0px;
 	opacity: 1;
-	transition: top 1s ease, opacity 1s ease;
 }
 
 .hero {
@@ -336,6 +335,18 @@ h1.article-title { /* come back and fix */
 }
 
 #nav-right a:hover {
+	font-weight: bold;
+}
+
+#nav-right-sticky {
+	padding-top: 6px;
+}
+
+#nav-right-sticky a {
+	color: #585859;
+}
+
+#nav-right-sticky a:hover {
 	font-weight: bold;
 }
 
