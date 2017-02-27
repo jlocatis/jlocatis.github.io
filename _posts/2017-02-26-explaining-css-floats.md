@@ -44,7 +44,7 @@ Here is what you it will look like:
 
 ### Clear it up
 
-Examine the code, not much too it right? You might notice one piece of code in the HTML where I create an empty container with a class of clear. If you reference the CSS file you will see that I give the class of clear one property, `clear: both`. To know why this needs to be there requires understanding of what floats actually do to your page's flow in order to accomplish their goal. When we set the properties `float: left` and `float: right` on their respective containers, we allowed them to <em>float</em> next to each other, but what happens to the rest of the page? Unfortunately closing the floated containers does not break the `float` CSS property. When you a declare a `float` it breaks the page flow, forcing all proceeding content to conform the the `float` rule. If we were just using this on an image, we might not even notice that the page is still trying to build itself around the image after it has already been initally wrapped by text, but it is. In the case of creating page layouts this will become noticeable. Look what happens in the image below. I have removed the `clear` from the above CSS code to show you what happens to the bottom container:
+Examine the code, not much too it right? You might notice one piece of code in the HTML where I create an empty container with a class of clear. If you reference the CSS file you will see that I give the class of clear one property, `clear: both`. To know why this needs to be there requires understanding of what floats actually do to your page's flow in order to accomplish their goal. When we set the properties `float: left` and `float: right` on their respective containers, we allowed them to <em>float</em> next to each other, but what happens to the rest of the page? Unfortunately closing the floated containers does not end the `float` CSS property. When you a declare a `float` it breaks the page flow, forcing all proceeding content to conform the the `float` rule. If we were just using this on an image, we might not even notice that the page is still trying to build itself around the image after it has already been initally wrapped by text, but it is. In the case of creating page layouts this will become noticeable. Look what happens in the image below. I have removed the `clear` from the above CSS code to show you what happens to the bottom container:
 
 <img src="{{ "/assets/images/floats/bad_floats_example.png" | relative_url }}" alt="Example of not clearing your floats" width="100%">
 
@@ -54,6 +54,21 @@ Notice how the bottom container looks like it is now part of a middle container 
 
 ### Let's talk about positions
 
-So now you can use floats to manipulate objects around each other, and even create entire page layouts. But what if you just want to tell something where it should be? This is where we can make use of the CSS property `position`. 
+So now you can use floats to manipulate objects around each other, and even create entire page layouts. But what if you just want to tell something where it should be? This is where we can make use of the CSS property `position`. Position can have four different values:
+
+* Static: The object is static and follows all of it's default properties. (Default)
+* Relative: You will now be able to move this object relative to it's static, fixed position.
+* Absolute: Moves the object onto it's own <em>stack</em>, or sometimes referred to as a layer. This object now essentially has it's own flow completely removed from everything else on the page.
+* Fixed: Same as absolute, except the object will be fixed to it's position on the window. (An absolute object will still scroll with the page, a fixed object will not)
+
+You can use the CSS properties `top`, `right`, `bottom`, and `left` to move objects around based on it's `position` property. So if I stack two boxes on each other, and set the bottom to `position: relative`, I can now move that box in any direction in relation to it's default position in the HTML flow of the page. Take a look at the code below where I do just this, but move the bottom box up 5px.
+
+(box example code)
+
+(example picture)
+
+Now let's set that box to position absolute and see what happens:
+
+(example picture)
 
 ### Nice, now how can I move these things?

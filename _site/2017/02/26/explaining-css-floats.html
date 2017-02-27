@@ -104,7 +104,7 @@
 
 <h3 id="clear-it-up">Clear it up</h3>
 
-<p>Examine the code, not much too it right? You might notice one piece of code in the HTML where I create an empty container with a class of clear. If you reference the CSS file you will see that I give the class of clear one property, <code class="highlighter-rouge">clear: both</code>. To know why this needs to be there requires understanding of what floats actually do to your page’s flow in order to accomplish their goal. When we set the properties <code class="highlighter-rouge">float: left</code> and <code class="highlighter-rouge">float: right</code> on their respective containers, we allowed them to <em>float</em> next to each other, but what happens to the rest of the page? Unfortunately closing the floated containers does not break the <code class="highlighter-rouge">float</code> CSS property. When you a declare a <code class="highlighter-rouge">float</code> it breaks the page flow, forcing all proceeding content to conform the the <code class="highlighter-rouge">float</code> rule. If we were just using this on an image, we might not even notice that the page is still trying to build itself around the image after it has already been initally wrapped by text, but it is. In the case of creating page layouts this will become noticeable. Look what happens in the image below. I have removed the <code class="highlighter-rouge">clear</code> from the above CSS code to show you what happens to the bottom container:</p>
+<p>Examine the code, not much too it right? You might notice one piece of code in the HTML where I create an empty container with a class of clear. If you reference the CSS file you will see that I give the class of clear one property, <code class="highlighter-rouge">clear: both</code>. To know why this needs to be there requires understanding of what floats actually do to your page’s flow in order to accomplish their goal. When we set the properties <code class="highlighter-rouge">float: left</code> and <code class="highlighter-rouge">float: right</code> on their respective containers, we allowed them to <em>float</em> next to each other, but what happens to the rest of the page? Unfortunately closing the floated containers does not end the <code class="highlighter-rouge">float</code> CSS property. When you a declare a <code class="highlighter-rouge">float</code> it breaks the page flow, forcing all proceeding content to conform the the <code class="highlighter-rouge">float</code> rule. If we were just using this on an image, we might not even notice that the page is still trying to build itself around the image after it has already been initally wrapped by text, but it is. In the case of creating page layouts this will become noticeable. Look what happens in the image below. I have removed the <code class="highlighter-rouge">clear</code> from the above CSS code to show you what happens to the bottom container:</p>
 
 <p><img src="/assets/images/floats/bad_floats_example.png" alt="Example of not clearing your floats" width="100%" /></p>
 
@@ -114,7 +114,24 @@
 
 <h3 id="lets-talk-about-positions">Let’s talk about positions</h3>
 
-<p>So now you can use floats to manipulate objects around each other, and even create entire page layouts. But what if you just want to tell something where it should be? This is where we can make use of the CSS property <code class="highlighter-rouge">position</code>.</p>
+<p>So now you can use floats to manipulate objects around each other, and even create entire page layouts. But what if you just want to tell something where it should be? This is where we can make use of the CSS property <code class="highlighter-rouge">position</code>. Position can have four different values:</p>
+
+<ul>
+  <li>Static: The object is static and follows all of it’s default properties. (Default)</li>
+  <li>Relative: You will now be able to move this object relative to it’s static, fixed position.</li>
+  <li>Absolute: Moves the object onto it’s own <em>stack</em>, or sometimes referred to as a layer. This object now essentially has it’s own flow completely removed from everything else on the page.</li>
+  <li>Fixed: Same as absolute, except the object will be fixed to it’s position on the window. (An absolute object will still scroll with the page, a fixed object will not)</li>
+</ul>
+
+<p>You can use the CSS properties <code class="highlighter-rouge">top</code>, <code class="highlighter-rouge">right</code>, <code class="highlighter-rouge">bottom</code>, and <code class="highlighter-rouge">left</code> to move objects around based on it’s <code class="highlighter-rouge">position</code> property. So if I stack two boxes on each other, and set the bottom to <code class="highlighter-rouge">position: relative</code>, I can now move that box in any direction in relation to it’s default position in the HTML flow of the page. Take a look at the code below where I do just this, but move the bottom box up 5px.</p>
+
+<p>(box example code)</p>
+
+<p>(example picture)</p>
+
+<p>Now let’s set that box to position absolute and see what happens:</p>
+
+<p>(example picture)</p>
 
 <h3 id="nice-now-how-can-i-move-these-things">Nice, now how can I move these things?</h3>
 
