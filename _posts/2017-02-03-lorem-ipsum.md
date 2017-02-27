@@ -1,5 +1,6 @@
 ---
 title:  "Lorem Ipsum"
+image: placeholder.jpg
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod

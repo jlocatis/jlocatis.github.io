@@ -107,13 +107,13 @@ input[type=checkbox]:checked + div {
 
 .hero {
     background-image: url("./images/hero_image.jpg");
-    background-position: center center;
+    background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
-    display:inline-block;
+    background-size: 100% 100%;
+    background-size: contain;
     width: 100%;
     margin: 0 auto;
-    padding-top: 66.286%;
+    padding-top: 41.66%;
 }
 
 .page-body {
@@ -233,10 +233,11 @@ h1.article-title { /* come back and fix */
 	margin-left: auto;
 	font-style: italic;
 	font-size: 0.9em;
-	text-align: right;
+	text-align: center;
 }
 
 .img-caption {
+	text-align: right;
 	padding-top: 6px;
 }
 
@@ -256,6 +257,14 @@ h1.article-title { /* come back and fix */
 	padding-left: 5px;
 	font-size: 0.9em;
 	border-radius: 5px;
+}
+
+.note_box a {
+	color: black;
+}
+
+.note_box a:visited {
+	color: black;
 }
 
 .twitter a:hover {
@@ -284,6 +293,22 @@ h1.article-title { /* come back and fix */
 
 .article-content a:hover {
 	text-decoration: underline;
+}
+
+.article-preview-container {
+	display: flex;
+	align-items: center;
+}
+
+.article-preview-image {
+	width: 150px;
+	height: 150px;
+	border: 1px solid black;
+	padding-top: 5px;
+	padding-right: 5px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+	margin-right: 10px;
 }
 
 #top-name {

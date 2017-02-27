@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+	<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+	<title>Jamie Locatis</title>
+	<link rel="stylesheet" href=/assets/style.css>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<script type="text/javascript" src="/assets/scripts.js"></script>
+	<script src="https://use.fontawesome.com/28ea288129.js"></script>
+</head>
+
+<body>
+
+	<div id="page-top">
+  <div class="top-bar">
+    <div id="top-name"><a href="/index.html" | relative_url }}">Jamie Locatis</a></div>
+    <div id="top-title">Student @ Omaha Code School</div>
+  </div>
+
+  <label for="menu--open" id="hamburger"><i class="fa fa-bars fa-2x" aria-hidden="true"></i></label>
+  <input type="checkbox" name="1" id="menu--open">
+  <div class="menu-bar">
+    <div id="menu-items">
+      <div id="nav-left">
+        <div id="left-container">
+          <span class="icon_link twitter"><a href="https://twitter.com/JamieLocatis" target="_blank">
+            <span class="fa-stack">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+            </span>
+          </a></span>
+          <span class="icon_link github"><a href="https://github.com/jlocatis" target="_blank"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a></span>
+          <span class="icon_link linkedin"><a href="https://www.linkedin.com/in/jamie-locatis-a76428123/" target="_blank">          
+            <span class="fa-stack">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i></i>
+            </span>
+          </a></span>
+          <span class="icon_link rss"><a href="#">          
+            <span class="fa-stack">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+            </span>
+          </a></span>
+        </div>
+      </div>
+      <div id="nav-right">
+        <div id="right-container">
+          <a href="/articles" | relative_url }}" class="nav-link">ARTICLES</a>
+          <a href="/about" | relative_url }}" class="nav-link">ABOUT</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="clear"></div>
+
+	<div class="page-body">
+	<h1 class="article-title">Explaining CSS Floats and Positions</h1>
+	<div id="posted-date">Feb 26, 2017</div>
+	<hr>
+	<div class="article-content">
+
+<p>Let’s talk about floats and positions. Often a headache for beginning web developers, taking a moment to understand how they work can make a huge difference. Floats and positions can be used for many things, from applying text wrap to an image, to controlling the <em>flow</em> of your content, to building a well structered page layout. A basic understanding of how these work is necessary to becoming a solid web developer.</p>
+
+<h3 id="what-is-a-float">What is a float</h3>
+
+<p>The basic concept behind a float, and it’s purpose, is found in everyday centuries-old publishing. We are accustomed to looking at a newspaper, or reading a magazine, and seeing pictures with text. Usually, that text is neatly wrapped around an image in some manner that flows with the rest of the page. In some ways this saves space, allowing for more content to be shuffled onto the page. Although it can also make something look more appealing to the eye, and grab your attention. Floats are a result of the need to accomplish this on the internet through HTML. This is the simple idea of why we have floats in CSS. We can use this tool to position and layout our web pages how we see fit.</p>
+
+<p><img src="/assets/images/floats/print-layout_example.png" alt="Print Layout Example" width="200px" style="float: left" />To the left you can see an example of using floats in everday print. The text is wrapped around the images, hence the term “text-wrap”. By wrapping the images with text, we are integrating them into the pages’ <em>flow</em>. We wouldn’t want the text of a printed page to just run over the image, that would defeat the purpose of the image right? A lot goes into designing the flow of content, and being able to place an image where the author or page designer wants it is essential.</p>
+
+<p><img src="/assets/images/floats/web-text-wrap.png" alt="Web Text Wrap Example" width="200px" style="float: right" />To the right you can see another example of floating images, only this time we have done it for a website. Looks similiar doesn’t it? That’s becuase it is this same idea. We are integrating images into the flow of our page when we <code class="highlighter-rouge">float</code> them. We could just let our text run over the top of the image, but that would make the image rather useless if it was an integral part of our page content. We could also just let the image sit on it’s own line, which is what HTML would do by default. Maybe this is how your content is designed to <em>flow</em>. But by using floats as a web developer you at least have much greater control over what you can do. The two images embedded in this article had the <code class="highlighter-rouge">float: left</code> and <code class="highlighter-rouge">float: right</code> CSS style applied to them.</p>
+
+<div class="note_box"><strong>Above Image Credits: </strong><a href="https://css-tricks.com/almanac/properties/f/float/" target="_blank">Float by CSS-Tricks</a></div>
+
+<p></p>
+
+<div class="note_box"><strong>Note: </strong>When you float an element it automatically has a few default CSS properties, including <em>display: block</em>. You may float elements <em>left</em> or <em>right</em> as displayed above. You can also use the CSS values <em>initial</em> or <em>inherit</em>. If you are curious, you can read more about what those values do:<br />
+<ul>
+	<li><a href="https://www.w3schools.com/cssref/css_initial.asp" target="_blank">CSS Initial value</a></li>
+	<li><a href="https://www.w3schools.com/cssref/css_inherit.asp" target="_blank">CSS Inherit value</a></li>
+</ul></div>
+
+<h3 id="cool-now-how-can-i-use-this-thing">Cool, now how can I use this thing?</h3>
+
+<p>Like above, you can use this thing to wrap text around your images. But what else can it do? How about control the flow of your website’s entire layout? Of course it can! By using the <code class="highlighter-rouge">float</code> property on your page’s <code class="highlighter-rouge">&lt;div&gt;</code> containers so you can float them next to each other.</p>
+
+<div class="img-container"><img src="/assets/images/floats/web-layout_example.png" alt="Web Layout Example" class="article-image" /></div>
+<div class="img-container img-caption">Credit: CSS-Tricks</div>
+
+<p>In the above image you see a simple example where two containers have used <code class="highlighter-rouge">float: left</code> and <code class="highlighter-rouge">float: right</code> to create a nice layout and flow for the page. Let’s see some simple code doing this in action! Paste the code below into an empty HTML file:</p>
+
+<script src="https://gist.github.com/jlocatis/528084dfb074eed774bbd5e565baf984.js"></script>
+
+<p>Now paste the accompanying CSS code into an empty CSS file:</p>
+
+<script src="https://gist.github.com/jlocatis/a3b7060a6243d10091c5861b6a85c7f6.js"></script>
+
+<p>Here is what you it will look like:</p>
+
+<p><img src="/assets/images/floats/floats_example.png" alt="Example CSS floats page" width="100%" /></p>
+
+<h3 id="clear-it-up">Clear it up</h3>
+
+<p>Examine the code, not much too it right? You might notice one piece of code in the HTML where I create an empty container with a class of clear. If you reference the CSS file you will see that I give the class of clear one property, <code class="highlighter-rouge">clear: both</code>. To know why this needs to be there requires understanding of what floats actually do to your page’s flow in order to accomplish their goal. When we set the properties <code class="highlighter-rouge">float: left</code> and <code class="highlighter-rouge">float: right</code> on their respective containers, we allowed them to <em>float</em> next to each other, but what happens to the rest of the page? Unfortunately closing the floated containers does not break the <code class="highlighter-rouge">float</code> CSS property. When you a declare a <code class="highlighter-rouge">float</code> it breaks the page flow, forcing all proceeding content to conform the the <code class="highlighter-rouge">float</code> rule. If we were just using this on an image, we might not even notice that the page is still trying to build itself around the image after it has already been initally wrapped by text, but it is. In the case of creating page layouts this will become noticeable. Look what happens in the image below. I have removed the <code class="highlighter-rouge">clear</code> from the above CSS code to show you what happens to the bottom container:</p>
+
+<p><img src="/assets/images/floats/bad_floats_example.png" alt="Example of not clearing your floats" width="100%" /></p>
+
+<p>Notice how the bottom container looks like it is now part of a middle container with the left/right boxes. The HTML code still says otherwise, but the browser is attempting to <code class="highlighter-rouge">float</code> the bottom container around the right container, since the page is now set to <code class="highlighter-rouge">float: right</code> around it. There are a few different tricks to <code class="highlighter-rouge">clear</code> your floats, in the example code I just created an empty container after my floated content and used the property <code class="highlighter-rouge">clear: both</code> to reset the page flow back to default. If you wanted, you could just use <code class="highlighter-rouge">clear: left</code> or <code class="highlighter-rouge">clear: right</code> if you were only looking to clear one of the float properties.</p>
+
+<div class="note_box"><strong>Note: </strong>When calling <em>clear: both</em> on an empty container like I did, the container needs to be a sibling node of the nodes containing the floats you intend to clear.</div>
+
+<h3 id="lets-talk-about-positions">Let’s talk about positions</h3>
+
+<p>So now you can use floats to manipulate objects around each other, and even create entire page layouts. But what if you just want to tell something where it should be? This is where we can make use of the CSS property <code class="highlighter-rouge">position</code>.</p>
+
+<h3 id="nice-now-how-can-i-move-these-things">Nice, now how can I move these things?</h3>
+
+
+	</div>
+	<div id="share_box">
+		<div><img src="/assets/images/twitter_logo.png" alt="Share on Twitter!" width="100"></div>
+		<div>If you liked this article and think others should read it, please <a href="https://twitter.com/share?text=Check+out+this+awesome+article&url=&via=jamielocatis&hashtags=example,awesome,nothing" target="_blank">share it on Twitter!</a></div>
+	</div>
+</div>
+
+	<div class="page-footer">
+	<div id="footer">&copy;2017 Jamie Locatis</div>
+</div>
+
+</body>
+</html>

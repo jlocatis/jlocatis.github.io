@@ -1,5 +1,6 @@
 ---
 title: Build Your Own Where's Waldo Game!
+image: waldo_front.jpg
 ---
 
 <p>This tutorial will walk you through the steps of creating an interactive Where's Waldo game for the web. You will be able to select you're own Where's Waldo image, and build your program around this image.</p>
