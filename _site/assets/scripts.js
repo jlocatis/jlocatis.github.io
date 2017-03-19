@@ -5,12 +5,12 @@ window.addEventListener("load", function() {
 		window.onscroll = function() {
    			if (document.body.scrollTop + document.documentElement.scrollTop > 100) {
    				document.getElementById("menu-bar_fixed").className = "menu-bar-sticky";
-   				document.getElementById("menu-items").id = "menu-items-sticky";
-   				document.getElementById("nav-right").id = "nav-right-sticky";
+   				document.getElementById("menu--items").className = "menu-items-sticky";
+   				document.getElementById("nav--right").className = "nav-right-sticky";
    			} else {
    				document.getElementById("menu-bar_fixed").className = "menu-bar";
-   				document.getElementById("menu-items-sticky").id = "menu-items";
-   				document.getElementById("nav-right-sticky").id = "nav-right";
+   				document.getElementById("menu--items").className = "menu-items";
+   				document.getElementById("nav--right").className= "nav-right";
    			}
 		}
 	}

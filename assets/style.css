@@ -106,14 +106,14 @@ input[type=checkbox]:checked + div {
 }
 
 .hero {
-    background-image: url("./images/hero_image.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-size: contain;
-    width: 100%;
-    margin: 0 auto;
-    padding-top: 41.66%;
+  background-image: url("./images/hero_image.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-size: contain;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 41.66%;
 }
 
 .page-body {
@@ -174,7 +174,7 @@ input[type=checkbox]:checked + div {
 
 .gist .blob-code-inner {
 	white-space: pre-wrap !important;
-  	word-break: break-all !important;
+  word-break: break-all !important;
 }
 
 .article-title {
@@ -344,11 +344,11 @@ h1.article-title { /* come back and fix */
 	color: gray;
 }
 
-#menu-items {
+.menu-items {
 	display: flex;
 }
 
-#menu-items-sticky {
+.menu-items-sticky {
 	padding-top: 0px;
 }
 
@@ -357,29 +357,29 @@ h1.article-title { /* come back and fix */
 	width: 50%;
 }
 
-#nav-right {
+.nav-right {
 	padding-top: 18px;
 	width: 50%;
 	font-family: 'Open Sans', sans-serif;
 }
 
-#nav-right a {
+.nav-right a {
 	color: #585859;
 }
 
-#nav-right a:hover {
+.nav-right a:hover {
 	font-weight: bold;
 }
 
-#nav-right-sticky {
+.nav-right-sticky {
 	padding-top: 6px;
 }
 
-#nav-right-sticky a {
+.nav-right-sticky a {
 	color: #585859;
 }
 
-#nav-right-sticky a:hover {
+.nav-right-sticky a:hover {
 	font-weight: bold;
 }
 
@@ -445,7 +445,7 @@ h1.article-title { /* come back and fix */
 }
 
 /* desktop changes */
-@media (min-width: 650px) {
+@media (min-width: 850px) {
 	#hamburger {
 		display: none;
 	}
@@ -473,7 +473,7 @@ h1.article-title { /* come back and fix */
 		box-shadow: 0 0 0;
 	}
 
-	#menu-items {
+	.menu-items {
 		padding-top: 20px;
 	}
 }
