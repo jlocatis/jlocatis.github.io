@@ -15,7 +15,7 @@
 # in the templates via {{ site.myvariable }}.
 name: Jamie Locatis, Web Developer
 title: Jamie Locatis
-blurb: Student @ Omaha Code School
+blurb: Web Developer
 email: jlocatis@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   The adventures of a retail manager turned web developer! Posting ideas relating to HTML, CSS, Ruby, PHP, JavaScript, and much more.

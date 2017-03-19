@@ -113,7 +113,7 @@ input[type=checkbox]:checked + div {
   background-size: contain;
   width: 100%;
   margin: 0 auto;
-  padding-top: 41.66%;
+  padding-top: 35.85%;
 }
 
 .page-body {
@@ -442,6 +442,10 @@ h1.article-title { /* come back and fix */
 
 #share_box a {
 	color: blue;
+}
+
+.active {
+	font-weight: bold;
 }
 
 /* desktop changes */
