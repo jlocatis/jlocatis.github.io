@@ -1,5 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-03-19T11:48:53-05:00</updated><id>http://localhost:4000/</id><title type="html">Jamie Locatis</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
-</subtitle><entry><title type="html">Star Wars Opening Crawl in CSS</title><link href="http://localhost:4000/2017/03/17/starwars-crawl-css.html" rel="alternate" type="text/html" title="Star Wars Opening Crawl in CSS" /><published>2017-03-17T00:00:00-05:00</published><updated>2017-03-17T00:00:00-05:00</updated><id>http://localhost:4000/2017/03/17/starwars-crawl-css</id><content type="html" xml:base="http://localhost:4000/2017/03/17/starwars-crawl-css.html">&lt;p&gt;How about something cool and completely useful on every website? Let’s build a Star Wars opening crawl entirely using CSS. No JavaScript required!&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jamie Locatis, Web Developer</title>
+    <description>The adventures of a retail manager turned web developer! Posting ideas relating to HTML, CSS, Ruby, PHP, JavaScript, and much more.
+</description>
+    <link>http://localhost:4000</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+    
+      <item>
+        <title>Star Wars Opening Crawl in CSS</title>
+        <description>&lt;p&gt;How about something cool and completely useful on every website? Let’s build a Star Wars opening crawl entirely using CSS. No JavaScript required!&lt;/p&gt;
 
 &lt;div class=&quot;img-container&quot;&gt;&lt;img src=&quot;/assets/images/swcss/crawl_example.jpg&quot; alt=&quot;Star Wars Crawl&quot; class=&quot;article-image&quot; /&gt;&lt;/div&gt;
 
@@ -29,7 +39,16 @@
 &lt;p&gt;&lt;/p&gt;
 &lt;script src=&quot;https://gist.github.com/jlocatis/a58da0197cf198701110ae47e11df8df.js&quot;&gt;&lt;/script&gt;
 
-&lt;p&gt;That’s it! Have fun with it. Put it on every website you make, together let’s make the internet great again! Star Wars crawls everywhere!&lt;/p&gt;</content><author><name></name></author><summary type="html">How about something cool and completely useful on every website? Let’s build a Star Wars opening crawl entirely using CSS. No JavaScript required!</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/crawl_example.jpg" /></entry><entry><title type="html">Explaining CSS Floats and Positions</title><link href="http://localhost:4000/2017/02/26/explaining-css-floats.html" rel="alternate" type="text/html" title="Explaining CSS Floats and Positions" /><published>2017-02-26T00:00:00-06:00</published><updated>2017-02-26T00:00:00-06:00</updated><id>http://localhost:4000/2017/02/26/explaining-css-floats</id><content type="html" xml:base="http://localhost:4000/2017/02/26/explaining-css-floats.html">&lt;p&gt;Let’s talk about floats and positions. Often a headache for beginning web developers, taking a moment to understand how they work can make a huge difference. Floats and positions can be used for many things, from applying text wrap to an image, to controlling the &lt;em&gt;flow&lt;/em&gt; of your content, to building a well structered page layout. A basic understanding of how these work is necessary to becoming a solid web developer.&lt;/p&gt;
+&lt;p&gt;That’s it! Have fun with it. Put it on every website you make, together let’s make the internet great again! Star Wars crawls everywhere!&lt;/p&gt;
+</description>
+        <pubDate>Fri, 17 Mar 2017 00:00:00 -0500</pubDate>
+        <link>http://localhost:4000//2017/03/17/starwars-crawl-css.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2017/03/17/starwars-crawl-css.html</guid>
+      </item>
+    
+      <item>
+        <title>Explaining CSS Floats and Positions</title>
+        <description>&lt;p&gt;Let’s talk about floats and positions. Often a headache for beginning web developers, taking a moment to understand how they work can make a huge difference. Floats and positions can be used for many things, from applying text wrap to an image, to controlling the &lt;em&gt;flow&lt;/em&gt; of your content, to building a well structered page layout. A basic understanding of how these work is necessary to becoming a solid web developer.&lt;/p&gt;
 
 &lt;h3 id=&quot;what-is-a-float&quot;&gt;What is a float&lt;/h3&gt;
 
@@ -117,7 +136,16 @@
 
 &lt;h3 id=&quot;nice-now-what&quot;&gt;Nice, now what?!&lt;/h3&gt;
 
-&lt;p&gt;You have a better understanding of how to use the CSS properties &lt;code class=&quot;highlighter-rouge&quot;&gt;float&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;position&lt;/code&gt;. Take some time to play around the with the power they offer in web design.&lt;/p&gt;</content><author><name></name></author><summary type="html">Let’s talk about floats and positions. Often a headache for beginning web developers, taking a moment to understand how they work can make a huge difference. Floats and positions can be used for many things, from applying text wrap to an image, to controlling the flow of your content, to building a well structered page layout. A basic understanding of how these work is necessary to becoming a solid web developer.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/floats_meme.jpg" /></entry><entry><title type="html">Build Your Own Where’s Waldo Game!</title><link href="http://localhost:4000/2017/02/24/build-wheres-waldo.html" rel="alternate" type="text/html" title="Build Your Own Where's Waldo Game!" /><published>2017-02-24T00:00:00-06:00</published><updated>2017-02-24T00:00:00-06:00</updated><id>http://localhost:4000/2017/02/24/build-wheres-waldo</id><content type="html" xml:base="http://localhost:4000/2017/02/24/build-wheres-waldo.html">&lt;p&gt;This tutorial will walk you through the steps of creating an interactive Where's Waldo game for the web. You will be able to select you're own Where's Waldo image, and build your program around this image.&lt;/p&gt;
+&lt;p&gt;You have a better understanding of how to use the CSS properties &lt;code class=&quot;highlighter-rouge&quot;&gt;float&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;position&lt;/code&gt;. Take some time to play around the with the power they offer in web design.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 26 Feb 2017 00:00:00 -0600</pubDate>
+        <link>http://localhost:4000//2017/02/26/explaining-css-floats.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2017/02/26/explaining-css-floats.html</guid>
+      </item>
+    
+      <item>
+        <title>Build Your Own Where's Waldo Game!</title>
+        <description>&lt;p&gt;This tutorial will walk you through the steps of creating an interactive Where's Waldo game for the web. You will be able to select you're own Where's Waldo image, and build your program around this image.&lt;/p&gt;
 
 &lt;div class=&quot;img-container&quot;&gt;&lt;img src=&quot;/assets/images/waldo/waldo_front.jpg&quot; alt=&quot;My Where's Waldo game&quot; class=&quot;article-image&quot; /&gt;&lt;/div&gt;
 &lt;div class=&quot;img-container img-caption&quot;&gt;My Where's Waldo game&lt;/div&gt;
@@ -230,7 +258,16 @@
 
 &lt;p&gt;One last bonus that happened in the code above but I didn't explain was adding a name to the high scores. Before anything in JS or Ruby can accomplish this, you need to get some sort of input method integrated into your HTML. If you look above you can see I grab the user's name and send it with the score in the &lt;em&gt;storeScores&lt;/em&gt; JavaScript function. The &lt;em&gt;storeScore&lt;/em&gt; Ruby function than writes the name and corresponding time to the .csv file. The &lt;em&gt;loadScores&lt;/em&gt; function will sort the names as it sorts the times.&lt;/p&gt;
 
-&lt;p&gt;I hope this tutorial was informative and fun! Spend sometime after you get the game working styling it up through HTML and CSS. For added difficulty you can add multiple Waldo pictures to your challenge. Enjoy!&lt;/p&gt;</content><author><name></name></author><summary type="html">This tutorial will walk you through the steps of creating an interactive Where's Waldo game for the web. You will be able to select you're own Where's Waldo image, and build your program around this image.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/waldo_front.jpg" /></entry><entry><title type="html">Article Example Template</title><link href="http://localhost:4000/2017/02/24/article-example.html" rel="alternate" type="text/html" title="Article Example Template" /><published>2017-02-24T00:00:00-06:00</published><updated>2017-02-24T00:00:00-06:00</updated><id>http://localhost:4000/2017/02/24/article-example</id><content type="html" xml:base="http://localhost:4000/2017/02/24/article-example.html">&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vulputate mauris dui. Nullam vitae orci odio. Sed eu nisi aliquam, ornare erat sit amet, condimentum augue. Nullam sagittis aliquet nulla eu tincidunt. Nulla at bibendum augue. Aliquam erat volutpat. Aenean a varius diam. Mauris condimentum sollicitudin varius.&lt;/p&gt;
+&lt;p&gt;I hope this tutorial was informative and fun! Spend sometime after you get the game working styling it up through HTML and CSS. For added difficulty you can add multiple Waldo pictures to your challenge. Enjoy!&lt;/p&gt;
+</description>
+        <pubDate>Fri, 24 Feb 2017 00:00:00 -0600</pubDate>
+        <link>http://localhost:4000//2017/02/24/build-wheres-waldo.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2017/02/24/build-wheres-waldo.html</guid>
+      </item>
+    
+      <item>
+        <title>Article Example Template</title>
+        <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vulputate mauris dui. Nullam vitae orci odio. Sed eu nisi aliquam, ornare erat sit amet, condimentum augue. Nullam sagittis aliquet nulla eu tincidunt. Nulla at bibendum augue. Aliquam erat volutpat. Aenean a varius diam. Mauris condimentum sollicitudin varius.&lt;/p&gt;
 
 &lt;p&gt;Check out this terrible code:&lt;br /&gt;&lt;script src=&quot;https://gist.github.com/jlocatis/1d3714de0a2d552d1efa55c2d3968b3c.js&quot;&gt;&lt;/script&gt;&lt;/p&gt;
 
@@ -255,4 +292,12 @@
 		&lt;li id=&quot;footnote2&quot;&gt;Some more footnotes. HelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHello&lt;/li&gt;
 		&lt;li id=&quot;footnote3&quot;&gt;One more footnote goes here.&lt;/li&gt;
 	&lt;/ol&gt;
-&lt;/footer&gt;</content><author><name></name></author><summary type="html">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vulputate mauris dui. Nullam vitae orci odio. Sed eu nisi aliquam, ornare erat sit amet, condimentum augue. Nullam sagittis aliquet nulla eu tincidunt. Nulla at bibendum augue. Aliquam erat volutpat. Aenean a varius diam. Mauris condimentum sollicitudin varius.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/placeholder.jpg" /></entry></feed>
+&lt;/footer&gt;
+</description>
+        <pubDate>Fri, 24 Feb 2017 00:00:00 -0600</pubDate>
+        <link>http://localhost:4000//2017/02/24/article-example.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2017/02/24/article-example.html</guid>
+      </item>
+    
+  </channel>
+</rss>
