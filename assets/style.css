@@ -51,7 +51,6 @@ footer :target {
 	top: 0;
 	left: 0;
 	z-index: 500;
-	box-shadow: 0px 3px 5px #888888;
 }
 
 #hamburger {
@@ -60,7 +59,7 @@ footer :target {
 	right: 25px;
 	color: white;
 	z-index: 999;
-	transition: color 0.6s ease;
+	transition: color 300ms ease;
 }
 
 #hamburger:hover {
@@ -84,12 +83,11 @@ input[type=checkbox]:checked + div {
 	display: block;
 	width: 100%;
 	height: 55px;
-	box-shadow: 0px 3px 5px #888888;
 	z-index: 200;
 	top: 45px;
 	left: 0px;
 	opacity: 0;
-	transition: top 1s ease, opacity 1s ease;
+	transition: top 500ms ease, opacity 500ms ease;
 }
 
 .menu-bar-sticky {
@@ -98,7 +96,6 @@ input[type=checkbox]:checked + div {
 	display: block;
 	width: 100%;
 	height: 55px;
-	box-shadow: 0px 3px 5px #888888;
 	z-index: 200;
 	top: 0px;
 	left: 0px;
@@ -155,7 +152,7 @@ input[type=checkbox]:checked + div {
 
 .icon_link a {
 	color: #585859;
-	transition: color 0.4s ease;
+	transition: color 300ms ease;
 }
 
 .center {
@@ -183,7 +180,7 @@ input[type=checkbox]:checked + div {
 
 .article-title a {
 	color: black;
-	transition: color 0.6s ease;
+	transition: color 300ms ease;
 }
 
 .article-title a:hover {
@@ -321,7 +318,7 @@ h1.article-title { /* come back and fix */
 
 #top-name a {
 	color: white;
-	transition: color 0.6s ease;
+	transition: color 300ms ease;
 }
 
 #top-name a:hover {
@@ -461,7 +458,6 @@ h1.article-title { /* come back and fix */
 	.top-bar {
 		width: 43%;
 		background-color: #c4c4c4;
-		box-shadow: 0 0 0;
 	}
 
 	#top-name a:hover {
@@ -474,7 +470,6 @@ h1.article-title { /* come back and fix */
 		width: 57%;
 		height: 100px;
 		top: 0;
-		box-shadow: 0 0 0;
 	}
 
 	.menu-items {
