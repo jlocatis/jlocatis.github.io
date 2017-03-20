@@ -27,7 +27,7 @@ Next we set the parameters for our two containers `crawl_box` and `content`.
 
 Notice the use of `transform-origin` and `transform` in order to create the 3D perspective of the text. Combined with the animation we build (called `crawl`, which is than called in the `@keyframes` rule from above), we create the 3D illusion of the text moving through space away from you. If you need to change the timing of the crawl to more closely match your text, simply edit the time (second property) of `animation`.
 
-Finally, here is the quick CSS I created for centering and styling the episode title and name. You don’t need to include this, any good film buff would know that Star Wars was originally released in 1977 without an episode number or title in the opening crawl. 
+Finally, here is the quick CSS I created for centering and styling the episode title and name. You don’t *have* to include this, any good film buff would know that Star Wars was originally released in 1977 without an episode number or title in the opening crawl. 
 
 <div class="note_box"><strong>Fun Fact:</strong> The title ‘Episode IV: A New Hope’ was added in 1980 when The Empire Strikes Back was released as Episode V.</div>
 <p></p>
