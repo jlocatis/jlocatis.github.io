@@ -1,6 +1,7 @@
 ---
 title: Article Example Template
 image: placeholder.jpg
+published: false
 ---
 
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vulputate mauris dui. Nullam vitae orci odio. Sed eu nisi aliquam, ornare erat sit amet, condimentum augue. Nullam sagittis aliquet nulla eu tincidunt. Nulla at bibendum augue. Aliquam erat volutpat. Aenean a varius diam. Mauris condimentum sollicitudin varius.</p>

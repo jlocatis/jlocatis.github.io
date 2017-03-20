@@ -38,7 +38,7 @@ image: waldo_front.jpg
 
 <p>Sounds easy enough right!? Let's get started...</p>
 
-<p>First let's go to your HTML page containing your Waldo image. We need a way to get x and y's pixel variables of the user's click location. We will compare these numbers to the real location of Waldo (which you should be aware of). First let's find Waldo's pixel coordinates within your image. If you haven't already, I suggest you use HTML to set a fixed width for your image, especially if the image is larger than your typical screen at full size. You want to make sure the image fits nicely in a window for the user to see, and also that it's size will be the same across different browser/computer setups. After this is done will use the JavaScript console of your browser to find Waldo's coordinate range.</p>
+<p>First let's go to your HTML page containing your Waldo image. We need a way to get x and y's pixel variables of the user's click location. We will compare these numbers to the real location of Waldo (which you should be aware of). First let's find Waldo's pixel coordinates within your image. If you haven't already, I suggest you use HTML to set a fixed width for your image, especially if the image is larger than your typical screen at full size. You want to make sure the image fits nicely in a window for the user to see, and also that it's size will be the same across different browser/computer setups. After this is done we will use the JavaScript console of your browser to find Waldo's coordinate range.</p>
 
 <p>In your code editor create a new JavaScript file. We will be using JavaScript for programming this portion of the game. Now let's create a function that will tell us the click location of our mouse within the image. This can be done with the code below:</p>
 
@@ -48,7 +48,7 @@ image: waldo_front.jpg
 
 <p><script src="https://gist.github.com/jlocatis/e8604b054f8227cb463ea5825b07361a.js"></script></p>
 
-<p>In order for the above event listener to work, you will need to return to your HTML page and give your Waldo image the class name "Waldo" (please see HTML tutorials on how this can be accomplished). The above JS code will add the event listener when our <em>window</em>, or page, loads. One last step we need in order to find Waldo's coordinates. Add a <em>debugger;</em> to the end of your findClickLocation function. The debugger will let us use your browser's JavaScript console to see where we are clicking. Everytime the browser reaches the debugger line (which will be on every click), it will halt the execution of the program and allow you to interact with it's current state.</p>
+<p>In order for the above event listener to work, you will need to return to your HTML page and give your Waldo image the class name "Waldo" (please see HTML tutorials on how this can be accomplished). The above JS code will add the event listener when our <em>window</em>, or page, loads. Just one last step we need in order to find Waldo's coordinates. Add a <em>debugger;</em> to the end of your findClickLocation function. The debugger will let us use your browser's JavaScript console to see where we are clicking. Everytime the browser reaches the debugger line (which will be on every click), it will halt the execution of the program and allow you to interact with it's current state.</p>
 
 <div class="img-container"><img src="{{ "/assets/images/waldo/JS_console.jpg" | relative_url }}" alt="Accessing the JavaScript console" class="article-image"></div>
 <div class="img-container img-caption">Accessing the JavaScript console</div>
@@ -56,12 +56,12 @@ image: waldo_front.jpg
 <div class="img-container"><img src="{{ "/assets/images/waldo/click_event.jpg" | relative_url }}" alt="Looking at a click event in the console" class="article-image"></div>
 <div class="img-container img-caption">Click event in the console</div>
 
-<p>The first image above shows me opening my JavaScript console. The second image shows me clicking on my waldo image with a debugger in place, and exploring what is returned in with an event. I am in my browser's JavaScript console (in this case I am using Google Chrome, but your browser of choice will have something similiar). Feel free to type "click_event" into your console, and see the output of everything <em>window.event</em> gives you. All we need is the <em>offsetX</em> and <em>offsetY</em> position of the click. These are the location of the mouse within the event target (in this case the Waldo image).</p>
+<p>The first image above shows me opening my JavaScript console. The second image shows me clicking on my waldo image with a debugger in place, and exploring what is returned in <em>window.event</em>. In the above example I am using Google Chrome, but your browser of choice will have something similiar. Feel free to type "click_event" into your console, and see the output of everything <em>window.event</em> gives you. All we need is the <em>offsetX</em> and <em>offsetY</em> position of the click. These are the location of the mouse within the event target (in this case the Waldo image).</p>
 
 <div class="img-container"><img src="{{ "/assets/images/waldo/x_and_y.jpg" | relative_url }}" alt="Example location of x and y" class="article-image"></div>
 <div class="img-container img-caption">X and Y in the console</div>
 
-<p>Click around and write down the range Waldo exists within. We will need this a bit later. For now let's focus on getting the click location of <strong>x</strong> and <strong>y</strong> to a server. For this project we will be coding in Ruby on the server-side, and will be using the Sinatra framework. If you aren't sure how the Sinatra framework handles things, please read over the beginnings of <a href="http://www.sinatrarb.com/intro.html" target="blank">this README</a> to familiarize yourself. You will only need to understand the basics of a Ruby web framework in order to proceed. Create your controller action file first. Start it out with this code:</p>
+<p>Click around and write down the range Waldo exists within. We will need this a bit later. For now let's focus on getting the click location of <strong>x</strong> and <strong>y</strong> to a server. For this piece of the project we will be coding in Ruby on the server-side, and will be using the Sinatra framework. If you aren't sure how the Sinatra framework handles things, please read over the beginnings of <a href="http://www.sinatrarb.com/intro.html" target="blank">this README</a> to familiarize yourself. You will only need to understand the basics of a Ruby web framework in order to proceed. Create your controller action file first. Start it out with this code:</p>
 
 <p><script src="https://gist.github.com/jlocatis/aa2f62428ed6d2e6ab759b15e81e52e8.js"></script></p>
 
@@ -76,8 +76,6 @@ image: waldo_front.jpg
 	<li>Receive and work with data from the server</li>
 </ul>
 
-<p>Note my use of the <em>onreadystatechange</em> method when declaring what to do with my returned data (the <em>console.logs</em> you see in the anonymous function). There are different methods that can be used here, but with this one we are telling the page to wait until it receives an actual state change from the server. When you load a page using only HTML and JavaScript the browser will execute all of these languages' code immediately by default. Asking our JS to wait for a server response will halt the execution of that specific function until ready.</p>
-
 <p>Back in the Ruby route for '/return' we need to create our function <em>waldoTest</em> to check and see if the user clicked on Waldo or not. If you haven't done so already, make a ruby file to hold your functions. Let's add the code to check if waldo exists:</p>
 
 <p><script src="https://gist.github.com/jlocatis/36aa6975ecb35fc3f872ca0f8cf9679b.js"></script></p>
@@ -86,7 +84,7 @@ image: waldo_front.jpg
 
 <p><strong>At this point test your program. It should be working. True or false should be returned to your JS console based on your click. If you have that working, let's make this thing a little more functional!</strong></p>
 
-<p>This next step is somewhat more open-ended. If you would like to let the user know that their click was unsuccessful, there are several creative ways you can do it. I just added an extra line in my HTML essentially saying "wrong location", and used some JavaScript and CSS magic to display it for a few seconds if false is returned. What about true? In my HTML I built a reusable hidden modal window (this way I can re-use it for both the end game message and high scores). If true is returned, this windows is displayed. Get creative with your HTML/CSS skills and see what you can come up with! Here is my updated <em>getData</em> function replacing our console.log statements with working code:</p>
+<p>This next step is somewhat more open-ended. If you would like to let the user know that their click was unsuccessful, there are several creative ways you can do it. I just added an extra line in my HTML essentially saying "wrong location", and used some JavaScript and CSS magic to display it for a few seconds if false is returned. What about true? In my HTML I built a reusable hidden modal window (this way I can re-use it for both the end game message and high scores). If true is returned, this window is displayed. Get creative with your HTML/CSS skills and see what you can come up with! Here is my updated <em>getData</em> function replacing our console.log statements with working code:</p>
 
 <p><script src="https://gist.github.com/jlocatis/cc8be8b6d19ab8a71a2d510e1c767a4a.js"></script></p>
 
@@ -112,19 +110,10 @@ image: waldo_front.jpg
 
 <p><script src="https://gist.github.com/jlocatis/8957eba8a7a4084ac454fb49bc27a70f.js"></script></p>
 
-<p>We are writing the scores to a .csv file (in the above example, called 'highscores.csv') that will be stored on the server. Now what if someone wants to see the high scores? Let's make the '/showscores' function a reality. Depending on how you chose to track time you could be doing something completely different. But that's the fun in programming, solving unique problems in different ways! My function is a little more complicated because it needs to break our clock string down into seconds, sort the scores by seconds, and restore the time back to it's clock format. It's a fun algorithmic excercise to rack your brain on! Here is the code:</p>
+<p>We are writing the scores to a .csv file (in the above example, called 'highscores.csv') that will be stored on the server. Now what if someone wants to see the high scores? Let's make the '/showscores' route a reality. Depending on how you chose to track time you could be doing something completely different. But that's the fun in programming, solving unique problems in different ways! My function is a little more complicated because it needs to break our clock string down into seconds, sort the scores by seconds, and restore the time back to it's clock format. It's a fun algorithmic excercise to rack your brain on! Here is the code:</p>
 
 <p><script src="https://gist.github.com/jlocatis/1d3714de0a2d552d1efa55c2d3968b3c.js"></script></p>
 
-<p>One last bonus that happened in the code above but I didn't explain was adding a name to the high scores. Before anything in JS or Ruby can accomplish this, you need to get some sort of input method integrated into your HTML. If you look above you can see I grab the user's name and send it with the score in the <em>storeScores</em> JavaScript function. The <em>storeScore</em> Ruby function than writes the name and corresponding time to the .csv file. The <em>loadScores</em> will sort the names when it sorts the times.</p>
+<p>One last bonus that happened in the code above but I didn't explain was adding a name to the high scores. Before anything in JS or Ruby can accomplish this, you need to get some sort of input method integrated into your HTML. If you look above you can see I grab the user's name and send it with the score in the <em>storeScores</em> JavaScript function. The <em>storeScore</em> Ruby function than writes the name and corresponding time to the .csv file. The <em>loadScores</em> function will sort the names as it sorts the times.</p>
 
 <p>I hope this tutorial was informative and fun! Spend sometime after you get the game working styling it up through HTML and CSS. For added difficulty you can add multiple Waldo pictures to your challenge. Enjoy!</p>
-<hr>
-<div id="footnotes-title">Footnotes:</div>
-<footer id="footnotes">
-	<ol>
-		<li id="footnote1">Some footnotes.</li>
-		<li id="footnote2">Some more footnotes. HelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHello</li>
-		<li id="footnote3">One more footnote goes here.</li>
-	</ol>
-</footer>
