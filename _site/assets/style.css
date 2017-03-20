@@ -449,7 +449,7 @@ h1.article-title { /* come back and fix */
 }
 
 /* desktop changes */
-@media (min-width: 850px) {
+@media (min-width: 950px) {
 	#hamburger {
 		display: none;
 	}
