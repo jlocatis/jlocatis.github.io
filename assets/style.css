@@ -456,7 +456,7 @@ h1.article-title { /* come back and fix */
 	}
 
 	.top-bar {
-		width: 43%;
+		width: 73%;
 		background-color: #c4c4c4;
 	}
 
@@ -467,7 +467,7 @@ h1.article-title { /* come back and fix */
 	.menu-bar {
 		position: relative;
 		opacity: 1;
-		width: 57%;
+		/*width: 57%;*/
 		height: 100px;
 		top: 0;
 	}
