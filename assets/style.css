@@ -445,7 +445,17 @@ h1.article-title { /* come back and fix */
 	font-weight: bold;
 }
 
-/* desktop changes */
+/* Embedded Code Styling */
+.highlighter-rouge {
+	font-size: 1.25em;
+	background-color: rgb(247,247,247);
+}
+
+.highlight {
+	font-size: 1.25em;
+}
+
+/* Desktop Changes */
 @media (min-width: 950px) {
 	#hamburger {
 		display: none;
