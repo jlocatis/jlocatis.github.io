@@ -196,7 +196,22 @@
 
 <p>Back in the Ruby route for '/return' we need to create our function <em>waldoTest</em> to check and see if the user clicked on Waldo or not. If you haven't done so already, make a ruby file to hold your functions. Let's add the code to check if waldo exists:</p>
 
-<p><script src="https://gist.github.com/jlocatis/36aa6975ecb35fc3f872ca0f8cf9679b.js"></script></p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="c1">## Replace your x and y min/max variables with the actual integer numbers </span>
+<span class="c1">## you wrote down from your JavaScript console.</span>
+
+<span class="k">def</span> <span class="nf">waldoTest</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+	<span class="n">x</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="ss">:x</span><span class="p">]</span>
+	<span class="n">y</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="ss">:y</span><span class="p">]</span>
+	<span class="n">waldo_test</span> <span class="o">=</span> <span class="kp">true</span>
+	<span class="k">if</span> <span class="n">x</span><span class="p">.</span><span class="nf">to_i</span> <span class="o">&gt;=</span> <span class="n">x_min</span> <span class="o">&amp;&amp;</span> <span class="n">x</span><span class="p">.</span><span class="nf">to_i</span> <span class="o">&lt;=</span> <span class="n">x_max</span> <span class="o">&amp;&amp;</span> 
+		<span class="n">y</span><span class="p">.</span><span class="nf">to_i</span> <span class="o">&gt;=</span> <span class="n">y_min</span> <span class="o">&amp;&amp;</span> <span class="n">y</span><span class="p">.</span><span class="nf">to_i</span> <span class="o">&lt;=</span> <span class="n">y_max</span>
+			<span class="n">waldo_test</span> <span class="o">=</span> <span class="kp">true</span>
+	<span class="k">else</span>
+		<span class="n">waldo_test</span> <span class="o">=</span> <span class="kp">false</span>
+	<span class="k">end</span>
+	
+	<span class="k">return</span> <span class="n">waldo_test</span>
+<span class="k">end</span></code></pre></figure>
 
 <p>This will return true or false based on your provided coordinates. Notice back on the controller page that we set this variable to a string before returning it at the end of the route. Any variable returned at the end of your Ruby route is what the JavaScript AJAX request will receive. A JavaScript boolean object is different from a Ruby boolean object, so we will instead use a string.</p>
 
@@ -204,33 +219,190 @@
 
 <p>This next step is somewhat more open-ended. If you would like to let the user know that their click was unsuccessful, there are several creative ways you can do it. I just added an extra line in my HTML essentially saying "wrong location", and used some JavaScript and CSS magic to display it for a few seconds if false is returned. What about true? In my HTML I built a reusable hidden modal window (this way I can re-use it for both the end game message and high scores). If true is returned, this window is displayed. Get creative with your HTML/CSS skills and see what you can come up with! Here is my updated <em>getData</em> function replacing our console.log statements with working code:</p>
 
-<p><script src="https://gist.github.com/jlocatis/cc8be8b6d19ab8a71a2d510e1c767a4a.js"></script></p>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">getData</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">httpRequest</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+  <span class="kd">var</span> <span class="nx">coordinates</span> <span class="o">=</span> <span class="s2">"x="</span> <span class="o">+</span> <span class="nx">x</span> <span class="o">+</span> <span class="s2">"&amp;y="</span> <span class="o">+</span> <span class="nx">y</span><span class="p">;</span>
+  <span class="nx">httpRequest</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s1">'GET'</span><span class="p">,</span> <span class="s1">'/return?'</span> <span class="o">+</span> <span class="nx">coordinates</span><span class="p">)</span>
+  <span class="nx">httpRequest</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="s2">"Content-type"</span><span class="p">,</span> <span class="s2">"application
+  	x-www-form-urlencoded"</span><span class="p">);</span>
+  <span class="nx">httpRequest</span><span class="p">.</span><span class="nx">onreadystatechange</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+	  <span class="c1">// var waldo_test = httpRequest.responseText</span>
+	  <span class="k">if</span> <span class="p">(</span><span class="nx">httpRequest</span><span class="p">.</span><span class="nx">responseText</span> <span class="o">==</span> <span class="s2">"true"</span><span class="p">)</span> <span class="p">{</span>
+		  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByClassName</span><span class="p">(</span><span class="s2">"not_yet"</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+			  <span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="s2">"none"</span><span class="p">;</span>
+		  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByClassName</span><span class="p">(</span><span class="s2">"modal"</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+			  <span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="s2">"block"</span><span class="p">;</span>
+		  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByClassName</span><span class="p">(</span><span class="s2">"modal_content"</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+			  <span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="s2">"block"</span><span class="p">;</span>
+		  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByClassName</span><span class="p">(</span><span class="s2">"modal_title"</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+			  <span class="p">.</span><span class="nx">textContent</span> <span class="o">=</span> <span class="s2">"You found him!"</span><span class="p">;</span>
+		  <span class="nx">clearInterval</span><span class="p">(</span><span class="nx">current_timer</span><span class="p">);</span>
+		  <span class="nx">final_minutes</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByClassName</span><span class="p">(</span><span class="s2">"minutes"</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+			  <span class="p">.</span><span class="nx">textContent</span><span class="p">;</span>
+		  <span class="nx">final_seconds</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByClassName</span><span class="p">(</span><span class="s2">"seconds"</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+			  <span class="p">.</span><span class="nx">textContent</span><span class="p">;</span>
+		  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByClassName</span><span class="p">(</span><span class="s2">"modal_body"</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">textContent</span> <span class="o">=</span> 
+			  <span class="s2">"Your final time was "</span> <span class="o">+</span> <span class="nx">final_minutes</span> <span class="o">+</span> 
+			  <span class="s2">" minutes and "</span> <span class="o">+</span> <span class="nx">final_seconds</span> <span class="o">+</span> <span class="s2">" seconds."</span><span class="p">;</span>
+		  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByClassName</span><span class="p">(</span><span class="s2">"submit_score"</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+			  	<span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"click"</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+			  <span class="nx">winner_name</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByClassName</span><span class="p">(</span><span class="s2">"winner_name"</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+			  	<span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+			  <span class="nx">storeScores</span><span class="p">(</span><span class="nx">winner_name</span><span class="p">,</span> <span class="nx">final_minutes</span><span class="p">,</span> <span class="nx">final_seconds</span><span class="p">);</span>
+		  <span class="p">});</span>
+	  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">httpRequest</span><span class="p">.</span><span class="nx">responseText</span> <span class="o">==</span> <span class="s2">"false"</span><span class="p">)</span> <span class="p">{</span>
+		  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByClassName</span><span class="p">(</span><span class="s2">"not_yet"</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> 
+			  <span class="s2">"block"</span><span class="p">;</span>
+		  <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">resetResponseError</span><span class="p">,</span> <span class="mi">5000</span><span class="p">);</span>
+		  <span class="kd">function</span> <span class="nx">resetResponseError</span><span class="p">()</span> <span class="p">{</span>
+			  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByClassName</span><span class="p">(</span><span class="s2">"not_yet"</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> 
+			  	<span class="s2">"none"</span><span class="p">;</span>
+		  <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="nx">httpRequest</span><span class="p">.</span><span class="nx">send</span><span class="p">();</span>
+<span class="p">}</span></code></pre></figure>
 
 <p>You might notice some code in the above function referring to a timer. Let's add some fun to your game by making a live timer on the screen that starts counting the instant the user loads the page. We can also use these times as a means of tracking high scores. There are several ways a timer in JavaScript can be accomplished. For this program I built a custom timer, that updates a string formatted like a clock ("minutes:seconds") every second:</p>
 
-<p><script src="https://gist.github.com/jlocatis/c1258b40bc6b9d6a5c602bc5d70d18a7.js"></script></p>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">current_timer</span> <span class="o">=</span> <span class="s2">""</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">timer</span><span class="p">()</span> <span class="p">{</span>
+	<span class="kd">var</span> <span class="nx">sec</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="kd">function</span> <span class="nx">pad</span><span class="p">(</span><span class="nx">val</span><span class="p">)</span> <span class="p">{</span> 
+		<span class="k">return</span> <span class="nx">val</span> <span class="o">&gt;</span> <span class="mi">9</span> <span class="p">?</span> <span class="nx">val</span> <span class="p">:</span> <span class="s2">"0"</span> <span class="o">+</span> <span class="nx">val</span><span class="p">;</span> 
+	<span class="p">}</span>
+	<span class="nx">current_timer</span> <span class="o">=</span> <span class="nx">setInterval</span><span class="p">(</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByClassName</span><span class="p">(</span><span class="s2">"seconds"</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    	<span class="p">.</span><span class="nx">textContent</span><span class="o">=</span><span class="nx">pad</span><span class="p">(</span><span class="o">++</span><span class="nx">sec</span><span class="o">%</span><span class="mi">60</span><span class="p">);</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByClassName</span><span class="p">(</span><span class="s2">"minutes"</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    	<span class="p">.</span><span class="nx">textContent</span><span class="o">=</span><span class="nx">pad</span><span class="p">(</span><span class="nb">parseInt</span><span class="p">(</span><span class="nx">sec</span><span class="o">/</span><span class="mi">60</span><span class="p">,</span><span class="mi">10</span><span class="p">));</span>
+	<span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">timer</span><span class="p">();</span></code></pre></figure>
 
 <p>My approach will create a bigger challenge later on when we go to sort our scores based on time (since we aren't actually storing time, but a string of time). But it does, in my opinion, look nicer to the user. </p>
 
 <p>So the timer code was already added to my <em>getData</em> function above, now let's build a function that will store those scores on the server. You may have already noticed in my <em>getData</em> function I call a new function named <em>storeScores</em> that will run if a player wins and chooses to submit their score. We will need to create another AJAX request to send this information back to the server. Here goes:</p>
 
-<p><script src="https://gist.github.com/jlocatis/b29e52182f65ac43ee9a4849924a1648.js"></script></p>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">storeScores</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">minutes</span><span class="p">,</span> <span class="nx">seconds</span><span class="p">)</span> <span class="p">{</span>
+	<span class="nx">httpRequest</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+	<span class="kd">var</span> <span class="nx">params</span> <span class="o">=</span> <span class="s2">"name="</span> <span class="o">+</span> <span class="nx">name</span> <span class="o">+</span> <span class="s2">"&amp;mins="</span> <span class="o">+</span> <span class="nx">minutes</span> <span class="o">+</span> <span class="s2">"&amp;secs="</span> <span class="o">+</span> <span class="nx">seconds</span><span class="p">;</span>
+	<span class="nx">httpRequest</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s1">'POST'</span><span class="p">,</span> <span class="s1">'/storescores?'</span> <span class="o">+</span> <span class="nx">params</span><span class="p">);</span>
+	<span class="nx">httpRequest</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="s2">"Content-type"</span><span class="p">,</span> 
+		<span class="s2">"application/x-www-form-urlencoded"</span><span class="p">);</span>
+	<span class="nx">httpRequest</span><span class="p">.</span><span class="nx">send</span><span class="p">();</span>
+	<span class="nx">event</span><span class="p">.</span><span class="nx">stopImmediatePropagation</span><span class="p">();</span>
+<span class="p">}</span></code></pre></figure>
 
 <p>While we are at it, let's also create a way to pull back those scores from the server for display. Create a link somewhere in your HTML and add an event listener in your JavaScript. Here is the code creating another AJAX request getting our scores:</p>
 
-<p><script src="https://gist.github.com/jlocatis/6b88bd2d8b50d739b750876b7b18febd.js"></script></p>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">showScores</span><span class="p">()</span> <span class="p">{</span>
+	<span class="nx">clearInterval</span><span class="p">(</span><span class="nx">current_timer</span><span class="p">);</span>
+	<span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByClassName</span><span class="p">(</span><span class="s2">"modal"</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"click"</span><span class="p">,</span> 
+		<span class="kd">function</span><span class="p">(){</span>
+		<span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span> <span class="o">=</span> <span class="s2">"/"</span><span class="p">;</span>
+	<span class="p">});</span>
+	<span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByClassName</span><span class="p">(</span><span class="s2">"modal"</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="s2">"block"</span><span class="p">;</span>
+	<span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"score_modal"</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="s2">"block"</span><span class="p">;</span>
+	<span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByClassName</span><span class="p">(</span><span class="s2">"modal_body"</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="s2">"none"</span><span class="p">;</span>
+	<span class="nx">xhr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+	<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s1">'GET'</span><span class="p">,</span> <span class="s1">'/showscores'</span><span class="p">);</span>
+	<span class="nx">xhr</span><span class="p">.</span><span class="nx">onreadystatechange</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+		<span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"score_body"</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">xhr</span><span class="p">.</span><span class="nx">responseText</span>
+	<span class="p">}</span>
+	<span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">();</span>
+<span class="p">}</span></code></pre></figure>
 
 <p>Let's add some routes to our ruby controller to make this all work:</p>
 
-<p><script src="https://gist.github.com/jlocatis/428e6dc0062f43fe74cf3b947b561d2c.js"></script></p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">post</span><span class="p">(</span><span class="s1">'/storescores'</span><span class="p">)</span> <span class="k">do</span>
+	<span class="n">storeScore</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+<span class="k">end</span>
+
+<span class="n">get</span><span class="p">(</span><span class="s1">'/showscores'</span><span class="p">)</span> <span class="k">do</span>
+	<span class="n">scores</span> <span class="o">=</span> <span class="n">loadScores</span><span class="p">()</span>
+	<span class="n">scores</span> <span class="o">=</span> <span class="n">scores</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="s2">""</span><span class="p">)</span>
+	<span class="n">scores</span> <span class="o">=</span> <span class="n">scores</span><span class="p">.</span><span class="nf">gsub</span><span class="p">(</span><span class="s1">','</span><span class="p">,</span> <span class="s1">', '</span><span class="p">)</span>
+	<span class="n">scores</span> <span class="o">=</span> <span class="n">scores</span><span class="p">.</span><span class="nf">gsub</span><span class="p">(</span><span class="sr">/\n/</span><span class="p">,</span> <span class="s1">'&lt;br&gt;'</span><span class="p">)</span>
+	<span class="k">return</span> <span class="n">scores</span>
+<span class="k">end</span></code></pre></figure>
 
 <p>In our '/storescores' route we send the data to a function called <em>storeScore</em>. Let's write it:</p>
 
-<p><script src="https://gist.github.com/jlocatis/8957eba8a7a4084ac454fb49bc27a70f.js"></script></p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">storeScore</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+	<span class="n">new_score</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="ss">:name</span><span class="p">]</span> <span class="o">+</span> <span class="s2">","</span> <span class="o">+</span> <span class="n">params</span><span class="p">[</span><span class="ss">:mins</span><span class="p">]</span> <span class="o">+</span> <span class="s2">":"</span> 
+		<span class="o">+</span> <span class="n">params</span><span class="p">[</span><span class="ss">:secs</span><span class="p">]</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span>
+	<span class="no">File</span><span class="p">.</span><span class="nf">open</span><span class="p">(</span><span class="s1">'./public/highscores.csv'</span><span class="p">,</span> <span class="s1">'a+'</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">file</span><span class="o">|</span>
+		<span class="n">file</span> <span class="o">&lt;&lt;</span> <span class="n">new_score</span>
+	<span class="k">end</span>
+<span class="k">end</span></code></pre></figure>
 
 <p>We are writing the scores to a .csv file (in the above example, called 'highscores.csv') that will be stored on the server. Now what if someone wants to see the high scores? Let's make the '/showscores' route a reality. Depending on how you chose to track time you could be doing something completely different. But that's the fun in programming, solving unique problems in different ways! My function is a little more complicated because it needs to break our clock string down into seconds, sort the scores by seconds, and restore the time back to it's clock format. It's a fun algorithmic excercise to rack your brain on! Here is the code:</p>
 
-<p><script src="https://gist.github.com/jlocatis/1d3714de0a2d552d1efa55c2d3968b3c.js"></script></p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">loadScores</span><span class="p">()</span>
+	<span class="n">scores</span> <span class="o">=</span> <span class="p">[]</span>
+	<span class="no">CSV</span><span class="p">.</span><span class="nf">foreach</span><span class="p">(</span><span class="s1">'./public/highscores.csv'</span><span class="p">,</span> <span class="p">{</span><span class="n">headers</span><span class="ss">:true</span><span class="p">})</span> <span class="k">do</span> <span class="o">|</span><span class="n">row</span><span class="o">|</span>
+		<span class="n">row</span><span class="p">[</span><span class="s2">"Name"</span><span class="p">]</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s2">"Name"</span><span class="p">].</span><span class="nf">chomp</span>
+		<span class="n">row</span><span class="p">[</span><span class="s2">"HighScore"</span><span class="p">]</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s2">"HighScore"</span><span class="p">].</span><span class="nf">chomp</span>
+		<span class="n">scores</span> <span class="o">&lt;&lt;</span> <span class="n">row</span><span class="p">.</span><span class="nf">to_s</span>
+	<span class="k">end</span>
+
+	<span class="c1"># Takes the minutes/seconds string, converts it into seconds </span>
+	<span class="c1"># as an integer, sorts the array based on the integer value, </span>
+	<span class="c1"># and returns the seconds integer back into a minutes/seconds string.</span>
+	
+	<span class="n">sort_scores</span> <span class="o">=</span> <span class="p">[]</span>
+	<span class="n">scores</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">x</span><span class="o">|</span>
+		<span class="n">time_array</span> <span class="o">=</span> <span class="n">x</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="s1">','</span><span class="p">)</span>
+		<span class="n">current_time</span> <span class="o">=</span> <span class="n">time_array</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+		<span class="n">mins</span> <span class="o">=</span> <span class="n">current_time</span><span class="p">.</span><span class="nf">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">).</span><span class="nf">to_i</span>
+		<span class="n">secs</span> <span class="o">=</span> <span class="n">current_time</span><span class="p">.</span><span class="nf">slice</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">).</span><span class="nf">to_i</span>
+		<span class="n">time_array</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">mins</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span> <span class="o">+</span> <span class="n">secs</span>
+		<span class="n">sort_scores</span> <span class="o">&lt;&lt;</span> <span class="n">time_array</span>
+	<span class="k">end</span>
+
+	<span class="n">sort_scores</span> <span class="o">=</span> <span class="n">sort_scores</span><span class="p">.</span><span class="nf">sort_by</span><span class="p">(</span><span class="o">&amp;</span><span class="ss">:last</span><span class="p">)</span>
+	<span class="n">sort_scores</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span>
+		<span class="n">time</span> <span class="o">=</span> <span class="n">i</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+		<span class="k">if</span> <span class="n">time</span> <span class="o">&gt;</span> <span class="mi">60</span>
+			<span class="n">seconds</span> <span class="o">=</span> <span class="n">time</span> <span class="o">%</span> <span class="mi">60</span> <span class="c1">#seconds</span>
+			<span class="n">time</span> <span class="o">=</span> <span class="n">time</span> <span class="o">/</span> <span class="mi">60</span> <span class="c1">#minutes</span>
+			<span class="k">if</span> <span class="n">seconds</span> <span class="o">&lt;</span> <span class="mi">10</span>
+				<span class="n">seconds</span> <span class="o">=</span> <span class="n">seconds</span><span class="p">.</span><span class="nf">to_s</span>
+				<span class="n">clock</span> <span class="o">=</span> <span class="s2">":0"</span> <span class="o">+</span> <span class="n">seconds</span>
+			<span class="k">else</span>
+				<span class="n">seconds</span> <span class="o">=</span> <span class="n">seconds</span><span class="p">.</span><span class="nf">to_s</span>
+				<span class="n">clock</span> <span class="o">=</span> <span class="s2">":"</span> <span class="o">+</span> <span class="n">seconds</span>
+			<span class="k">end</span>
+			<span class="k">if</span> <span class="n">time</span> <span class="o">&lt;</span> <span class="mi">10</span>
+				<span class="n">time</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="nf">to_s</span>
+				<span class="n">clock</span> <span class="o">=</span> <span class="s2">"0"</span> <span class="o">+</span> <span class="n">time</span> <span class="o">+</span> <span class="n">clock</span>
+			<span class="k">else</span>
+				<span class="n">time</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="nf">to_s</span>
+				<span class="n">clock</span> <span class="o">=</span> <span class="n">time</span> <span class="o">+</span> <span class="n">clock</span>
+			<span class="k">end</span>
+		<span class="k">else</span>
+			<span class="k">if</span> <span class="n">time</span> <span class="o">&lt;</span> <span class="mi">10</span>
+				<span class="n">time</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="nf">to_s</span>
+				<span class="n">clock</span> <span class="o">=</span> <span class="s2">"00:0"</span> <span class="o">+</span> <span class="n">time</span>
+			<span class="k">else</span>
+				<span class="n">time</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="nf">to_s</span>
+				<span class="n">clock</span> <span class="o">=</span> <span class="s2">"00:"</span> <span class="o">+</span> <span class="n">time</span>
+			<span class="k">end</span>
+		<span class="k">end</span>
+		<span class="n">i</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">clock</span>
+	<span class="k">end</span>
+	
+	<span class="n">sort_scores_again</span> <span class="o">=</span> <span class="p">[]</span>
+	<span class="n">sort_scores</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">j</span><span class="o">|</span>
+		<span class="n">string</span> <span class="o">=</span> <span class="n">j</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="s1">','</span><span class="p">)</span>
+		<span class="n">sort_scores_again</span> <span class="o">&lt;&lt;</span> <span class="n">string</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span>
+	<span class="k">end</span>
+
+	<span class="k">return</span> <span class="n">sort_scores_again</span>
+<span class="k">end</span></code></pre></figure>
 
 <p>One last bonus that happened in the code above but I didn't explain was adding a name to the high scores. Before anything in JS or Ruby can accomplish this, you need to get some sort of input method integrated into your HTML. If you look above you can see I grab the user's name and send it with the score in the <em>storeScores</em> JavaScript function. The <em>storeScore</em> Ruby function than writes the name and corresponding time to the .csv file. The <em>loadScores</em> function will sort the names as it sorts the times.</p>
 

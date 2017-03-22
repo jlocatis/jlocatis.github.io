@@ -126,7 +126,24 @@ function getData() {
 
 <p>Back in the Ruby route for '/return' we need to create our function <em>waldoTest</em> to check and see if the user clicked on Waldo or not. If you haven't done so already, make a ruby file to hold your functions. Let's add the code to check if waldo exists:</p>
 
-<p><script src="https://gist.github.com/jlocatis/36aa6975ecb35fc3f872ca0f8cf9679b.js"></script></p>
+{% highlight ruby %}
+## Replace your x and y min/max variables with the actual integer numbers 
+## you wrote down from your JavaScript console.
+
+def waldoTest(params)
+	x = params[:x]
+	y = params[:y]
+	waldo_test = true
+	if x.to_i >= x_min && x.to_i <= x_max && 
+		y.to_i >= y_min && y.to_i <= y_max
+			waldo_test = true
+	else
+		waldo_test = false
+	end
+	
+	return waldo_test
+end
+{% endhighlight %}
 
 <p>This will return true or false based on your provided coordinates. Notice back on the controller page that we set this variable to a string before returning it at the end of the route. Any variable returned at the end of your Ruby route is what the JavaScript AJAX request will receive. A JavaScript boolean object is different from a Ruby boolean object, so we will instead use a string.</p>
 
@@ -134,33 +151,204 @@ function getData() {
 
 <p>This next step is somewhat more open-ended. If you would like to let the user know that their click was unsuccessful, there are several creative ways you can do it. I just added an extra line in my HTML essentially saying "wrong location", and used some JavaScript and CSS magic to display it for a few seconds if false is returned. What about true? In my HTML I built a reusable hidden modal window (this way I can re-use it for both the end game message and high scores). If true is returned, this window is displayed. Get creative with your HTML/CSS skills and see what you can come up with! Here is my updated <em>getData</em> function replacing our console.log statements with working code:</p>
 
-<p><script src="https://gist.github.com/jlocatis/cc8be8b6d19ab8a71a2d510e1c767a4a.js"></script></p>
+{% highlight javascript %}
+function getData() {
+  httpRequest = new XMLHttpRequest();
+  var coordinates = "x=" + x + "&y=" + y;
+  httpRequest.open('GET', '/return?' + coordinates)
+  httpRequest.setRequestHeader("Content-type", "application
+  	x-www-form-urlencoded");
+  httpRequest.onreadystatechange = function() {
+	  // var waldo_test = httpRequest.responseText
+	  if (httpRequest.responseText == "true") {
+		  document.getElementsByClassName("not_yet")[0]
+			  .style.display = "none";
+		  document.getElementsByClassName("modal")[0]
+			  .style.display = "block";
+		  document.getElementsByClassName("modal_content")[0]
+			  .style.display = "block";
+		  document.getElementsByClassName("modal_title")[0]
+			  .textContent = "You found him!";
+		  clearInterval(current_timer);
+		  final_minutes = document.getElementsByClassName("minutes")[0]
+			  .textContent;
+		  final_seconds = document.getElementsByClassName("seconds")[0]
+			  .textContent;
+		  document.getElementsByClassName("modal_body")[0].textContent = 
+			  "Your final time was " + final_minutes + 
+			  " minutes and " + final_seconds + " seconds.";
+		  document.getElementsByClassName("submit_score")[0]
+			  	.addEventListener("click", function() {
+			  winner_name = document.getElementsByClassName("winner_name")[0]
+			  	.value;
+			  storeScores(winner_name, final_minutes, final_seconds);
+		  });
+	  } else if (httpRequest.responseText == "false") {
+		  document.getElementsByClassName("not_yet")[0].style.display = 
+			  "block";
+		  setTimeout(resetResponseError, 5000);
+		  function resetResponseError() {
+			  document.getElementsByClassName("not_yet")[0].style.display = 
+			  	"none";
+		  }
+  }
+  }
+  httpRequest.send();
+}
+{% endhighlight %}
 
 <p>You might notice some code in the above function referring to a timer. Let's add some fun to your game by making a live timer on the screen that starts counting the instant the user loads the page. We can also use these times as a means of tracking high scores. There are several ways a timer in JavaScript can be accomplished. For this program I built a custom timer, that updates a string formatted like a clock ("minutes:seconds") every second:</p>
 
-<p><script src="https://gist.github.com/jlocatis/c1258b40bc6b9d6a5c602bc5d70d18a7.js"></script></p>
+{% highlight javascript %}
+var current_timer = "";
+
+function timer() {
+	var sec = 0;
+	function pad(val) { 
+		return val > 9 ? val : "0" + val; 
+	}
+	current_timer = setInterval( function(){
+    document.getElementsByClassName("seconds")[0]
+    	.textContent=pad(++sec%60);
+    document.getElementsByClassName("minutes")[0]
+    	.textContent=pad(parseInt(sec/60,10));
+	}, 1000);
+}
+
+timer();
+{% endhighlight %}
 
 <p>My approach will create a bigger challenge later on when we go to sort our scores based on time (since we aren't actually storing time, but a string of time). But it does, in my opinion, look nicer to the user. </p>
 
 <p>So the timer code was already added to my <em>getData</em> function above, now let's build a function that will store those scores on the server. You may have already noticed in my <em>getData</em> function I call a new function named <em>storeScores</em> that will run if a player wins and chooses to submit their score. We will need to create another AJAX request to send this information back to the server. Here goes:</p>
 
-<p><script src="https://gist.github.com/jlocatis/b29e52182f65ac43ee9a4849924a1648.js"></script></p>
+{% highlight javascript %}
+function storeScores(name, minutes, seconds) {
+	httpRequest = new XMLHttpRequest();
+	var params = "name=" + name + "&mins=" + minutes + "&secs=" + seconds;
+	httpRequest.open('POST', '/storescores?' + params);
+	httpRequest.setRequestHeader("Content-type", 
+		"application/x-www-form-urlencoded");
+	httpRequest.send();
+	event.stopImmediatePropagation();
+}
+{% endhighlight %}
 
 <p>While we are at it, let's also create a way to pull back those scores from the server for display. Create a link somewhere in your HTML and add an event listener in your JavaScript. Here is the code creating another AJAX request getting our scores:</p>
 
-<p><script src="https://gist.github.com/jlocatis/6b88bd2d8b50d739b750876b7b18febd.js"></script></p>
+{% highlight javascript %}
+function showScores() {
+	clearInterval(current_timer);
+	document.getElementsByClassName("modal")[0].addEventListener("click", 
+		function(){
+		window.location.href = "/";
+	});
+	document.getElementsByClassName("modal")[0].style.display = "block";
+	document.getElementById("score_modal").style.display = "block";
+	document.getElementsByClassName("modal_body")[0].style.display = "none";
+	xhr = new XMLHttpRequest();
+	xhr.open('GET', '/showscores');
+	xhr.onreadystatechange = function() {
+		document.getElementById("score_body").innerHTML = xhr.responseText
+	}
+	xhr.send();
+}
+{% endhighlight %}
 
 <p>Let's add some routes to our ruby controller to make this all work:</p>
 
-<p><script src="https://gist.github.com/jlocatis/428e6dc0062f43fe74cf3b947b561d2c.js"></script></p>
+{% highlight ruby %}
+post('/storescores') do
+	storeScore(params)
+end
+
+get('/showscores') do
+	scores = loadScores()
+	scores = scores.join("")
+	scores = scores.gsub(',', ', ')
+	scores = scores.gsub(/\n/, '<br>')
+	return scores
+end
+{% endhighlight %}
 
 <p>In our '/storescores' route we send the data to a function called <em>storeScore</em>. Let's write it:</p>
 
-<p><script src="https://gist.github.com/jlocatis/8957eba8a7a4084ac454fb49bc27a70f.js"></script></p>
+{% highlight ruby %}
+def storeScore(params)
+	new_score = params[:name] + "," + params[:mins] + ":" 
+		+ params[:secs] + "\n"
+	File.open('./public/highscores.csv', 'a+') do |file|
+		file << new_score
+	end
+end
+{% endhighlight %}
 
 <p>We are writing the scores to a .csv file (in the above example, called 'highscores.csv') that will be stored on the server. Now what if someone wants to see the high scores? Let's make the '/showscores' route a reality. Depending on how you chose to track time you could be doing something completely different. But that's the fun in programming, solving unique problems in different ways! My function is a little more complicated because it needs to break our clock string down into seconds, sort the scores by seconds, and restore the time back to it's clock format. It's a fun algorithmic excercise to rack your brain on! Here is the code:</p>
 
-<p><script src="https://gist.github.com/jlocatis/1d3714de0a2d552d1efa55c2d3968b3c.js"></script></p>
+{% highlight ruby %}
+def loadScores()
+	scores = []
+	CSV.foreach('./public/highscores.csv', {headers:true}) do |row|
+		row["Name"] = row["Name"].chomp
+		row["HighScore"] = row["HighScore"].chomp
+		scores << row.to_s
+	end
+
+	# Takes the minutes/seconds string, converts it into seconds 
+	# as an integer, sorts the array based on the integer value, 
+	# and returns the seconds integer back into a minutes/seconds string.
+	
+	sort_scores = []
+	scores.each do |x|
+		time_array = x.split(',')
+		current_time = time_array[1]
+		mins = current_time.slice(0,2).to_i
+		secs = current_time.slice(3,2).to_i
+		time_array[1] = (mins * 60) + secs
+		sort_scores << time_array
+	end
+
+	sort_scores = sort_scores.sort_by(&:last)
+	sort_scores.each do |i|
+		time = i[1]
+		if time > 60
+			seconds = time % 60 #seconds
+			time = time / 60 #minutes
+			if seconds < 10
+				seconds = seconds.to_s
+				clock = ":0" + seconds
+			else
+				seconds = seconds.to_s
+				clock = ":" + seconds
+			end
+			if time < 10
+				time = time.to_s
+				clock = "0" + time + clock
+			else
+				time = time.to_s
+				clock = time + clock
+			end
+		else
+			if time < 10
+				time = time.to_s
+				clock = "00:0" + time
+			else
+				time = time.to_s
+				clock = "00:" + time
+			end
+		end
+		i[1] = clock
+	end
+	
+	sort_scores_again = []
+	sort_scores.each do |j|
+		string = j.join(',')
+		sort_scores_again << string + "\n"
+	end
+
+	return sort_scores_again
+end
+{% endhighlight %}
 
 <p>One last bonus that happened in the code above but I didn't explain was adding a name to the high scores. Before anything in JS or Ruby can accomplish this, you need to get some sort of input method integrated into your HTML. If you look above you can see I grab the user's name and send it with the score in the <em>storeScores</em> JavaScript function. The <em>storeScore</em> Ruby function than writes the name and corresponding time to the .csv file. The <em>loadScores</em> function will sort the names as it sorts the times.</p>
 
