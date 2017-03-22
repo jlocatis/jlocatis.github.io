@@ -76,8 +76,8 @@
 <div class="clear"></div>
 
 	<div class="page-body">
-	<h1 class="article-title">Navigating the DOM</h1>
-	<div id="posted-date">Jan 2, 2017</div>
+	<h1 class="article-title">The DOM and JavaScript</h1>
+	<div id="posted-date">Jan 3, 2017</div>
 	<hr>
 	<div class="article-content">
 
@@ -88,9 +88,9 @@
 <div class="img-container"><img src="/assets/images/DOM/pic_html_tree.gif" alt="DOM Tree" class="article-image" /></div>
 <div class="img-container img-caption">Visual Example of navigating the HTML DOM Tree</div>
 
-<p>In the above example you can see how the DOM can be traversed. HTML is structered so that elements or tags are always associated with a parent element (all the way to the top of the page, beginning at the <code class="highlighter-rouge">&lt;body&gt;</code> tag, or even higher the <code class="highlighter-rouge"><span class="nt">&lt;html&gt;</span></code> tag). Objects on your page (text, images, forms, etc…) are all connected to their parent tags, in a hierarchical tree structure. All of these objects are considered “Nodes” of the DOM, pieces of the document structure.</p>
+<p>In the above example you can see how the DOM can be traversed. HTML is structered so that elements or tags are always associated with a parent element (all the way to the top of the page, beginning at the <code class="highlighter-rouge">&lt;body&gt;</code> tag or  <code class="highlighter-rouge"><span class="nt">&lt;html&gt;</span></code> tag). Objects on your page (text, images, forms, etc…) are all connected to their parent tags in a hierarchical tree structure. All of these objects are considered “nodes” of the DOM, pieces of the document model.</p>
 
-<p>Using the DOM and Javascript together gives you a powerful tool with which to manipulate your website. As you write HTML you find it’s completely static, the web browser simply runs through the code from top to bottom and prints out your website for the user in the exact same user. Any interaction with the website is extremely limited to only what HTML can do. But using a far more powerful language such as Javascript, and dynamically integrating that in with your HTML allows you so much more. As an example, you can have the user click a button and suddenly, without reloading the page, it’s entire structure can be re-written.</p>
+<p>Using the DOM and Javascript together gives you a powerful tool with which to manipulate your website. When writing HTML you’ll find it’s completely static, the web browser simply runs through the code from top to bottom and prints out your website for the user typically in that exact order. Hence the term <em>markup language</em> in HTML. Any interaction with the website is extremely limited to only what you have asked it to show. You can do so much more though by dynamically integrating HTML with a real language such as Javascript. As an example, you can have the user click a button and suddenly, without reloading the page, it’s entire structure can be re-written.</p>
 
 <div class="img-container"><img src="/assets/images/DOM/comments1.png" alt="Replies Closed" class="article-image" /></div>
 <div class="img-container img-caption">Example comments HTML page</div>
@@ -98,17 +98,21 @@
 <div class="img-container"><img src="/assets/images/DOM/comments2.png" alt="Replies Open" class="article-image" /></div>
 <div class="img-container img-caption">Using Javascript and the DOM to expand Bob's replies</div>
 
-<p>In the above examples you can see a comments system that has been written for the web in HTML and uses Javascript and the DOM to dynamically alter the page based on user input. In the second image the user has clicked a link to see the 4 replies to Bob, and without reloading the page, the replies are shown.</p>
+<p>In the above example you can see a comments system that has been written for in plain HTML. By using Javascript and the DOM to dynamically alter the page based on user input, you can see we change the page in the second image when a user has clicked on something. In the example the user has clicked a link to see the 4 replies to Bob, and without reloading the page, the replies are shown.</p>
 
 <h3 id="what-is-the-difference-between-client-side-and-server-side-web-development">What is the difference between “client-side” and “server-side” web development?</h3>
 
-<p>There is an important but easy distinction between “client-side” and “server-side” web development, and yes it’s written right into their descriptors. Anything developed to happen “client-side” is code that is entirely managed and processed on your personal computer. You send a request to a website (by typing in <em>jamielocatis.com</em> for example), and the server sends back all of the data needed to make the website work. All of the processing through the code happens on your computer, in your web browser. HTML happens completely on the “client-side”.</p>
+<p>There is an important but easy distinction between “client-side” and “server-side” web development, and yes it’s written right into their descriptors. Anything developed to happen “client-side” is code that is entirely managed and processed on your personal computer. You send a request to a website (by typing in <em>jamielocatis.com</em> for example), and the server sends back all of the code needed to make the website work. All of the processing through that code happens on your computer, inside of your web browser. HTML happens completely on the “client-side”. JavaScript is also “client-side”, but we can use it to communicate with the server to request and receive and new data for the page (without having to reload the page).</p>
 
-<p>Opposite to this is “server-side” development, where portions of the code are processed completely on the server, and the server sends back to your computer only the HTML needed to display whatever it is you were requesting. This can allow for very complicated processes to happen on a big server, so your computer only has to worry about showing the page. It can also be used to keep confidential information stored securely on the server, so it never interacts with your computer (or anyone else’s). Still, a lot can be accomplished on the client-side without needing any extra server-side processing. You might think in the example above the changing of the page’s structure was accomplished server-side, when in fact it was dont completely on the client-side using Javascript and the DOM.</p>
+<p>Opposite to this is “server-side” development, where portions of the code are processed completely on the server, and the server sends back to your computer only the HTML needed to display whatever it is you were requesting. Than using a language such as JavaScript, we can actively update the DOM with our new information.</p>
+
+<p>Let’s say the example above was something as robust as <em>Facebook</em>. On your initial page load, your computer would only need the code for the top image to load right? Why waste time and bandwidth sending everything else! When the user hits the link to show Bob’s replies, a language like JavaScript would send an AJAX request to the server for those replies. The server sends the code back, and the HTML DOM is updated to display all of the replies.</p>
+
+<div class="note_box"><strong>Note:</strong> I haven't talked about AJAX just yet. If you aren't sure what this is, check out my "Build Your First Game for the Web" tutorial!</div>
 
 <h3 id="what-are-events">What are events?</h3>
 
-<p>We have talked about how using the DOM and Javascript can be a great way to add some true dynamic functionality to your website. “Events” are exactly how they sound, coded events that will tell the computer that when “this” happens go do “that”. In the comments example from above, a Javascript event was coded to a DOM node (in this case the ‘4 replies’ link) that said when clicked, display all of the HTML code comprising the 4 replies for Bob. Nothing was sent to the server, everything your computer needed was already loaded, the event just triggered displaying that code. Like I discussed earlier that wouldn’t be possible using just plain HTML. We needed Javascript and the DOM in order to add this extra functionality.</p>
+<p>We have talked about how using the DOM and Javascript can be a great way to add some true dynamic functionality to your website. “Events” are exactly how they sound, coded events that will tell the computer when “this” happens go do “that”. In the comments example from above a Javascript event was coded to a DOM node (in this case the ‘4 replies’ link) that said when clicked, do everything needed to get the 4 replies for Bob.</p>
 
 <h3 id="what-are-event-listeners-how-are-they-used-in-web-development">What are event listeners? How are they used in web development?</h3>
 
@@ -120,11 +124,11 @@
   <span class="nx">repliesArray</span><span class="p">[</span><span class="nx">x</span><span class="p">].</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"click"</span><span class="p">,</span> <span class="nx">showReplies</span><span class="p">);</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>There are several different ways of creating an event listener. In the above example we wait for a “click” on the ‘4 Replies’ link, and than run the function ‘showReplies’. The specific link to Bob’s replies isn’t specifically defined when we use ‘addEventListener’ becuase it is actually running a loop that is creating an event listener for every replies link on the page.</p>
+<p>There are several different ways of creating an event listener. In the above example we wait for a “click” on the ‘4 Replies’ link, and than run the function ‘showReplies’. We can even create groups of events through loops, like the above example. It creates an event listener for every defined ‘reply_click’ link it finds in the DOM. When clicked, it will run the <code class="highlighter-rouge">showReplies</code> function.</p>
 
-<h3 id="what-is-windowevent">What is <em>window.event</em>?</h3>
+<h3 id="get-to-know-the-dom">Get to know the DOM</h3>
 
-<p>A bigger part of the events described above, window.event is essentially an event listener taking place across your entire window. Above I showed how an event listener looking for a click on the replies link initiated showing Bob’s replies. Is it possible to control even more going on throughout your page? Yes, using window.event allows you to capture a specific moment of everything happening on your page. From the exact location of the user’s mouse where they clicked to whether or not they were holding down a specific key.</p>
+<p>Understanding the DOM is important to good web development. Play around with it and see the power it has to offer you. Updating websites without reloading them is significant when you think about how your user will be interacting with what you build.</p>
 
 
 	</div>

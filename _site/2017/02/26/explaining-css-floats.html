@@ -91,10 +91,6 @@
 
 <p><img src="/assets/images/floats/web-text-wrap.png" alt="Web Text Wrap Example" width="200px" style="float: right" />To the right you can see another example of floating images, only this time we have done it for a website. Looks similiar doesn’t it? That’s becuase it is this same idea. We are integrating images into the flow of our page when we <code class="highlighter-rouge">float</code> them. We could just let our text run over the top of the image, but that would make the image rather useless if it was an integral part of our page content. We could also just let the image sit on it’s own line, which is what HTML would do by default. Maybe this is how your content is designed to <em>flow</em>. But by using floats as a web developer you at least have much greater control over what you can do. The two images embedded in the content above had the <code class="highlighter-rouge">float: left</code> and <code class="highlighter-rouge">float: right</code> CSS style applied to them.</p>
 
-<div class="note_box"><strong>Above Image Credits: </strong><a href="https://css-tricks.com/almanac/properties/f/float/" target="_blank" style="color:black">Float by CSS-Tricks</a></div>
-
-<p></p>
-
 <div class="note_box"><strong>Note: </strong>When you float an element it automatically has a few default CSS properties, including <em>display: block</em>.</div>
 
 <h3 id="cool-now-how-can-i-use-this-thing">Cool, now how can I use this thing?</h3>
@@ -102,19 +98,67 @@
 <p>Like above, you can use this thing to wrap text around your images. But what else can it do? How about control the flow of your website’s entire layout? Of course it can! Use the <code class="highlighter-rouge">float</code> property on your page’s <code class="highlighter-rouge">&lt;div&gt;</code> containers so you can float them next to each other.</p>
 
 <div class="img-container"><img src="/assets/images/floats/web-layout_example.png" alt="Web Layout Example" class="article-image" /></div>
-<div class="img-container img-caption">Credit: CSS-Tricks</div>
 
 <p>In the above image you see a simple example where two containers have used <code class="highlighter-rouge">float: left</code> and <code class="highlighter-rouge">float: right</code> to create a nice layout and flow for the page. Let’s write some simple code doing this in action! Paste the code below into an empty HTML file:</p>
 
-<script src="https://gist.github.com/jlocatis/528084dfb074eed774bbd5e565baf984.js"></script>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">type=</span><span class="s">"text/css"</span> <span class="na">href=</span><span class="s">"float_sample.css"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;title&gt;</span>Example CSS floats page<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+
+<span class="nt">&lt;body&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"top"</span><span class="nt">&gt;</span>I'm the top box<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"left"</span><span class="nt">&gt;</span>I'm a left box<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"right"</span><span class="nt">&gt;</span>I'm a right box<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"clear"</span><span class="nt">&gt;&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bottom"</span><span class="nt">&gt;</span>I'm the bottom!<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span></code></pre></figure>
 
 <p>Now paste the accompanying CSS code into an empty CSS file:</p>
 
-<script src="https://gist.github.com/jlocatis/a3b7060a6243d10091c5861b6a85c7f6.js"></script>
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.top</span> <span class="p">{</span>
+  <span class="nl">height</span><span class="p">:</span> <span class="m">40px</span><span class="p">;</span>
+  <span class="nl">text-align</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+  <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="no">black</span><span class="p">;</span>
+  <span class="nl">margin-bottom</span><span class="p">:</span> <span class="m">5px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.left</span> <span class="p">{</span>
+  <span class="nl">height</span><span class="p">:</span> <span class="m">40px</span><span class="p">;</span>
+  <span class="nl">float</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
+  <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="no">black</span><span class="p">;</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">25%</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.right</span> <span class="p">{</span>
+  <span class="nl">height</span><span class="p">:</span> <span class="m">40px</span><span class="p">;</span>
+  <span class="nl">float</span><span class="p">:</span> <span class="nb">right</span><span class="p">;</span>
+  <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="no">black</span><span class="p">;</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">74%</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.bottom</span> <span class="p">{</span>
+  <span class="nl">height</span><span class="p">:</span> <span class="m">40px</span><span class="p">;</span>
+  <span class="nl">text-align</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+  <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="no">black</span><span class="p">;</span>
+  <span class="nl">margin-top</span><span class="p">:</span> <span class="m">5px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.clear</span> <span class="p">{</span>
+  <span class="nl">clear</span><span class="p">:</span> <span class="nb">both</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
 
 <p>Here is what you it will look like:</p>
 
-<p><img src="/assets/images/floats/floats_example.png" alt="Example CSS floats page" width="100%" /></p>
+<div class="img-container"><img src="/assets/images/floats/floats_example.jpg" alt="Example CSS floats page" class="article-image" /></div>
+<div class="img-container img-caption">CSS Layout Example</div>
 
 <h3 id="clear-it-up">Clear it up</h3>
 
@@ -139,19 +183,60 @@
 
 <p>Take a look at the code example below where I create the two simple boxes:</p>
 
-<p>HTML:
-<script src="https://gist.github.com/jlocatis/594f7c5b6d3e63cebcf6222a34c46d71.js"></script></p>
+<p>HTML:</p>
 
-<p>CSS:
-<script src="https://gist.github.com/jlocatis/0b54c2826abe022f599f49d1647271c0.js"></script></p>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;title&gt;</span>CSS Positions Example<span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">type=</span><span class="s">"text/css"</span> <span class="na">href=</span><span class="s">"styles.css"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"top-box"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"bottom-box"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span></code></pre></figure>
+
+<p>CSS:</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nf">#top-box</span> <span class="p">{</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">400px</span><span class="p">;</span>
+  <span class="nl">height</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="no">lightblue</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nf">#bottom-box</span> <span class="p">{</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">400px</span><span class="p">;</span>
+  <span class="nl">height</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="no">green</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
 
 <div class="img-container"><img src="/assets/images/floats/position_static.png" alt="Static Position" class="article-image" /></div>
 <div class="img-container img-caption">Static positioned boxes</div>
 
 <p>Remember, by default both of those <code class="highlighter-rouge">&lt;div&gt;</code> boxes have a position of static. But if I set the bottom box to <code class="highlighter-rouge">position: relative</code>, I can now move that box in any direction in relation to it’s default position in the HTML flow of the page (in this case, underneath the top box).</p>
 
-<p>Updated CSS:
-<script src="https://gist.github.com/jlocatis/12f4c38c3263eb9e86dafd30853071d5.js"></script></p>
+<p>Updated CSS:</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nf">#top-box</span> <span class="p">{</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">400px</span><span class="p">;</span>
+  <span class="nl">height</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="no">lightblue</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nf">#bottom-box</span> <span class="p">{</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">400px</span><span class="p">;</span>
+  <span class="nl">height</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="no">green</span><span class="p">;</span>
+  <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span>
+  <span class="nl">top</span><span class="p">:</span> <span class="m">50px</span><span class="p">;</span>
+  <span class="nl">left</span><span class="p">:</span> <span class="m">50px</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
 
 <div class="img-container"><img src="/assets/images/floats/position_relative.png" alt="Relative Position" class="article-image" /></div>
 <div class="img-container img-caption">Relative positioned boxes</div>
@@ -160,7 +245,20 @@
 
 <p>Now let’s go ahead and move the green box neatly on top of the blue using <code class="highlighter-rouge">position: absolute</code>. Here are the changes:</p>
 
-<script src="https://gist.github.com/jlocatis/18974491b858000af365ea596e6669cc.js"></script>
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nf">#top-box</span> <span class="p">{</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">400px</span><span class="p">;</span>
+  <span class="nl">height</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="no">lightblue</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nf">#bottom-box</span> <span class="p">{</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">400px</span><span class="p">;</span>
+  <span class="nl">height</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="no">green</span><span class="p">;</span>
+  <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>
+  <span class="nl">top</span><span class="p">:</span> <span class="m">50px</span><span class="p">;</span>
+  <span class="nl">left</span><span class="p">:</span> <span class="m">50px</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
 
 <div class="img-container"><img src="/assets/images/floats/position_absolute.png" alt="Absolute Position" class="article-image" /></div>
 <div class="img-container img-caption">Absolute positioned boxes</div>

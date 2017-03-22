@@ -76,12 +76,12 @@
 <div class="clear"></div>
 
 	<div class="page-body">
-	<h1 class="article-title">Build Your Own Where's Waldo Game!</h1>
+	<h1 class="article-title">Build Your First Game for the Web</h1>
 	<div id="posted-date">Feb 24, 2017</div>
 	<hr>
 	<div class="article-content">
 
-<p>This tutorial will walk you through the steps of creating an interactive Where's Waldo game for the web. You will be able to select you're own Where's Waldo image, and build your program around this image.</p>
+<p>This tutorial will walk you through the steps of creating an interactive Where's Waldo game for the web. You will be able to select you're own Where's Waldo image, and build your program around this image. Introducing some basic JavaScript and Ruby code with AJAX functionality.</p>
 
 <div class="img-container"><img src="/assets/images/waldo/waldo_front.jpg" alt="My Where's Waldo game" class="article-image" /></div>
 <div class="img-container img-caption">My Where's Waldo game</div>
@@ -120,11 +120,23 @@
 
 <p>In your code editor create a new JavaScript file. We will be using JavaScript for programming this portion of the game. Now let's create a function that will tell us the click location of our mouse within the image. This can be done with the code below:</p>
 
-<p><script src="https://gist.github.com/jlocatis/76216c782c036f43f563a6a87fcfcf71.js"></script></p>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">findClickLocation</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+	<span class="kd">var</span> <span class="nx">click_event</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">event</span><span class="p">;</span>
+	<span class="nx">x</span> <span class="o">=</span> <span class="nx">click_event</span><span class="p">.</span><span class="nx">offsetX</span><span class="p">?(</span><span class="nx">click_event</span><span class="p">.</span><span class="nx">offsetX</span><span class="p">):</span><span class="nx">click_event</span><span class="p">.</span>
+		<span class="nx">pageX</span><span class="o">-</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByClassName</span><span class="p">(</span><span class="s2">"waldo"</span><span class="p">).</span><span class="nx">offsetLeft</span><span class="p">;</span>
+	<span class="nx">y</span> <span class="o">=</span> <span class="nx">click_event</span><span class="p">.</span><span class="nx">offsetY</span><span class="p">?(</span><span class="nx">click_event</span><span class="p">.</span><span class="nx">offsetY</span><span class="p">):</span><span class="nx">click_event</span><span class="p">.</span>
+		<span class="nx">pageY</span><span class="o">-</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByClassName</span><span class="p">(</span><span class="s2">"waldo"</span><span class="p">).</span><span class="nx">offsetTop</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
 
 <p>We will be using JavaScript's <em>window.event</em> method which will give us all sorts of information about the state of the page as the event happens. But wait, what is the event? We also need to add an event listener to our JavaScript that will "listen" for when the click occurs, and execute the code in our <em>findClickLocation</em> function when it happens. Make some room at the top of your JS file and add the following code:</p>
 
-<p><script src="https://gist.github.com/jlocatis/e8604b054f8227cb463ea5825b07361a.js"></script></p>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"load"</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+	<span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByClassName</span><span class="p">(</span><span class="s2">"waldo"</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span>
+		<span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"click"</span><span class="p">,</span> <span class="nx">findClickLocation</span><span class="p">);</span>
+<span class="p">}</span></code></pre></figure>
 
 <p>In order for the above event listener to work, you will need to return to your HTML page and give your Waldo image the class name "Waldo" (please see HTML tutorials on how this can be accomplished). The above JS code will add the event listener when our <em>window</em>, or page, loads. Just one last step we need in order to find Waldo's coordinates. Add a <em>debugger;</em> to the end of your findClickLocation function. The debugger will let us use your browser's JavaScript console to see where we are clicking. Everytime the browser reaches the debugger line (which will be on every click), it will halt the execution of the program and allow you to interact with it's current state.</p>
 
@@ -141,11 +153,39 @@
 
 <p>Click around and write down the range Waldo exists within. We will need this a bit later. For now let's focus on getting the click location of <strong>x</strong> and <strong>y</strong> to a server. For this piece of the project we will be coding in Ruby on the server-side, and will be using the Sinatra framework. If you aren't sure how the Sinatra framework handles things, please read over the beginnings of <a href="http://www.sinatrarb.com/intro.html" target="blank">this README</a> to familiarize yourself. You will only need to understand the basics of a Ruby web framework in order to proceed. Create your controller action file first. Start it out with this code:</p>
 
-<p><script src="https://gist.github.com/jlocatis/aa2f62428ed6d2e6ab759b15e81e52e8.js"></script></p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">require</span> <span class="s1">'sinatra'</span>
+<span class="nb">require</span> <span class="s1">'./functions.rb'</span>
+<span class="nb">require</span> <span class="s1">'pry'</span>
+
+<span class="n">get</span><span class="p">(</span><span class="s1">'/'</span><span class="p">)</span> <span class="k">do</span>
+	<span class="n">erb</span> <span class="ss">:index</span>
+<span class="k">end</span>
+
+<span class="n">get</span><span class="p">(</span><span class="s1">'/return'</span><span class="p">)</span> <span class="k">do</span>
+	<span class="n">waldo</span> <span class="o">=</span> <span class="n">waldoTest</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+	<span class="n">waldo</span> <span class="o">=</span> <span class="n">waldo</span><span class="p">.</span><span class="nf">to_s</span>
+	<span class="k">return</span> <span class="n">waldo</span>
+<span class="k">end</span></code></pre></figure>
 
 <p>The above code will get the routes you need to finish the next few steps of our program. Return to your JS script file and let's write a function that will take our <strong>x</strong> and <strong>y</strong> coordinates and send them to the Ruby route '/return' we just created. Create a function named <em>getData</em>:</p>
 
-<p><script src="https://gist.github.com/jlocatis/3d598727bfcbccd37bb8a6d431bc94c9.js"></script></p>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">getData</span><span class="p">()</span> <span class="p">{</span>
+	<span class="nx">httpRequest</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+	<span class="kd">var</span> <span class="nx">coordinates</span> <span class="o">=</span> <span class="s2">"x="</span> <span class="o">+</span> <span class="nx">x</span> <span class="o">+</span> <span class="s2">"&amp;y="</span> <span class="o">+</span> <span class="nx">y</span><span class="p">;</span>
+	<span class="nx">httpRequest</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s1">'GET'</span><span class="p">,</span> <span class="s1">'/return?'</span> <span class="o">+</span> <span class="nx">coordinates</span><span class="p">)</span>
+	<span class="nx">httpRequest</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="s2">"Content-type"</span><span class="p">,</span> 
+		<span class="s2">"application/x-www-form-urlencoded"</span><span class="p">);</span>
+	<span class="nx">httpRequest</span><span class="p">.</span><span class="nx">onreadystatechange</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+		<span class="c1">// var waldo_test = httpRequest.responseText</span>
+		<span class="k">if</span> <span class="p">(</span><span class="nx">httpRequest</span><span class="p">.</span><span class="nx">responseText</span> <span class="o">==</span> <span class="s2">"true"</span><span class="p">)</span> <span class="p">{</span>
+			<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"true!!!"</span><span class="p">);</span>
+			<span class="p">}</span>
+		<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">httpRequest</span><span class="p">.</span><span class="nx">responseText</span> <span class="o">==</span> <span class="s2">"false"</span><span class="p">)</span> <span class="p">{</span>
+			<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"false :(:(:("</span><span class="p">);</span>
+	<span class="p">}</span>
+	<span class="p">}</span>
+	<span class="nx">httpRequest</span><span class="p">.</span><span class="nx">send</span><span class="p">();</span>
+<span class="p">}</span></code></pre></figure>
 
 <p>For now we just want to make sure it works, so I have included <em>console.log</em> statements within our true/false test that will just print "true" or "false" to your JS console. You're probably wondering what some of that code is. Here I am introducing AJAX (Asynchronous JavaScript and XML). Using AJAX, we can communicate easily between our client side code and our server side code. Examine the above code and see if you can guess what it is doing. It creates a new <em>XMLHttpRequest</em>, and sends our <strong>x</strong> and <strong>y</strong> variables as parameters to the server where we can use them in our Ruby code. <a href="https://developer.mozilla.org/en-US/docs/AJAX/Getting_Started" target="blank">Here</a> is some good entry level reading on the details of AJAX if interested, but it is important to understand that it is basically designed to do two things:</p>
 

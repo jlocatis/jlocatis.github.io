@@ -1,9 +1,9 @@
 ---
-title: Build Your Own Where's Waldo Game!
+title: Build Your First Game for the Web
 image: waldo_front.jpg
 ---
 
-<p>This tutorial will walk you through the steps of creating an interactive Where's Waldo game for the web. You will be able to select you're own Where's Waldo image, and build your program around this image.</p>
+<p>This tutorial will walk you through the steps of creating an interactive Where's Waldo game for the web. You will be able to select you're own Where's Waldo image, and build your program around this image. Introducing some basic JavaScript and Ruby code with AJAX functionality.</p>
 
 <div class="img-container"><img src="{{ "/assets/images/waldo/waldo_front.jpg" | relative_url }}" alt="My Where's Waldo game" class="article-image"></div>
 <div class="img-container img-caption">My Where's Waldo game</div>
@@ -42,11 +42,27 @@ image: waldo_front.jpg
 
 <p>In your code editor create a new JavaScript file. We will be using JavaScript for programming this portion of the game. Now let's create a function that will tell us the click location of our mouse within the image. This can be done with the code below:</p>
 
-<p><script src="https://gist.github.com/jlocatis/76216c782c036f43f563a6a87fcfcf71.js"></script></p>
+{% highlight javascript %}
+var x = 0;
+var y = 0;
+
+function findClickLocation(event) {
+	var click_event = window.event;
+	x = click_event.offsetX?(click_event.offsetX):click_event.
+		pageX-document.getElementsByClassName("waldo").offsetLeft;
+	y = click_event.offsetY?(click_event.offsetY):click_event.
+		pageY-document.getElementsByClassName("waldo").offsetTop;
+}
+{% endhighlight %}
 
 <p>We will be using JavaScript's <em>window.event</em> method which will give us all sorts of information about the state of the page as the event happens. But wait, what is the event? We also need to add an event listener to our JavaScript that will "listen" for when the click occurs, and execute the code in our <em>findClickLocation</em> function when it happens. Make some room at the top of your JS file and add the following code:</p>
 
-<p><script src="https://gist.github.com/jlocatis/e8604b054f8227cb463ea5825b07361a.js"></script></p>
+{% highlight javascript %}
+window.addEventListener("load", function() {
+	document.getElementsByClassName("waldo")[0].
+		addEventListener("click", findClickLocation);
+}
+{% endhighlight %}
 
 <p>In order for the above event listener to work, you will need to return to your HTML page and give your Waldo image the class name "Waldo" (please see HTML tutorials on how this can be accomplished). The above JS code will add the event listener when our <em>window</em>, or page, loads. Just one last step we need in order to find Waldo's coordinates. Add a <em>debugger;</em> to the end of your findClickLocation function. The debugger will let us use your browser's JavaScript console to see where we are clicking. Everytime the browser reaches the debugger line (which will be on every click), it will halt the execution of the program and allow you to interact with it's current state.</p>
 
@@ -63,11 +79,43 @@ image: waldo_front.jpg
 
 <p>Click around and write down the range Waldo exists within. We will need this a bit later. For now let's focus on getting the click location of <strong>x</strong> and <strong>y</strong> to a server. For this piece of the project we will be coding in Ruby on the server-side, and will be using the Sinatra framework. If you aren't sure how the Sinatra framework handles things, please read over the beginnings of <a href="http://www.sinatrarb.com/intro.html" target="blank">this README</a> to familiarize yourself. You will only need to understand the basics of a Ruby web framework in order to proceed. Create your controller action file first. Start it out with this code:</p>
 
-<p><script src="https://gist.github.com/jlocatis/aa2f62428ed6d2e6ab759b15e81e52e8.js"></script></p>
+{% highlight ruby %}
+require 'sinatra'
+require './functions.rb'
+require 'pry'
+
+get('/') do
+	erb :index
+end
+
+get('/return') do
+	waldo = waldoTest(params)
+	waldo = waldo.to_s
+	return waldo
+end
+{% endhighlight %}
 
 <p>The above code will get the routes you need to finish the next few steps of our program. Return to your JS script file and let's write a function that will take our <strong>x</strong> and <strong>y</strong> coordinates and send them to the Ruby route '/return' we just created. Create a function named <em>getData</em>:</p>
 
-<p><script src="https://gist.github.com/jlocatis/3d598727bfcbccd37bb8a6d431bc94c9.js"></script></p>
+{% highlight javascript %}
+function getData() {
+	httpRequest = new XMLHttpRequest();
+	var coordinates = "x=" + x + "&y=" + y;
+	httpRequest.open('GET', '/return?' + coordinates)
+	httpRequest.setRequestHeader("Content-type", 
+		"application/x-www-form-urlencoded");
+	httpRequest.onreadystatechange = function() {
+		// var waldo_test = httpRequest.responseText
+		if (httpRequest.responseText == "true") {
+			console.log("true!!!");
+			}
+		} else if (httpRequest.responseText == "false") {
+			console.log("false :(:(:(");
+	}
+	}
+	httpRequest.send();
+}
+{% endhighlight %}
 
 <p>For now we just want to make sure it works, so I have included <em>console.log</em> statements within our true/false test that will just print "true" or "false" to your JS console. You're probably wondering what some of that code is. Here I am introducing AJAX (Asynchronous JavaScript and XML). Using AJAX, we can communicate easily between our client side code and our server side code. Examine the above code and see if you can guess what it is doing. It creates a new <em>XMLHttpRequest</em>, and sends our <strong>x</strong> and <strong>y</strong> variables as parameters to the server where we can use them in our Ruby code. <a href="https://developer.mozilla.org/en-US/docs/AJAX/Getting_Started" target="blank">Here</a> is some good entry level reading on the details of AJAX if interested, but it is important to understand that it is basically designed to do two things:</p>
 

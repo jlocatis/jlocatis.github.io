@@ -13,10 +13,6 @@ The basic concept behind a float, and it's purpose, is found in everyday centuri
 
 <img src="{{ "/assets/images/floats/web-text-wrap.png" | relative_url }}" alt="Web Text Wrap Example" width="200px" style="float: right">To the right you can see another example of floating images, only this time we have done it for a website. Looks similiar doesn't it? That's becuase it is this same idea. We are integrating images into the flow of our page when we `float` them. We could just let our text run over the top of the image, but that would make the image rather useless if it was an integral part of our page content. We could also just let the image sit on it's own line, which is what HTML would do by default. Maybe this is how your content is designed to <em>flow</em>. But by using floats as a web developer you at least have much greater control over what you can do. The two images embedded in the content above had the `float: left` and `float: right` CSS style applied to them.
 
-<div class="note_box"><strong>Above Image Credits: </strong><a href="https://css-tricks.com/almanac/properties/f/float/" target="_blank" style="color:black">Float by CSS-Tricks</a></div>
-
-<p></p>
-
 <div class="note_box"><strong>Note: </strong>When you float an element it automatically has a few default CSS properties, including <em>display: block</em>.</div>
 
 ### Cool, now how can I use this thing?
@@ -24,19 +20,71 @@ The basic concept behind a float, and it's purpose, is found in everyday centuri
 Like above, you can use this thing to wrap text around your images. But what else can it do? How about control the flow of your website's entire layout? Of course it can! Use the `float` property on your page's `<div>` containers so you can float them next to each other.
 
 <div class="img-container"><img src="{{ "/assets/images/floats/web-layout_example.png" | relative_url }}" alt="Web Layout Example" class="article-image"></div>
-<div class="img-container img-caption">Credit: CSS-Tricks</div>
 
 In the above image you see a simple example where two containers have used `float: left` and `float: right` to create a nice layout and flow for the page. Let's write some simple code doing this in action! Paste the code below into an empty HTML file:
 
-<script src="https://gist.github.com/jlocatis/528084dfb074eed774bbd5e565baf984.js"></script>
+{% highlight html %}
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="float_sample.css">
+  <title>Example CSS floats page</title>
+</head>
+
+<body>
+<div class="top">I'm the top box</div>
+
+<div class="left">I'm a left box</div>
+
+<div class="right">I'm a right box</div>
+
+<div class="clear"></div>
+
+<div class="bottom">I'm the bottom!</div>
+</body>
+</html>
+{% endhighlight %}
 
 Now paste the accompanying CSS code into an empty CSS file:
 
-<script src="https://gist.github.com/jlocatis/a3b7060a6243d10091c5861b6a85c7f6.js"></script>
+{% highlight css %}
+.top {
+  height: 40px;
+  text-align: center;
+  border: 1px solid black;
+  margin-bottom: 5px;
+}
+
+.left {
+  height: 40px;
+  float: left;
+  border: 1px solid black;
+  width: 25%;
+}
+
+.right {
+  height: 40px;
+  float: right;
+  border: 1px solid black;
+  width: 74%;
+}
+
+.bottom {
+  height: 40px;
+  text-align: center;
+  border: 1px solid black;
+  margin-top: 5px;
+}
+
+.clear {
+  clear: both;
+}
+{% endhighlight %}
 
 Here is what you it will look like:
 
-<img src="{{ "/assets/images/floats/floats_example.png" | relative_url }}" alt="Example CSS floats page" width="100%">
+<div class="img-container"><img src="{{ "/assets/images/floats/floats_example.jpg" | relative_url }}" alt="Example CSS floats page" class="article-image"></div>
+<div class="img-container img-caption">CSS Layout Example</div>
 
 ### Clear it up
 
@@ -60,10 +108,39 @@ So now you can use floats to manipulate objects around each other, and even crea
 Take a look at the code example below where I create the two simple boxes:
 
 HTML:
-<script src="https://gist.github.com/jlocatis/594f7c5b6d3e63cebcf6222a34c46d71.js"></script>
+{% highlight html %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSS Positions Example</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+
+<div id="top-box">
+</div>
+
+<div id="bottom-box">
+</div>
+
+</body>
+</html>
+{% endhighlight %}
 
 CSS:
-<script src="https://gist.github.com/jlocatis/0b54c2826abe022f599f49d1647271c0.js"></script>
+{% highlight css %}
+#top-box {
+  width: 400px;
+  height: 100px;
+  background-color: lightblue;
+}
+
+#bottom-box {
+  width: 400px;
+  height: 100px;
+  background-color: green;
+}
+{% endhighlight %}
 
 <div class="img-container"><img src="{{ "/assets/images/floats/position_static.png" | relative_url }}" alt="Static Position" class="article-image"></div>
 <div class="img-container img-caption">Static positioned boxes</div>
@@ -71,7 +148,22 @@ CSS:
 Remember, by default both of those `<div>` boxes have a position of static. But if I set the bottom box to `position: relative`, I can now move that box in any direction in relation to it's default position in the HTML flow of the page (in this case, underneath the top box).
 
 Updated CSS:
-<script src="https://gist.github.com/jlocatis/12f4c38c3263eb9e86dafd30853071d5.js"></script>
+{% highlight css %}
+#top-box {
+  width: 400px;
+  height: 100px;
+  background-color: lightblue;
+}
+
+#bottom-box {
+  width: 400px;
+  height: 100px;
+  background-color: green;
+  position: relative;
+  top: 50px;
+  left: 50px;
+}
+{% endhighlight %}
 
 <div class="img-container"><img src="{{ "/assets/images/floats/position_relative.png" | relative_url }}" alt="Relative Position" class="article-image"></div>
 <div class="img-container img-caption">Relative positioned boxes</div>
@@ -80,7 +172,22 @@ We can use the `top`, `right`, `bottom`, and `left` CSS properties to move the b
 
 Now let's go ahead and move the green box neatly on top of the blue using `position: absolute`. Here are the changes:
 
-<script src="https://gist.github.com/jlocatis/18974491b858000af365ea596e6669cc.js"></script>
+{% highlight css %}
+#top-box {
+  width: 400px;
+  height: 100px;
+  background-color: lightblue;
+}
+
+#bottom-box {
+  width: 400px;
+  height: 100px;
+  background-color: green;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+}
+{% endhighlight %}
 
 <div class="img-container"><img src="{{ "/assets/images/floats/position_absolute.png" | relative_url }}" alt="Absolute Position" class="article-image"></div>
 <div class="img-container img-caption">Absolute positioned boxes</div>

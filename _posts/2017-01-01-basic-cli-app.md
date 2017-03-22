@@ -3,7 +3,7 @@ title: Building Your First CLI App
 image: terminal.png
 ---
 
-This a basic introduction to writing command line applications, the fundamental core of every programmer's knowledge. This tutorial will navigate you through the basics of the CLI (Command Line Interface) and help you build a quick and useful application.
+This is a basic introduction to writing command line applications, the fundamental core of every programmer's knowledge. This tutorial will navigate you through the basics of the CLI (Command Line Interface) and help you build a quick and useful application.
 
 <div class="img-container"><img src="{{ "/assets/images/basic_cli/basic_terminal.png" | relative_url }}" class="article-image"></div>
 <div class="img-container img-caption">Terminal</div>

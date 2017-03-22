@@ -87,7 +87,25 @@
 
 <p>It’s quite simple really. First build a basic HTML page containing two <code class="highlighter-rouge">&lt;div&gt;</code> containers for our crawl content.</p>
 
-<script src="https://gist.github.com/jlocatis/544a268a55d2a3ae44db000fa64ec5a0.js"></script>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"Content-type"</span> <span class="na">content=</span><span class="s">"text/html; charset=UTF-8"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;title&gt;</span>Star Wars Quiz :D<span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">type=</span><span class="s">"text/css"</span> <span class="na">href=</span><span class="s">"./css/scrolling.css"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">"https://fonts.googleapis.com/css?family=News+Cycle"</span> <span class="na">rel=</span><span class="s">"stylesheet"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"crawl_box"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"content"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"center_episode"</span><span class="nt">&gt;</span>Episode I<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"center_title"</span><span class="nt">&gt;</span>THE PHANTOM CODE<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;p&gt;</span>This is an absolutely useful Star Wars opening crawl for any website! Impress your visitors with how awesome this is. And most of all, have fun! It's what George always wanted....<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Made completely in CSS3, no JavaScript required! ;)<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span></code></pre></figure>
 
 <p>The outer <code class="highlighter-rouge">&lt;div&gt;</code> with an id of <code class="highlighter-rouge">crawl_box</code> will contain most of the wizardry required to make this work! The inner <code class="highlighter-rouge">&lt;div&gt;</code> with an id of <code class="highlighter-rouge">content</code> will contain the engaging words you wish to share with the world. For the crawling text I simply used <code class="highlighter-rouge">&lt;p&gt;</code> tags to get the spacing needed in between your paragraphs. I did use two different <code class="highlighter-rouge">&lt;div&gt;</code> containers to get the crawl episode number and title looking as close as (I think) possible to the real thing.</p>
 
@@ -97,19 +115,67 @@
 
 <p>The next bit of CSS will animate our crawl using the <code class="highlighter-rouge">@keyframes</code> rule. Read more about how that works <a href="https://www.w3schools.com/cssref/css3_pr_animation-keyframes.asp" target="_blank">here</a>.</p>
 
-<script src="https://gist.github.com/jlocatis/b2e6ae56f6676b0f7880842c6889b188.js"></script>
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nt">body</span> <span class="p">{</span>
+  <span class="nl">font-family</span><span class="p">:</span> <span class="s2">'News Cycle'</span><span class="p">,</span> <span class="n">Helvetica</span><span class="p">;</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="no">yellow</span><span class="p">;</span>
+  <span class="nl">background-image</span><span class="p">:</span> <span class="sx">url("../images/star_background.jpg")</span><span class="p">;</span>
+  <span class="nl">background-size</span><span class="p">:</span> <span class="n">cover</span><span class="p">;</span>
+  <span class="nl">background-repeat</span><span class="p">:</span> <span class="nb">no-repeat</span><span class="p">;</span>
+  <span class="nl">background-position</span><span class="p">:</span> <span class="nb">right</span> <span class="nb">top</span><span class="p">;</span>
+    <span class="nl">background-attachment</span><span class="p">:</span> <span class="nb">fixed</span><span class="p">;</span>
+<span class="p">}</span>
 
-<p>Next we set the parameters for our two containers <code class="highlighter-rouge">crawl_box</code> and <code class="highlighter-rouge">content</code>.</p>
+<span class="c">/* This will create the 'crawl' animation using the @keyframes rule. The animation
+is defined below */</span>
+<span class="k">@keyframes</span> <span class="n">crawl</span> <span class="p">{</span>
+  <span class="nt">0</span><span class="o">%</span> <span class="p">{</span> <span class="nl">top</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span> <span class="p">}</span>
+  <span class="nt">100</span><span class="o">%</span> <span class="p">{</span> <span class="nl">top</span><span class="p">:</span> <span class="m">-170%</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
 
-<script src="https://gist.github.com/jlocatis/dbd35089c47fb735d79a8cda6655376d.js"></script>
+<p>Next we set the CSS for our two containers <code class="highlighter-rouge">crawl_box</code> and <code class="highlighter-rouge">content</code>.</p>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nf">#crawl_box</span>
+<span class="p">{</span>
+  <span class="c">/* Transforms the text perspective to look 3D */</span>
+  <span class="nl">transform-origin</span><span class="p">:</span> <span class="m">50%</span> <span class="m">100%</span><span class="p">;</span>
+  <span class="nl">transform</span><span class="p">:</span> <span class="n">perspective</span><span class="p">(</span><span class="m">300px</span><span class="p">)</span> <span class="n">rotateX</span><span class="p">(</span><span class="m">25deg</span><span class="p">);</span>
+  <span class="c">/* Positions the crawl on the page and sets the font
+   to closely match the actual Star Wars crawl. */</span>
+  <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>
+  <span class="nl">overflow</span><span class="p">:</span> <span class="nb">hidden</span><span class="p">;</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">18em</span><span class="p">;</span>
+  <span class="nl">height</span><span class="p">:</span> <span class="m">50em</span><span class="p">;</span>
+  <span class="nl">bottom</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="nl">left</span><span class="p">:</span> <span class="m">50%</span><span class="p">;</span>
+  <span class="nl">margin-left</span><span class="p">:</span> <span class="m">-9em</span><span class="p">;</span>
+  <span class="nl">font-size</span><span class="p">:</span> <span class="m">350%</span><span class="p">;</span>
+  <span class="nl">font-weight</span><span class="p">:</span> <span class="nb">bold</span><span class="p">;</span>
+  <span class="nl">text-align</span><span class="p">:</span> <span class="nb">justify</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nf">#content</span>
+<span class="p">{</span>
+  <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>
+  <span class="nl">top</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+  <span class="c">/* Creates the 'crawl' animation we call in @keyframes */</span>
+  <span class="nl">animation</span><span class="p">:</span> <span class="n">crawl</span> <span class="m">100s</span> <span class="n">linear</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
 
 <p>Notice the use of <code class="highlighter-rouge">transform-origin</code> and <code class="highlighter-rouge">transform</code> in order to create the 3D perspective of the text. Combined with the animation we build (called <code class="highlighter-rouge">crawl</code>, which is than called in the <code class="highlighter-rouge">@keyframes</code> rule from above), we create the 3D illusion of the text moving through space away from you. If you need to change the timing of the crawl to more closely match your text, simply edit the time (second property) of <code class="highlighter-rouge">animation</code>.</p>
 
 <p>Finally, here is the quick CSS I created for centering and styling the episode title and name. You don’t <em>have</em> to include this, any good film buff would know that Star Wars was originally released in 1977 without an episode number or title in the opening crawl.</p>
 
 <div class="note_box"><strong>Fun Fact:</strong> The title ‘Episode IV: A New Hope’ was added in 1980 when The Empire Strikes Back was released as Episode V.</div>
-<p></p>
-<script src="https://gist.github.com/jlocatis/a58da0197cf198701110ae47e11df8df.js"></script>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nf">#center_episode</span> <span class="p">{</span>
+  <span class="nl">text-align</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+  <span class="nl">margin-bottom</span><span class="p">:</span> <span class="m">0.4em</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nf">#center_title</span> <span class="p">{</span>
+  <span class="nl">font-size</span><span class="p">:</span> <span class="m">1.75em</span><span class="p">;</span>
+  <span class="nl">text-align</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
 
 <p>That’s it! Have fun with it. Put it on every website you make, together let’s make the internet great again! Star Wars crawls everywhere!</p>
 

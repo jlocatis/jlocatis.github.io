@@ -9,7 +9,27 @@ How about something cool and completely useful on every website? Let’s build a
 
 It’s quite simple really. First build a basic HTML page containing two `<div>` containers for our crawl content.
 
-<script src="https://gist.github.com/jlocatis/544a268a55d2a3ae44db000fa64ec5a0.js"></script>
+{% highlight html %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+  <title>Star Wars Quiz :D</title>
+  <link rel="stylesheet" type="text/css" href="./css/scrolling.css">
+  <link href="https://fonts.googleapis.com/css?family=News+Cycle" rel="stylesheet">
+</head>
+<body>
+<div id="crawl_box">
+  <div id="content">
+    <div id="center_episode">Episode I</div>
+    <div id="center_title">THE PHANTOM CODE</div>
+    <p>This is an absolutely useful Star Wars opening crawl for any website! Impress your visitors with how awesome this is. And most of all, have fun! It's what George always wanted....</p>
+    <p>Made completely in CSS3, no JavaScript required! ;)</p>
+  </div>
+</div>
+</body>
+</html>
+{% endhighlight %}
 
 The outer `<div>` with an id of `crawl_box` will contain most of the wizardry required to make this work! The inner `<div>` with an id of `content` will contain the engaging words you wish to share with the world. For the crawling text I simply used `<p>` tags to get the spacing needed in between your paragraphs. I did use two different `<div>` containers to get the crawl episode number and title looking as close as (I think) possible to the real thing.
 
@@ -19,18 +39,73 @@ Now for some movie making magic! Let’s use CSS to set how we want our `body` o
 
 The next bit of CSS will animate our crawl using the `@keyframes` rule. Read more about how that works <a href="https://www.w3schools.com/cssref/css3_pr_animation-keyframes.asp" target="_blank">here</a>.
 
-<script src="https://gist.github.com/jlocatis/b2e6ae56f6676b0f7880842c6889b188.js"></script>
+{% highlight css %}
+body {
+  font-family: 'News Cycle', Helvetica;
+  color: yellow;
+  background-image: url("../images/star_background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right top;
+    background-attachment: fixed;
+}
 
-Next we set the parameters for our two containers `crawl_box` and `content`.
+/* This will create the 'crawl' animation using the @keyframes rule. The animation
+is defined below */
+@keyframes crawl {
+  0% { top: 100%; }
+  100% { top: -170%; }
+}
+{% endhighlight %}
 
-<script src="https://gist.github.com/jlocatis/dbd35089c47fb735d79a8cda6655376d.js"></script>
+Next we set the CSS for our two containers `crawl_box` and `content`.
+
+{% highlight css %}
+#crawl_box
+{
+  /* Transforms the text perspective to look 3D */
+  transform-origin: 50% 100%;
+  transform: perspective(300px) rotateX(25deg);
+  /* Positions the crawl on the page and sets the font
+   to closely match the actual Star Wars crawl. */
+  position: absolute;
+  overflow: hidden;
+  width: 18em;
+  height: 50em;
+  bottom: 0;
+  left: 50%;
+  margin-left: -9em;
+  font-size: 350%;
+  font-weight: bold;
+  text-align: justify;
+}
+
+#content
+{
+  position: absolute;
+  top: 100%;
+  /* Creates the 'crawl' animation we call in @keyframes */
+  animation: crawl 100s linear;
+}
+{% endhighlight %}
 
 Notice the use of `transform-origin` and `transform` in order to create the 3D perspective of the text. Combined with the animation we build (called `crawl`, which is than called in the `@keyframes` rule from above), we create the 3D illusion of the text moving through space away from you. If you need to change the timing of the crawl to more closely match your text, simply edit the time (second property) of `animation`.
 
 Finally, here is the quick CSS I created for centering and styling the episode title and name. You don’t *have* to include this, any good film buff would know that Star Wars was originally released in 1977 without an episode number or title in the opening crawl. 
 
 <div class="note_box"><strong>Fun Fact:</strong> The title ‘Episode IV: A New Hope’ was added in 1980 when The Empire Strikes Back was released as Episode V.</div>
-<p></p>
-<script src="https://gist.github.com/jlocatis/a58da0197cf198701110ae47e11df8df.js"></script>
+
+{% highlight css %}
+
+#center_episode {
+  text-align: center;
+  margin-bottom: 0.4em;
+}
+
+#center_title {
+  font-size: 1.75em;
+  text-align: center;
+}
+{% endhighlight %}
 
 That’s it! Have fun with it. Put it on every website you make, together let’s make the internet great again! Star Wars crawls everywhere!
