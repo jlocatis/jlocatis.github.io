@@ -459,7 +459,7 @@ h1.article-title { /* come back and fix */
 }
 
 /* Desktop Changes */
-@media (device-width: 600px) {
+@media (min-width: 300px) {
 	#hamburger {
 		display: none;
 	}
@@ -488,4 +488,13 @@ h1.article-title { /* come back and fix */
 	.menu-items {
 		padding-top: 20px;
 	}
+
+/*	#left-container {
+		float: none;
+	}
+
+	#right-container {
+		float: none;
+		text-align: right;
+	}*/
 }
