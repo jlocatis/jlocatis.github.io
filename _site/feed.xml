@@ -642,17 +642,19 @@ is defined below */&lt;/span&gt;
       </item>
     
       <item>
-        <title>The DOM and JavaScript</title>
-        <description>&lt;p&gt;The DOM, short for Document Object Model, gives you some much needed dynamic power to build better, more interactive websites. Using the DOM, you are able to navigate through HTML code as if it were tree of interconnected objects. You can dynamically add, remove, or most importantly alter these objects as your user interfaces with your website.&lt;/p&gt;
+        <title>Navigating the DOM</title>
+        <description>&lt;p&gt;The DOM, short for Document Object Model, gives you some much needed dynamic power to build better, more interactive websites. Using the DOM you are able to navigate through HTML code as if it were tree of interconnected objects. You can dynamically add, remove, or alter these objects as your user interfaces with your website.&lt;/p&gt;
 
-&lt;h3 id=&quot;how-can-this-be-used&quot;&gt;How can this be used?&lt;/h3&gt;
+&lt;h3 id=&quot;what-is-the-dom&quot;&gt;What is the DOM?&lt;/h3&gt;
 
 &lt;div class=&quot;img-container&quot;&gt;&lt;img src=&quot;/assets/images/DOM/pic_html_tree.gif&quot; alt=&quot;DOM Tree&quot; class=&quot;article-image&quot; /&gt;&lt;/div&gt;
 &lt;div class=&quot;img-container img-caption&quot;&gt;Visual Example of navigating the HTML DOM Tree&lt;/div&gt;
 
-&lt;p&gt;In the above example you can see how the DOM can be traversed. HTML is structered so that elements or tags are always associated with a parent element (all the way to the top of the page, beginning at the &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;body&amp;gt;&lt;/code&gt; tag or  &lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;&lt;/code&gt; tag). Objects on your page (text, images, forms, etc…) are all connected to their parent tags in a hierarchical tree structure. All of these objects are considered “nodes” of the DOM, pieces of the document model.&lt;/p&gt;
+&lt;p&gt;In the above example you can see how the DOM can be traversed. HTML is structered so that elements or tags are always associated with a parent element (all the way to the top of the page, beginning at the &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;body&amp;gt;&lt;/code&gt; or  &lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;&lt;/code&gt; tag). Objects on your page (text, images, forms, etc…) are all connected to each other in a hierarchical tree structure. All of these objects are considered “nodes” of the DOM, pieces of the document model.&lt;/p&gt;
 
-&lt;p&gt;Using the DOM and Javascript together gives you a powerful tool with which to manipulate your website. When writing HTML you’ll find it’s completely static, the web browser simply runs through the code from top to bottom and prints out your website for the user typically in that exact order. Hence the term &lt;em&gt;markup language&lt;/em&gt; in HTML. Any interaction with the website is extremely limited to only what you have asked it to show. You can do so much more though by dynamically integrating HTML with a real language such as Javascript. As an example, you can have the user click a button and suddenly, without reloading the page, it’s entire structure can be re-written.&lt;/p&gt;
+&lt;h3 id=&quot;how-can-this-be-used&quot;&gt;How can this be used?&lt;/h3&gt;
+
+&lt;p&gt;Let’s talk about using the DOM and Javascript together. With JavaScript you have a powerful tool with which to manipulate your website. When writing HTML you’ll find it’s completely static, the web browser simply runs through the code from top to bottom and prints out your website for the user typically in that exact order. Hence the term &lt;em&gt;markup language&lt;/em&gt; in HTML. Any interaction with the website is extremely limited to only what you have asked it to show. You can do so much more by bringing out languages into the mix, such as Javascript. In the below example a visitor to the site can click a button and suddenly, without reloading the page, it’s entire structure can be re-written.&lt;/p&gt;
 
 &lt;div class=&quot;img-container&quot;&gt;&lt;img src=&quot;/assets/images/DOM/comments1.png&quot; alt=&quot;Replies Closed&quot; class=&quot;article-image&quot; /&gt;&lt;/div&gt;
 &lt;div class=&quot;img-container img-caption&quot;&gt;Example comments HTML page&lt;/div&gt;
@@ -660,15 +662,15 @@ is defined below */&lt;/span&gt;
 &lt;div class=&quot;img-container&quot;&gt;&lt;img src=&quot;/assets/images/DOM/comments2.png&quot; alt=&quot;Replies Open&quot; class=&quot;article-image&quot; /&gt;&lt;/div&gt;
 &lt;div class=&quot;img-container img-caption&quot;&gt;Using Javascript and the DOM to expand Bob's replies&lt;/div&gt;
 
-&lt;p&gt;In the above example you can see a comments system that has been written for in plain HTML. By using Javascript and the DOM to dynamically alter the page based on user input, you can see we change the page in the second image when a user has clicked on something. In the example the user has clicked a link to see the 4 replies to Bob, and without reloading the page, the replies are shown.&lt;/p&gt;
+&lt;p&gt;Above we have this commenting system built in plain HTML. By using Javascript and the DOM to dynamically alter the page based on user input, you can see we change the page in the second image when a user has clicked on something. In the example the user has clicked a link to see the 4 replies to Bob, and without reloading the page, the replies appear.&lt;/p&gt;
 
-&lt;h3 id=&quot;what-is-the-difference-between-client-side-and-server-side-web-development&quot;&gt;What is the difference between “client-side” and “server-side” web development?&lt;/h3&gt;
+&lt;h3 id=&quot;client-vs-server-and-the-doms-place-in-it-all&quot;&gt;Client vs. Server and the DOM’s place in it all&lt;/h3&gt;
 
-&lt;p&gt;There is an important but easy distinction between “client-side” and “server-side” web development, and yes it’s written right into their descriptors. Anything developed to happen “client-side” is code that is entirely managed and processed on your personal computer. You send a request to a website (by typing in &lt;em&gt;jamielocatis.com&lt;/em&gt; for example), and the server sends back all of the code needed to make the website work. All of the processing through that code happens on your computer, inside of your web browser. HTML happens completely on the “client-side”. JavaScript is also “client-side”, but we can use it to communicate with the server to request and receive and new data for the page (without having to reload the page).&lt;/p&gt;
+&lt;p&gt;There is an important but easy distinction between “client-side” and “server-side” web development, and yes it’s written right into their descriptors. Anything developed to happen “client-side” is code that is entirely managed and processed on your personal computer. You send a request to a website (by typing in &lt;em&gt;jamielocatis.com&lt;/em&gt; for example), and the server sends back all of the code needed to make that website work. All of the processing of that code happens on your computer, inside of your web browser. HTML happens completely on the “client-side”. JavaScript is also “client-side”, but we can use it to communicate with the server to request and receive new data for the page (without having to do any reloading).&lt;/p&gt;
 
 &lt;p&gt;Opposite to this is “server-side” development, where portions of the code are processed completely on the server, and the server sends back to your computer only the HTML needed to display whatever it is you were requesting. Than using a language such as JavaScript, we can actively update the DOM with our new information.&lt;/p&gt;
 
-&lt;p&gt;Let’s say the example above was something as robust as &lt;em&gt;Facebook&lt;/em&gt;. On your initial page load, your computer would only need the code for the top image to load right? Why waste time and bandwidth sending everything else! When the user hits the link to show Bob’s replies, a language like JavaScript would send an AJAX request to the server for those replies. The server sends the code back, and the HTML DOM is updated to display all of the replies.&lt;/p&gt;
+&lt;p&gt;Let’s say the example above was something as robust as &lt;em&gt;Facebook&lt;/em&gt;. On your initial page load, your computer would only need the code for the top image to load right? Why waste time and bandwidth sending everything else! When the user hits the link to show Bob’s replies, a language like JavaScript would send an AJAX request to the server for that information. In response the server sends the requestsed code back, and the HTML DOM is updated to display all of the replies.&lt;/p&gt;
 
 &lt;div class=&quot;note_box&quot;&gt;&lt;strong&gt;Note:&lt;/strong&gt; I haven't talked about AJAX just yet. If you aren't sure what this is, check out my &quot;Build Your First Game for the Web&quot; tutorial!&lt;/div&gt;
 
@@ -678,7 +680,7 @@ is defined below */&lt;/span&gt;
 
 &lt;h3 id=&quot;what-are-event-listeners-how-are-they-used-in-web-development&quot;&gt;What are event listeners? How are they used in web development?&lt;/h3&gt;
 
-&lt;p&gt;Events were described above, essentially a way of telling the computer to do something when something specifically happens to trigger it. But what is that specific something? In Javascript it’s called an event listener.&lt;/p&gt;
+&lt;p&gt;So what triggers these events? How do we tell computer that “this” has happened. In Javascript it’s called an event listener.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;repliesArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementsByClassName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;reply_click&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 
@@ -686,25 +688,20 @@ is defined below */&lt;/span&gt;
   &lt;span class=&quot;nx&quot;&gt;repliesArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;click&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;showReplies&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;There are several different ways of creating an event listener. In the above example we wait for a “click” on the ‘4 Replies’ link, and than run the function ‘showReplies’. We can even create groups of events through loops, like the above example. It creates an event listener for every defined ‘reply_click’ link it finds in the DOM. When clicked, it will run the &lt;code class=&quot;highlighter-rouge&quot;&gt;showReplies&lt;/code&gt; function.&lt;/p&gt;
+&lt;p&gt;There are several different ways of creating an event listener. In the above example we wait for a “click” on the ‘4 Replies’ link, and than run the function ‘showReplies’. We can even create groups of events through loops, which is done in the above code. It creates an event listener for every defined ‘reply_click’ link it finds in the DOM. When one of these are clicked, the &lt;code class=&quot;highlighter-rouge&quot;&gt;showReplies&lt;/code&gt; function does it’s thing.&lt;/p&gt;
 
 &lt;h3 id=&quot;get-to-know-the-dom&quot;&gt;Get to know the DOM&lt;/h3&gt;
 
 &lt;p&gt;Understanding the DOM is important to good web development. Play around with it and see the power it has to offer you. Updating websites without reloading them is significant when you think about how your user will be interacting with what you build.&lt;/p&gt;
+
+&lt;div class=&quot;img-container&quot;&gt;&lt;img src=&quot;/assets/images/DOM/console_example.jpg&quot; alt=&quot;Inspecting a Page&quot; class=&quot;article-image&quot; /&gt;&lt;/div&gt;
+&lt;div class=&quot;img-container img-caption&quot;&gt;Inspecting a page through the browser&lt;/div&gt;
+
+&lt;p&gt;One tip for seeing how webpages are structured in this hierarchical structure is to inspect any page through your browser’s developer tools. You will begin to see how all this fits together!&lt;/p&gt;
 </description>
         <pubDate>Tue, 03 Jan 2017 00:00:00 -0600</pubDate>
         <link>http://localhost:4000//2017/01/03/navigating-the-dom.html</link>
         <guid isPermaLink="true">http://localhost:4000//2017/01/03/navigating-the-dom.html</guid>
-      </item>
-    
-      <item>
-        <title>Introduction to the DOM</title>
-        <description>&lt;p&gt;The DOM, short for Document Object Model, gives you some much needed dynamic power to build better, more interactive websites. Using the DOM, you are able to navigate through HTML code as if it were tree of interconnected objects. You can dynamically add, remove, or most importantly alter these objects as your user interfaces with your website.&lt;/p&gt;
-
-</description>
-        <pubDate>Mon, 02 Jan 2017 00:00:00 -0600</pubDate>
-        <link>http://localhost:4000//2017/01/02/basic-dom-intro.html</link>
-        <guid isPermaLink="true">http://localhost:4000//2017/01/02/basic-dom-intro.html</guid>
       </item>
     
       <item>
