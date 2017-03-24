@@ -458,6 +458,10 @@ h1.article-title { /* come back and fix */
 	word-wrap: break-word;
 }
 
+pre {
+	white-space: pre-wrap;
+}
+
 /* Desktop Changes */
 @media (min-width: 300px) {
 	#hamburger {
