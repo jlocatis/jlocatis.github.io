@@ -21,10 +21,10 @@ It’s quite simple really. First build a basic HTML page containing two `<div>`
 <body>
 <div id="crawl_box">
   <div id="content">
-    <div id="center_episode">Episode I</div>
-    <div id="center_title">THE PHANTOM CODE</div>
-    <p>This is an absolutely useful Star Wars opening crawl for any website! Impress your visitors with how awesome this is. And most of all, have fun! It's what George always wanted....</p>
-    <p>Made completely in CSS3, no JavaScript required! ;)</p>
+    <div id="center_episode">Episode #</div>
+    <div id="center_title">EPISODE TITLE</div>
+    <p>Paragraph 1</p>
+    <p>Paragraph 2...etc...</p>
   </div>
 </div>
 </body>
