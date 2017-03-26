@@ -463,17 +463,14 @@ pre {
 }
 
 /* Desktop Changes */
-@media (min-width: 300px) {
+@media only screen and (min-width: 1000px) {
 	#hamburger {
 		display: none;
 	}
 
-	#page-top {
-		display: flex;
-	}
-
 	.top-bar {
-		width: 73%;
+		float: left;
+		width: 45%;
 		background-color: #c4c4c4;
 	}
 
@@ -482,9 +479,10 @@ pre {
 	}
 
 	.menu-bar {
+		float: right;
 		position: relative;
 		opacity: 1;
-		/*width: 57%;*/
+		width: 55%;
 		height: 100px;
 		top: 0;
 	}
@@ -492,13 +490,4 @@ pre {
 	.menu-items {
 		padding-top: 20px;
 	}
-
-/*	#left-container {
-		float: none;
-	}
-
-	#right-container {
-		float: none;
-		text-align: right;
-	}*/
 }
