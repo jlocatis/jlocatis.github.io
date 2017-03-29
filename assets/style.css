@@ -470,7 +470,7 @@ pre {
 
 	.top-bar {
 		float: left;
-		width: 44%;
+		width: 42%;
 		background-color: #c4c4c4;
 	}
 
@@ -482,7 +482,7 @@ pre {
 		float: right;
 		position: relative;
 		opacity: 1;
-		width: 56%;
+		width: 58%;
 		height: 100px;
 		top: 0;
 	}
