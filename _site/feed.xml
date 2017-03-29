@@ -8,6 +8,29 @@
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Easy Blog Setup Using React</title>
+        <description>&lt;p&gt;I found this easy tutorial that brings together a few different technologies to create a quick SEO-friendly, CMS-powered blog. Take a look at what’s involved and read the tutorial!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://dev.to/rogerjin12/how-to-build-a-seo-friendly-react-blog-with-an-api-based-cms&quot; target=&quot;_blank&quot;&gt;Roger Jin’s tutorial “How to build a SEO-friendly React blog with an API-based CMS” on dev.to&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;tech-involved&quot;&gt;Tech involved&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;React - Declarative, efficient, and flexible JavaScript library for building impactful user interfaces&lt;/li&gt;
+  &lt;li&gt;Next.js - Minimalistic framework for server-rendered React apps&lt;/li&gt;
+  &lt;li&gt;ButterCMS - A hosted API similiar to WordPress with different language support&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;what-it-does&quot;&gt;What it does&lt;/h3&gt;
+
+&lt;p&gt;Build a blog interface using React and use Roger’s tutorial to quickly wrap a  framework around it! Roger’s tutorial pointed me in the direction of Next.js, an easy way to serve your React apps (removing the steps of grabbing and setting up a webpack server on your own, which Next.js uses and does for you). Next.js also includes everything you need to use Babel (important in React to translate your JSX to plain-old JS). Lastly his tutorial introduced me to ButterCMS, which can initally be used for free. You can manage your blog content through a nice WordPress-style web API, and serve it your website through the language of your choice!&lt;/p&gt;
+</description>
+        <pubDate>Mon, 27 Mar 2017 00:00:00 -0500</pubDate>
+        <link>http://localhost:4000//2017/03/27/react-blog.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2017/03/27/react-blog.html</guid>
+      </item>
+    
+      <item>
         <title>Star Wars Opening Crawl in CSS</title>
         <description>&lt;p&gt;How about something cool and completely useful on every website? Let’s build a Star Wars opening crawl entirely using CSS. No JavaScript required!&lt;/p&gt;
 
