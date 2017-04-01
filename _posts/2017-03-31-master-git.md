@@ -1,5 +1,5 @@
 ---
-title: Master the art of Git
+title: Master the Art of Git
 image: git-icon.png
 ---
 
