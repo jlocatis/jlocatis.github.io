@@ -8,6 +8,52 @@
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Master the art of Git</title>
+        <description>&lt;p&gt;Using Git can be the easiest yet most frustrating part of becoming a developer. It’s as simple as a quick tutorial to get into, yet I promise it will take a long time to perfect. But Git is a &lt;em&gt;need to know&lt;/em&gt; for every coder. Check out this great tutorial that breaks down mastering the art of Git.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://hackernoon.com/how-to-master-the-art-of-git-68e1050f3147&quot; target=&quot;_blank&quot;&gt;How to master the art of Git by Adnan Rahić&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;make-it-a-habit&quot;&gt;Make it a habit!&lt;/h3&gt;
+
+&lt;p&gt;Adnan offers some simple TLDR; steps for learning Git through habit:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git status&lt;/code&gt; all the time!&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Try only to change files you really want to change.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;git add -A&lt;/code&gt; is your friend.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;note_box&quot;&gt;&lt;strong&gt;Note from me:&lt;/strong&gt; Seriously it is! I've gotten in a nasty habit of just doing `git add .`, adding all of my files to a commit everytime instead of just the specific one I'm changing. This can create waves of issues if you are editing multiple files at the same time!&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Feel free to &lt;code class=&quot;highlighter-rouge&quot;&gt;git commit -m &quot;meaningful messages&quot;&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;note_box&quot;&gt;&lt;strong&gt;Another note from me:&lt;/strong&gt; Again, seriously, meaningful messages! It's easy to just write whatever (literally, I find myself writing `whatever` a lot) to get the commit saved. But that won't help down the line when you need to remember what you've just screwed up ;)&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Always &lt;code class=&quot;highlighter-rouge&quot;&gt;git pull&lt;/code&gt; &lt;em&gt;before&lt;/em&gt; doing any pushing, but &lt;em&gt;after&lt;/em&gt; you have committed any changes.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Finally, &lt;code class=&quot;highlighter-rouge&quot;&gt;git push&lt;/code&gt; the committed changes.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;Credit:&lt;/em&gt; &lt;a href=&quot;https://hackernoon.com/how-to-master-the-art-of-git-68e1050f3147&quot; target=&quot;_blank&quot;&gt;How to master the art of Git by Adnan Rahić&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 31 Mar 2017 00:00:00 -0500</pubDate>
+        <link>http://localhost:4000//2017/03/31/master-git.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2017/03/31/master-git.html</guid>
+      </item>
+    
+      <item>
         <title>Easy Blog Setup Using React</title>
         <description>&lt;p&gt;I found this easy tutorial that brings together a few different technologies to create a quick SEO-friendly, CMS-powered blog. Take a look at what’s involved and read the tutorial!&lt;/p&gt;
 
@@ -23,7 +69,7 @@
 
 &lt;h3 id=&quot;what-it-does&quot;&gt;What it does&lt;/h3&gt;
 
-&lt;p&gt;Build a blog interface using React and use Roger’s tutorial to quickly wrap a  framework around it! Roger’s tutorial pointed me in the direction of Next.js, an easy way to serve your React apps (removing the steps of grabbing and setting up a webpack server on your own, which Next.js uses and does for you). Next.js also includes everything you need to use Babel (important in React to translate your JSX to plain-old JS). Lastly his tutorial introduced me to ButterCMS, which can initally be used for free. You can manage your blog content through a nice WordPress-style web API, and serve it your website through the language of your choice!&lt;/p&gt;
+&lt;p&gt;Build a blog interface with React and use Roger’s tutorial to quickly wrap a  framework around it! Roger’s tutorial pointed me in the direction of Next.js, an easy way to serve your React apps (removing the steps of grabbing and setting up a webpack server on your own, which Next.js uses and does for you). Next.js also includes everything you need to use Babel (important in React to translate your JSX to plain JS). Lastly his tutorial introduced me to ButterCMS, which can initally be used for free. You can manage your blog content through a nice WordPress-style web API, and serve it to your website through the language of your choice!&lt;/p&gt;
 </description>
         <pubDate>Mon, 27 Mar 2017 00:00:00 -0500</pubDate>
         <link>http://localhost:4000//2017/03/27/react-blog.html</link>
@@ -824,7 +870,7 @@ is defined below */&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;questions&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;loadArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;input&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;ARGV&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;inputType&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;shift&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inputTYpe&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'add'&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inputType&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'add'&lt;/span&gt;
   &lt;span class=&quot;n&quot;&gt;questions&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;addQuestion&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;questions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
   &lt;span class=&quot;n&quot;&gt;updateTxtFile&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;questions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;elsif&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inputType&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'rm'&lt;/span&gt;

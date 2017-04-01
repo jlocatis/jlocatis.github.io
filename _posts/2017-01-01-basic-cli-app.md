@@ -107,7 +107,7 @@ So below you see the final piece of our programing puzzle. Above we built reusab
 questions = loadArray()
 input = ARGV
 inputType = input.shift
-if inputTYpe == 'add'
+if inputType == 'add'
   questions = addQuestion(questions, input)
   updateTxtFile(questions)
 elsif inputType == 'rm'

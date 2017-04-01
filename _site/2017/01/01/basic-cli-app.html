@@ -176,7 +176,7 @@
 <span class="n">questions</span> <span class="o">=</span> <span class="n">loadArray</span><span class="p">()</span>
 <span class="n">input</span> <span class="o">=</span> <span class="no">ARGV</span>
 <span class="n">inputType</span> <span class="o">=</span> <span class="n">input</span><span class="p">.</span><span class="nf">shift</span>
-<span class="k">if</span> <span class="n">inputTYpe</span> <span class="o">==</span> <span class="s1">'add'</span>
+<span class="k">if</span> <span class="n">inputType</span> <span class="o">==</span> <span class="s1">'add'</span>
   <span class="n">questions</span> <span class="o">=</span> <span class="n">addQuestion</span><span class="p">(</span><span class="n">questions</span><span class="p">,</span> <span class="n">input</span><span class="p">)</span>
   <span class="n">updateTxtFile</span><span class="p">(</span><span class="n">questions</span><span class="p">)</span>
 <span class="k">elsif</span> <span class="n">inputType</span> <span class="o">==</span> <span class="s1">'rm'</span>
