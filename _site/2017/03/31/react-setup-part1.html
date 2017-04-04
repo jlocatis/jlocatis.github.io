@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+	<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+	<title>Jamie Locatis</title>
+	<link rel="stylesheet" href=/assets/style.css>
+  <link rel="stylesheet" type="text/css" href=/assets/highlight.css>
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<script type="text/javascript" src="/assets/scripts.js"></script>
+	<script src="https://use.fontawesome.com/28ea288129.js"></script>
+</head>
+
+<body>
+
+	
+  <div class="top-bar">
+    <div id="top-name">
+      <a href="/index.html" | relative_url }}">Jamie Locatis</a>
+    </div>
+    <div id="top-title">Web Developer</div>
+  </div>
+
+  <label for="menu--open" id="hamburger">
+    <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
+  </label>
+  <input type="checkbox" name="1" id="menu--open">
+  
+  <div class="menu-bar" id="menu-bar_fixed">
+    <div class="menu-items" id="menu--items">
+      <div id="nav-left">
+        <div id="left-container">
+          <span class="icon_link twitter">
+            <a href="https://twitter.com/JamieLocatis" target="_blank">
+              <span class="fa-stack">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </span>
+          <span class="icon_link github">
+            <a href="https://github.com/jlocatis" target="_blank">
+              <i class="fa fa-github fa-2x" aria-hidden="true"></i>
+            </a>
+          </span>
+          <span class="icon_link linkedin">
+            <a href="https://www.linkedin.com/in/jamie-locatis-a76428123/" target="_blank">          
+              <span class="fa-stack">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </span>
+          <span class="icon_link rss">
+            <a href="/feed.xml" | relative_url }}">          
+              <span class="fa-stack">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </span>
+        </div>
+      </div>
+
+      <div class="nav-right" id="nav--right">
+        <div id="right-container">
+          <a href="/articles" | relative_url }}" class="nav-link">ARTICLES</a>
+          <a href="/about" | relative_url }}" class="nav-link">ABOUT</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<div class="clear"></div>
+
+	<div class="page-body">
+	<h1 class="article-title">Setting Up A React Dev Environment, Part I</h1>
+	<div id="posted-date">Mar 31, 2017</div>
+	<hr>
+	<div class="article-content">
+
+<p>This quick setup tutorial will get you everything you need to begin coding with ReactJS! After just a few steps you will be ready to begin coding in this newer declarative, component-based JavaScript library.</p>
+
+<div class="img-container"><img src="/assets/preview_images/reactjspt1.jpg" alt="ReactJS Logo" class="article-image" /></div>
+
+<p><a href="/2017/04/03/react-setup-part2.html">Visit Part II of this tutorial!</a></p>
+
+<h3 id="prerequisites">Prerequisites</h3>
+
+<p>You will need to have Homebrew, Node.js, and npm installed on your computer before proceeding. Ensure that your installation of Node.js is up to date and includes npm (Node Package Manager). The newest versions of Node.js should already include npm. Visit the Homebrew site <a href="https://brew.sh/" target="_blank">here</a> to get it up and running first. Next install Node.js via your Homebrew package manager using the following line:</p>
+
+<p><code class="highlighter-rouge">brew install node</code></p>
+
+<div class="note_box"><strong>Note:</strong> If you aren't on macOS and can't use Homebrew, <a href="http://scoop.sh/" target="_blank">Scoop</a> is a similiar command-line installer for Windows. Head <a href="https://nodejs.org/en/download/package-manager/" tager="_blank">here</a> for a list of various package maanger install commands for Node.js.</div>
+
+<h3 id="getting-your-template-setup">Getting your template setup</h3>
+
+<p>Let’s get everything installed and running in a new directory so you can begin coding in React! Create a new empty directory, and in your terminal type the following in order: (and make sure you are in your new empty directory!)</p>
+
+<p><code class="highlighter-rouge">npm init</code></p>
+
+<p>After entering this first command you will be prompted with a bunch of questions, just hit enter for all of them. As you learn more about React and Node you will use these prompts, but nothing needs to change to get a basic dev environment up and running.</p>
+
+<p><code class="highlighter-rouge">npm i -S react</code></p>
+
+<p><code class="highlighter-rouge">npm i -S react-dom</code></p>
+
+<p><code class="highlighter-rouge">npm i -D babel-core babel-loader babel-preset-react</code></p>
+
+<p><code class="highlighter-rouge">npm i -D webpack webpack-dev-server html-webpack-plugin</code></p>
+
+<p>Whoa, that was a lot right? For starters I abbreviated a few things in those commands. Where you see <code class="highlighter-rouge">npm i</code> I am shortening <code class="highlighter-rouge">npm install</code>. I do the same with <code class="highlighter-rouge">-S</code> which is short for <code class="highlighter-rouge">--save</code>. The other we used was <code class="highlighter-rouge">-D</code>. This flag is short for <code class="highlighter-rouge">--save-dev</code> and saves an npm module for development version only.</p>
+
+<p>We installed a lot, including React and the React-DOM! We also installed Babel, a next generation JavaScript compiler that will convert your React JSX syntax to regular JavaScript. JSX is a XML-like syntax extension for ES6, the latest version of JavaScript. I know there a lot of new terms being thrown out here, but we installed one more thing. Webpack will act as your server for the React code you will write. It bundles application source code in convenient chunks and loads that code from a server into a broswer.</p>
+
+<div class="img-container"><img src="/assets/images/reactjspt1/reactjs.png" alt="ReactJS Logo" class="article-image" /></div>
+
+<p>Whew! Take some time to go over what just happened above. Your directory should now be full of files and folders. In Part II of Setting Up a React Dev Environment we will finish getting everything ready to go for your React app!</p>
+
+
+	</div>
+	<div id="share_box">
+		<div><img src="/assets/images/twitter_logo.png" alt="Share on Twitter!" width="100"></div>
+		<div>If you liked this article and think others should read it, please <a href="https://twitter.com/share?text=Read+this+article&url=&text=by&via=jamielocatis&hashtags=webdevelopment" target="_blank">share it on Twitter!</a></div>
+	</div>
+</div>
+
+	<div class="page-footer">
+	<div id="footer">&copy;2017 Jamie Locatis</div>
+</div>
+
+</body>
+</html>

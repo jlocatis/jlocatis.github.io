@@ -8,7 +8,76 @@
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
-        <title>Master the art of Git</title>
+        <title>Setting Up A React Dev Environment, Part II</title>
+        <description>&lt;p&gt;Some stuff here.&lt;/p&gt;
+
+&lt;div class=&quot;img-container&quot;&gt;&lt;img src=&quot;/assets/preview_images/reactjspt2.jpg&quot; alt=&quot;ReactJS Logo&quot; class=&quot;article-image&quot; /&gt;&lt;/div&gt;
+</description>
+        <pubDate>Mon, 03 Apr 2017 00:00:00 -0500</pubDate>
+        <link>http://localhost:4000//2017/04/03/react-setup-part2.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2017/04/03/react-setup-part2.html</guid>
+      </item>
+    
+      <item>
+        <title>Comments Should Be Good</title>
+        <description>&lt;p&gt;The idea of having good comments in code has come up almost daily in my coding adventure. But I’m here to tell you a truth, all of us who were talking about good comments have yet to write consistently good comments! Let’s examine what &lt;em&gt;makes&lt;/em&gt; a comment &lt;em&gt;good&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;I stumbled across &lt;a href=&quot;https://dev.to/andreasklinger/comments-explain-why-not-what-and-2-more-rules-on-writing-good-comments&quot; target=&quot;_blank&quot;&gt;this&lt;/a&gt; article by Andreas Klinger on the idea of good comments. The article’s title says it all! &lt;em&gt;Good comments explain WHY, not WHAT, and 3 more rules on writing good comments.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;It’s a simple idea, code should explain WHAT is happening while comments should explain WHY the code is happening. It’s a good read! Here’s to actually practicing what I’m preaching…&lt;/p&gt;
+</description>
+        <pubDate>Sun, 02 Apr 2017 00:00:00 -0500</pubDate>
+        <link>http://localhost:4000//2017/04/02/good-comments-are-good.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2017/04/02/good-comments-are-good.html</guid>
+      </item>
+    
+      <item>
+        <title>Setting Up A React Dev Environment, Part I</title>
+        <description>&lt;p&gt;This quick setup tutorial will get you everything you need to begin coding with ReactJS! After just a few steps you will be ready to begin coding in this newer declarative, component-based JavaScript library.&lt;/p&gt;
+
+&lt;div class=&quot;img-container&quot;&gt;&lt;img src=&quot;/assets/preview_images/reactjspt1.jpg&quot; alt=&quot;ReactJS Logo&quot; class=&quot;article-image&quot; /&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;a href=&quot;/2017/04/03/react-setup-part2.html&quot;&gt;Visit Part II of this tutorial!&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;prerequisites&quot;&gt;Prerequisites&lt;/h3&gt;
+
+&lt;p&gt;You will need to have Homebrew, Node.js, and npm installed on your computer before proceeding. Ensure that your installation of Node.js is up to date and includes npm (Node Package Manager). The newest versions of Node.js should already include npm. Visit the Homebrew site &lt;a href=&quot;https://brew.sh/&quot; target=&quot;_blank&quot;&gt;here&lt;/a&gt; to get it up and running first. Next install Node.js via your Homebrew package manager using the following line:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;brew install node&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;note_box&quot;&gt;&lt;strong&gt;Note:&lt;/strong&gt; If you aren't on macOS and can't use Homebrew, &lt;a href=&quot;http://scoop.sh/&quot; target=&quot;_blank&quot;&gt;Scoop&lt;/a&gt; is a similiar command-line installer for Windows. Head &lt;a href=&quot;https://nodejs.org/en/download/package-manager/&quot; tager=&quot;_blank&quot;&gt;here&lt;/a&gt; for a list of various package maanger install commands for Node.js.&lt;/div&gt;
+
+&lt;h3 id=&quot;getting-your-template-setup&quot;&gt;Getting your template setup&lt;/h3&gt;
+
+&lt;p&gt;Let’s get everything installed and running in a new directory so you can begin coding in React! Create a new empty directory, and in your terminal type the following in order: (and make sure you are in your new empty directory!)&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;npm init&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;After entering this first command you will be prompted with a bunch of questions, just hit enter for all of them. As you learn more about React and Node you will use these prompts, but nothing needs to change to get a basic dev environment up and running.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;npm i -S react&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;npm i -S react-dom&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;npm i -D babel-core babel-loader babel-preset-react&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;npm i -D webpack webpack-dev-server html-webpack-plugin&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Whoa, that was a lot right? For starters I abbreviated a few things in those commands. Where you see &lt;code class=&quot;highlighter-rouge&quot;&gt;npm i&lt;/code&gt; I am shortening &lt;code class=&quot;highlighter-rouge&quot;&gt;npm install&lt;/code&gt;. I do the same with &lt;code class=&quot;highlighter-rouge&quot;&gt;-S&lt;/code&gt; which is short for &lt;code class=&quot;highlighter-rouge&quot;&gt;--save&lt;/code&gt;. The other we used was &lt;code class=&quot;highlighter-rouge&quot;&gt;-D&lt;/code&gt;. This flag is short for &lt;code class=&quot;highlighter-rouge&quot;&gt;--save-dev&lt;/code&gt; and saves an npm module for development version only.&lt;/p&gt;
+
+&lt;p&gt;We installed a lot, including React and the React-DOM! We also installed Babel, a next generation JavaScript compiler that will convert your React JSX syntax to regular JavaScript. JSX is a XML-like syntax extension for ES6, the latest version of JavaScript. I know there a lot of new terms being thrown out here, but we installed one more thing. Webpack will act as your server for the React code you will write. It bundles application source code in convenient chunks and loads that code from a server into a broswer.&lt;/p&gt;
+
+&lt;div class=&quot;img-container&quot;&gt;&lt;img src=&quot;/assets/images/reactjspt1/reactjs.png&quot; alt=&quot;ReactJS Logo&quot; class=&quot;article-image&quot; /&gt;&lt;/div&gt;
+
+&lt;p&gt;Whew! Take some time to go over what just happened above. Your directory should now be full of files and folders. In Part II of Setting Up a React Dev Environment we will finish getting everything ready to go for your React app!&lt;/p&gt;
+</description>
+        <pubDate>Fri, 31 Mar 2017 00:00:00 -0500</pubDate>
+        <link>http://localhost:4000//2017/03/31/react-setup-part1.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2017/03/31/react-setup-part1.html</guid>
+      </item>
+    
+      <item>
+        <title>Master the Art of Git</title>
         <description>&lt;p&gt;Using Git can be the easiest yet most frustrating part of becoming a developer. It’s as simple as a quick tutorial to get into, yet I promise it will take a long time to perfect. But Git is a &lt;em&gt;need to know&lt;/em&gt; for every coder. Check out this great tutorial that breaks down mastering the art of Git.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://hackernoon.com/how-to-master-the-art-of-git-68e1050f3147&quot; target=&quot;_blank&quot;&gt;How to master the art of Git by Adnan Rahić&lt;/a&gt;&lt;/p&gt;
