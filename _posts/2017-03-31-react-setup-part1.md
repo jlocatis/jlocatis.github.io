@@ -3,11 +3,11 @@ title: Setting Up A React Dev Environment, Part I
 image: react.png
 ---
 
-This quick setup tutorial will get you everything you need to begin coding with ReactJS! After just a few steps you will be ready to begin coding in this newer declarative, component-based JavaScript library.
+This quick setup tutorial will get you started on everything you need to begin coding with ReactJS! After just a few steps you will be ready to begin coding in this newer declarative, component-based JavaScript library.
 
 <div class="img-container"><img src="{{ "/assets/preview_images/reactjspt1.jpg" | relative_url }}" alt="ReactJS Logo" class="article-image"></div>
 
-[Visit Part II of this tutorial!]({% post_url 2017-04-03-react-setup-part2 %})
+[Visit Part II of this tutorial!]({% post_url 2017-04-05-react-setup-part2 %})
 
 ### Prerequisites
 
@@ -39,4 +39,4 @@ We installed a lot, including React and the React-DOM! We also installed Babel, 
 
 <div class="img-container"><img src="{{ "/assets/images/reactjspt1/reactjs.png" | relative_url }}" alt="ReactJS Logo" class="article-image"></div>
 
-Whew! Take some time to go over what just happened above. Your directory should now be full of files and folders. In Part II of Setting Up a React Dev Environment we will finish getting everything ready to go for your React app!
+Whew! Take some time to go over what just happened above. Your directory should now be full of files and folders. In [Part II]({% post_url 2017-04-05-react-setup-part2 %}) of Setting Up a React Dev Environment we will finish getting everything ready to go for your React app!

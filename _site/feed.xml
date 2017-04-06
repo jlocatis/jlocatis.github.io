@@ -9,13 +9,25 @@
     
       <item>
         <title>Setting Up A React Dev Environment, Part II</title>
-        <description>&lt;p&gt;Some stuff here.&lt;/p&gt;
+        <description>&lt;p&gt;In this tutorial I will cover getting your React site up and running from a server so you can begin serving your react code to your browser. I will also give you the tools you need to finish creating the near &lt;em&gt;perfect&lt;/em&gt; dev environment for your React apps.&lt;/p&gt;
 
 &lt;div class=&quot;img-container&quot;&gt;&lt;img src=&quot;/assets/preview_images/reactjspt2.jpg&quot; alt=&quot;ReactJS Logo&quot; class=&quot;article-image&quot; /&gt;&lt;/div&gt;
+
+&lt;p&gt;If you haven’t been through &lt;a href=&quot;/2017/03/31/react-setup-part1.html&quot;&gt;Part I of Setting Up A React Dev Enivronment&lt;/a&gt;Part I of Setting Up A React Dev Enivronment, do so before proceeding! Otherwise, let’s dive in…&lt;/p&gt;
+
+&lt;h3 id=&quot;configure-babel&quot;&gt;Configure Babel&lt;/h3&gt;
+
+&lt;p&gt;You should already have Babel installed inside of your app’s directory. In the root of the directory, create a new file and save it as &lt;code class=&quot;highlighter-rouge&quot;&gt;.babelrc&lt;/code&gt;. This file will configure Babel to work across your app. Remember that Babel will be compiling our JSX code into JavaScript, a core component of React. Save the following code in &lt;code class=&quot;highlighter-rouge&quot;&gt;.babelrc&lt;/code&gt;:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;presets&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'react'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h3 id=&quot;configure-webpack&quot;&gt;Configure Webpack&lt;/h3&gt;
+
+&lt;p&gt;Next we need to configure Webpack. Webpack will actually be bundling all of our app’s code together, and doing the final build on the transformed HTML and JavaScript files the browser will ultimately be served. But Webpack needs to know how it should be doing this, so let’s create a configuration file. In your project’s root directly, create a new file and save it as &lt;code class=&quot;highlighter-rouge&quot;&gt;webpack.config.js&lt;/code&gt;.&lt;/p&gt;
 </description>
-        <pubDate>Mon, 03 Apr 2017 00:00:00 -0500</pubDate>
-        <link>http://localhost:4000//2017/04/03/react-setup-part2.html</link>
-        <guid isPermaLink="true">http://localhost:4000//2017/04/03/react-setup-part2.html</guid>
+        <pubDate>Wed, 05 Apr 2017 00:00:00 -0500</pubDate>
+        <link>http://localhost:4000//2017/04/05/react-setup-part2.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2017/04/05/react-setup-part2.html</guid>
       </item>
     
       <item>
@@ -33,11 +45,11 @@
     
       <item>
         <title>Setting Up A React Dev Environment, Part I</title>
-        <description>&lt;p&gt;This quick setup tutorial will get you everything you need to begin coding with ReactJS! After just a few steps you will be ready to begin coding in this newer declarative, component-based JavaScript library.&lt;/p&gt;
+        <description>&lt;p&gt;This quick setup tutorial will get you started on everything you need to begin coding with ReactJS! After just a few steps you will be ready to begin coding in this newer declarative, component-based JavaScript library.&lt;/p&gt;
 
 &lt;div class=&quot;img-container&quot;&gt;&lt;img src=&quot;/assets/preview_images/reactjspt1.jpg&quot; alt=&quot;ReactJS Logo&quot; class=&quot;article-image&quot; /&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;a href=&quot;/2017/04/03/react-setup-part2.html&quot;&gt;Visit Part II of this tutorial!&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/2017/04/05/react-setup-part2.html&quot;&gt;Visit Part II of this tutorial!&lt;/a&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;prerequisites&quot;&gt;Prerequisites&lt;/h3&gt;
 
@@ -69,7 +81,7 @@
 
 &lt;div class=&quot;img-container&quot;&gt;&lt;img src=&quot;/assets/images/reactjspt1/reactjs.png&quot; alt=&quot;ReactJS Logo&quot; class=&quot;article-image&quot; /&gt;&lt;/div&gt;
 
-&lt;p&gt;Whew! Take some time to go over what just happened above. Your directory should now be full of files and folders. In Part II of Setting Up a React Dev Environment we will finish getting everything ready to go for your React app!&lt;/p&gt;
+&lt;p&gt;Whew! Take some time to go over what just happened above. Your directory should now be full of files and folders. In &lt;a href=&quot;/2017/04/05/react-setup-part2.html&quot;&gt;Part II&lt;/a&gt; of Setting Up a React Dev Environment we will finish getting everything ready to go for your React app!&lt;/p&gt;
 </description>
         <pubDate>Fri, 31 Mar 2017 00:00:00 -0500</pubDate>
         <link>http://localhost:4000//2017/03/31/react-setup-part1.html</link>

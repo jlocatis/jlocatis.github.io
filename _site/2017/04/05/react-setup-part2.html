@@ -77,13 +77,25 @@
 
 	<div class="page-body">
 	<h1 class="article-title">Setting Up A React Dev Environment, Part II</h1>
-	<div id="posted-date">Apr 3, 2017</div>
+	<div id="posted-date">Apr 5, 2017</div>
 	<hr>
 	<div class="article-content">
 
-<p>Some stuff here.</p>
+<p>In this tutorial I will cover getting your React site up and running from a server so you can begin serving your react code to your browser. I will also give you the tools you need to finish creating the near <em>perfect</em> dev environment for your React apps.</p>
 
 <div class="img-container"><img src="/assets/preview_images/reactjspt2.jpg" alt="ReactJS Logo" class="article-image" /></div>
+
+<p>If you haven’t been through <a href="/2017/03/31/react-setup-part1.html">Part I of Setting Up A React Dev Enivronment</a>Part I of Setting Up A React Dev Enivronment, do so before proceeding! Otherwise, let’s dive in…</p>
+
+<h3 id="configure-babel">Configure Babel</h3>
+
+<p>You should already have Babel installed inside of your app’s directory. In the root of the directory, create a new file and save it as <code class="highlighter-rouge">.babelrc</code>. This file will configure Babel to work across your app. Remember that Babel will be compiling our JSX code into JavaScript, a core component of React. Save the following code in <code class="highlighter-rouge">.babelrc</code>:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">{</span> <span class="nl">presets</span><span class="p">:</span> <span class="p">[</span><span class="s1">'react'</span><span class="p">]</span> <span class="p">}</span></code></pre></figure>
+
+<h3 id="configure-webpack">Configure Webpack</h3>
+
+<p>Next we need to configure Webpack. Webpack will actually be bundling all of our app’s code together, and doing the final build on the transformed HTML and JavaScript files the browser will ultimately be served. But Webpack needs to know how it should be doing this, so let’s create a configuration file. In your project’s root directly, create a new file and save it as <code class="highlighter-rouge">webpack.config.js</code>.</p>
 
 
 	</div>
