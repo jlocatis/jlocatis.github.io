@@ -85,7 +85,7 @@
 
 <div class="img-container"><img src="/assets/preview_images/reactjspt2.jpg" alt="ReactJS Logo" class="article-image" /></div>
 
-<p>If you haven’t been through <a href="/2017/03/31/react-setup-part1.html">Part I of Setting Up A React Dev Enivronment</a>Part I of Setting Up A React Dev Enivronment, do so before proceeding! Otherwise, let’s dive in…</p>
+<p>If you haven’t been through <a href="/2017/03/31/react-setup-part1.html">Part I of Setting Up A React Dev Enivronment</a>, do so before proceeding! Otherwise, let’s dive in…</p>
 
 <h3 id="configure-babel">Configure Babel</h3>
 
@@ -112,7 +112,7 @@
   <span class="p">]</span>
 <span class="p">};</span></code></pre></figure>
 
-<p>The entry line will be our <em>entry</em> file that will serve our app. React is mostly designed to work SPA’s (Single Page Applications), which is why in the case above all of our React and JavaScript will be funnelled through one file, in the case above <code class="highlighter-rouge">/index.js'. Using </code>__dirname<code class="highlighter-rouge"> is a method of Node.js, which will set the root directory before the </code>/`.</p>
+<p>The entry line will be our <em>entry</em> file that will serve our app. React is mostly designed to work with SPA’s (Single Page Applications), which is why in the case above all of our React and JavaScript will be funnelled through one file, <code class="highlighter-rouge">/index.js</code> above. Using <code class="highlighter-rouge">__dirname</code> is a method of Node.js, which will set the root directory before the <code class="highlighter-rouge">/</code>.</p>
 
 <p>At the bottom we add <code class="highlighter-rouge">loaders</code>. This is where we tell Webpack what files to use as it builds our site. You can have multiple loaders but for a simple application you will only need one. Each loader should have a <code class="highlighter-rouge">test:</code>, where we tell Webpack what actual files to load. In the test above we use a regular expression to indicate that we want all JavaScript files to be loaded. After <code class="highlighter-rouge">test:</code> we set what files to <code class="highlighter-rouge">exclude:</code>. We told Webpack first to take all JavaScript files, but that would include everything that was setup in your <code class="highlighter-rouge">/node_modules</code> directory when we initially set the app up. We don’t want that! Lastly we tell Webpack which <code class="highlighter-rouge">loader:</code> to use, which should be Babel since it will actually be reading through our React code. So to recap our loader:</p>
 
@@ -126,14 +126,14 @@
 
 <h3 id="one-more-thing-with-webpack">One more thing with Webpack</h3>
 
-<p>Almost done getting this thing setup. We need to configure Webpack’s HTMLWebpackPlugin. As we are developing our files will be located where they need to be. ut when we build these files for deployment using the Webpack settings above, it will only be building the <code class="highlighter-rouge">transformed.js</code> file. Can’t get to that without some good old HTML. Using the HTMLWebpackPlugin will build the accompanying HTML with our new .js file. Add this to the top of your <code class="highlighter-rouge">webpack.config.js</code> file:</p>
+<p>Almost done getting it setup. We need to configure Webpack’s HTMLWebpackPlugin. As we are developing our files will be located where they need to be. But when we build these files for deployment using the Webpack settings above, it will only be building the <code class="highlighter-rouge">transformed.js</code> file. Can’t get to that without some good old HTML. Using the HTMLWebpackPlugin will build the accompanying HTML with our new .js file. Add this to the top of your <code class="highlighter-rouge">webpack.config.js</code> file:</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">HTMLWebpackPlugin</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'html-webpack-plugin'</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">HTMLWebpackPlugin</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">HTMLWebpackPlugin</span><span class="p">({</span>
   <span class="na">template</span><span class="p">:</span> <span class="nx">__dirname</span> <span class="o">+</span> <span class="s1">'/index.html'</span>
 <span class="p">});</span></code></pre></figure>
 
-<p>Basically when we go to deploy our app, this will build an <code class="highlighter-rouge">index.html</code> based on our development version, and will automatically add a <code class="highlighter-rouge">&lt;script&gt;&lt;/script&gt;</code> tag with our <code class="highlighter-rouge">transformed.js</code> file. In a dev environment we won’t need to be building these files, just for deployment.</p>
+<p>When we go to deploy our app, this will build an <code class="highlighter-rouge">index.html</code> based on our development version, and will automatically add a <code class="highlighter-rouge">&lt;script&gt;&lt;/script&gt;</code> tag with our <code class="highlighter-rouge">transformed.js</code> file. In a dev environment we won’t need to be building these files, just for deployment.</p>
 
 <p>One last piece to make this work. Inside of <code class="highlighter-rouge">module.exports</code> after your loaders add:</p>
 
@@ -152,11 +152,11 @@
 
 <h3 id="get-babel-transform-in-your-code-editor-sublime-text">Get Babel Transform in your code editor (Sublime Text)</h3>
 
-<p>Depending on what code editor you are using, it may or may not understand what JSX is as you’re writing it. If you’re like me than enjoy the extra readability of code this adds when your editor colors things for you. Personally I’m coding in Sublime Text, and it does not have a built-in understanding of JSX as of this writing. You will need to install the Babel Transform package to make this work. See <a href="http://stackoverflow.com/questions/13124532/installing-packages-in-sublime-text-2" target="_blank">this Stack Overflow</a> if you are unsure how to go about installing Sublime Text packages.</p>
+<p>Depending on what code editor you are using, it may or may not understand what JSX is as you’re writing it. If you’re like me you enjoy the extra readability of code this adds when your editor colors things for you. Personally I’m coding in Sublime Text, and it does not have a built-in understanding of JSX as of this writing. You will need to install the Babel Transform package to make this work. See <a href="http://stackoverflow.com/questions/13124532/installing-packages-in-sublime-text-2" target="_blank">this Stack Overflow</a> if you are unsure how to go about installing Sublime Text packages.</p>
 
 <h3 id="ready-to-go">Ready to go!</h3>
 
-<p>You should be ready to begin coding React. In the next tutorial we will create a simple Hello World app using React!</p>
+<p>You should be ready to begin coding in React. In the next tutorial we will create a simple Hello World app using React!</p>
 
 
 	</div>
