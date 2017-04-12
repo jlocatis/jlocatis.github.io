@@ -28,13 +28,13 @@ module.exports = {
     filename: 'transformed.js',
     path: __dirname + '/build'
   },
-  loaders: [
-    {
+  module: {
+    [{
       test: /\.js$/,
       exclude: /node_modules/,
       loader: 'babel-loader'
-  }
-  ]
+    }]
+  }  
 };
 {% endhighlight %}
 
@@ -54,7 +54,7 @@ Almost done getting it setup. We need to configure Webpack's HTMLWebpackPlugin. 
 
 {% highlight javascript %}
 var HTMLWebpackPlugin = require('html-webpack-plugin');
-var HTMLWebpackPlugin = new HTMLWebpackPlugin({
+var HTMLWebpackPluginConfig = new HTMLWebpackPlugin({
   template: __dirname + '/index.html'
 });
 {% endhighlight %}
