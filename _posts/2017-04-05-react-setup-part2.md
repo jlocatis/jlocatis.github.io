@@ -3,7 +3,7 @@ title: Setting Up A React Dev Environment, Part II
 image: react.png
 ---
 
-In this tutorial I will cover getting your React site up and running from a server so you can begin serving your react code to your browser. I will also give you the tools you need to finish creating the near _perfect_ dev environment for your React apps.
+In this tutorial I will cover getting your React site up and running from a server so you can begin serving your react code to a browser. I will also give you the tools you need to finish creating the near _perfect_ dev environment for your React apps.
 
 <div class="img-container"><img src="{{ "/assets/preview_images/reactjspt2.jpg" | relative_url }}" alt="ReactJS Logo" class="article-image"></div>
 
@@ -86,4 +86,4 @@ Depending on what code editor you are using, it may or may not understand what J
 
 ### Ready to go!
 
-You should be ready to begin coding in React. In the next tutorial we will create a simple Hello World app using React!
+You should be ready to begin coding in React. In the [next tutorial]({% post_url 2017-04-07-react-hello-world %}) we will create a simple Hello World app using React!

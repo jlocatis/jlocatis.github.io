@@ -81,7 +81,7 @@
 	<hr>
 	<div class="article-content">
 
-<p>In this tutorial I will cover getting your React site up and running from a server so you can begin serving your react code to your browser. I will also give you the tools you need to finish creating the near <em>perfect</em> dev environment for your React apps.</p>
+<p>In this tutorial I will cover getting your React site up and running from a server so you can begin serving your react code to a browser. I will also give you the tools you need to finish creating the near <em>perfect</em> dev environment for your React apps.</p>
 
 <div class="img-container"><img src="/assets/preview_images/reactjspt2.jpg" alt="ReactJS Logo" class="article-image" /></div>
 
@@ -103,13 +103,13 @@
     <span class="na">filename</span><span class="p">:</span> <span class="s1">'transformed.js'</span><span class="p">,</span>
     <span class="na">path</span><span class="p">:</span> <span class="nx">__dirname</span> <span class="o">+</span> <span class="s1">'/build'</span>
   <span class="p">},</span>
-  <span class="na">loaders</span><span class="p">:</span> <span class="p">[</span>
-    <span class="p">{</span>
+  <span class="na">module</span><span class="p">:</span> <span class="p">{</span>
+    <span class="p">[{</span>
       <span class="na">test</span><span class="p">:</span> <span class="sr">/</span><span class="se">\.</span><span class="sr">js$/</span><span class="p">,</span>
       <span class="na">exclude</span><span class="p">:</span> <span class="sr">/node_modules/</span><span class="p">,</span>
       <span class="na">loader</span><span class="p">:</span> <span class="s1">'babel-loader'</span>
-  <span class="p">}</span>
-  <span class="p">]</span>
+    <span class="p">}]</span>
+  <span class="p">}</span>  
 <span class="p">};</span></code></pre></figure>
 
 <p>The entry line will be our <em>entry</em> file that will serve our app. React is mostly designed to work with SPA’s (Single Page Applications), which is why in the case above all of our React and JavaScript will be funnelled through one file, <code class="highlighter-rouge">/index.js</code> above. Using <code class="highlighter-rouge">__dirname</code> is a method of Node.js, which will set the root directory before the <code class="highlighter-rouge">/</code>.</p>
@@ -129,7 +129,7 @@
 <p>Almost done getting it setup. We need to configure Webpack’s HTMLWebpackPlugin. As we are developing our files will be located where they need to be. But when we build these files for deployment using the Webpack settings above, it will only be building the <code class="highlighter-rouge">transformed.js</code> file. Can’t get to that without some good old HTML. Using the HTMLWebpackPlugin will build the accompanying HTML with our new .js file. Add this to the top of your <code class="highlighter-rouge">webpack.config.js</code> file:</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">HTMLWebpackPlugin</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'html-webpack-plugin'</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">HTMLWebpackPlugin</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">HTMLWebpackPlugin</span><span class="p">({</span>
+<span class="kd">var</span> <span class="nx">HTMLWebpackPluginConfig</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">HTMLWebpackPlugin</span><span class="p">({</span>
   <span class="na">template</span><span class="p">:</span> <span class="nx">__dirname</span> <span class="o">+</span> <span class="s1">'/index.html'</span>
 <span class="p">});</span></code></pre></figure>
 
@@ -156,7 +156,7 @@
 
 <h3 id="ready-to-go">Ready to go!</h3>
 
-<p>You should be ready to begin coding in React. In the next tutorial we will create a simple Hello World app using React!</p>
+<p>You should be ready to begin coding in React. In the <a href="/2017/04/07/react-hello-world.html">next tutorial</a> we will create a simple Hello World app using React!</p>
 
 
 	</div>

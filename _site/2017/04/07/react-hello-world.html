@@ -83,7 +83,69 @@
 
 <p>Learn how to build a simple Hello World app in React!</p>
 
+<p>If you haven’t already make sure you read <a href="/2017/03/31/react-setup-part1.html">Part I</a> and <a href="/2017/04/05/react-setup-part2.html">Part II</a> of my Setting Up a React Dev Environment tutorials. If you have everything setup and ready to go let’s dive in!</p>
+
 <div class="img-container"><img src="/assets/preview_images/reactjshw.jpg" alt="ReactJS Logo" class="article-image" /></div>
+
+<h3 id="lets-do-this">Let’s do this</h3>
+
+<p>In your root directory containing your new React program, create a new file <code class="highlighter-rouge">index.html</code>. This should be a simple page, give it a title if you want. The only thing it really needs for this is one <code class="highlighter-rouge">&lt;div&gt;</code> element. You don’t even have to put anything inside of it! Do give it an id of <code class="highlighter-rouge">app</code>. Your page should look something like this:</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;title&gt;</span>Hello World from React!<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+  <span class="c">&lt;!-- Our empty div! React will work it's magic here. --&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"app"</span><span class="nt">&gt;&lt;/div&gt;</span>
+
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span></code></pre></figure>
+
+<p>Next make an empty file named <code class="highlighter-rouge">index.js</code>. Inside of that dump the following code:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Import React into your app.</span>
+<span class="kd">var</span> <span class="nx">React</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'react'</span><span class="p">);</span>
+<span class="c1">// Import the React DOM into your app.</span>
+<span class="kd">var</span> <span class="nx">ReactDOM</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'react-dom'</span><span class="p">);</span>
+
+<span class="c1">// React is designed to a modular way of creating JavaScript based websites. Below we create a class called Hello World, which will render our Hello World HTML code. The code below is a mix of JavaScript and JSX.</span>
+<span class="kd">var</span> <span class="nx">HelloWorld</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
+  <span class="na">render</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+        <span class="c1">// Notice below the JSX syntax on the break HTML tag. All tags in JSX must be closed!</span>
+        <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Hello</span> <span class="nx">World</span><span class="o">!&lt;</span><span class="sr">/h1&gt;&lt;br /</span><span class="o">&gt;</span>
+        <span class="c1">// I'm sure you're wondering what this.props.name is. Read on for an explanation!</span>
+        <span class="o">&lt;</span><span class="nx">h2</span><span class="o">&gt;</span><span class="nx">From</span> <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/h2</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="c1">// Call the React DOM to render our HelloWorld component to the DOM on our app div we created.</span>
+<span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">HelloWorld</span> <span class="nx">name</span><span class="o">=</span><span class="s2">"Jamie"</span> <span class="o">/&gt;</span><span class="p">,</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'app'</span><span class="p">));</span></code></pre></figure>
+
+<p>If you followed the instructions from the previous two tutorials, everything should be ready to work! Remember in our file <code class="highlighter-rouge">webpack.config.js</code> we defined our entry JavaScript file as <code class="highlighter-rouge">index.js</code> in our directory’s root folder, and our HTML template was also defined as <code class="highlighter-rouge">index.html</code> in the root folder. If you wanted these to be located in different places you would simply need to go back to the Webpack config file and change these locations. At this point you should be able to run <code class="highlighter-rouge">npm run start</code> at your command line to start the server and see Hello World in action!</p>
+
+<div class="note_box"><strong>Note:</strong> Webpack's default location is localhost:8080. This means it runs on port 8080 of your computer when running the server.</div>
+
+<h3 id="howd-that-work">How’d that work?</h3>
+
+<p>Let’s walk through the React code and breakdown what happened. The first two lines (as noted in the comments) are required to import the React and ReactDOM libraries into your file. As you build bigger apps that span multiple files, you will be requiring these imports in every file (well at least React, you won’t need ReactDOM except for anywhere you are actually writing something to the DOM).</p>
+
+<p>Next we use <code class="highlighter-rouge">React.createClass</code> on a variable named <code class="highlighter-rouge">HelloWorld</code>. This is creating a React class, or more often referred to as a component, named HelloWorld! Inside of this component we write an anonymous render function that returns some JSX. Doesn’t like look HTML? Why yes, it does! JSX is mostly HTML in JavaScript, making the writing of components like these a breeze. I did mention in the comments that I would explain what <code class="highlighter-rouge"><span class="p">{</span><span class="err">this.props.name</span><span class="p">}</span></code> is doing…</p>
+
+<p>Notice at the bottom of our React code where we actually call the ReactDOM to render our HelloWorld component. I wrote <code class="highlighter-rouge">&lt;HelloWorld name="Jamie" /&gt;</code>, instead we could have just called <code class="highlighter-rouge">&lt;HelloWorld /&gt;</code> and that would have still done everything contained inside of the HelloWorld component. But where <code class="highlighter-rouge"><span class="p">{</span><span class="err">this.props.name</span><span class="p">}</span></code> is, it would be blank! A prop is an item you can pass into a React component. This makes these components super modular and very scalable, as you can reuse them over and over again as you pass in different prop objects (or props, it can get confusing I know!).</p>
+
+<p>The last line does almost exactly what it reads like, it calls on ReactDOM to render an object to something in the DOM. ReactDOM will always take two parameters, the first is your React component you are passing in, the second is where it needs to connect it. In the case above we connect it to the single <code class="highlighter-rouge">&lt;div&gt;</code> we created in our HTML page. Imagine chaining lots of these React components together for one simple ReactDOM render! That’s the magic of React.</p>
+
+<p>Above I mentioned how our HelloWorld component was moduler and reusable. It is important when desigining React apps to break down the objects within your site in this way. This article in the official Facebook docs on React, <a href="https://facebook.github.io/react/docs/thinking-in-react.html" target="_blank">Thinking in React</a>, is a great entry into the idea of what React should be used for.</p>
+
+<h3 id="thats-it">That’s it!</h3>
+
+<p>You’ve just built a simple Hello World toy application in React from the ground up! Exciting right!? Go back and read <a href="/2017/03/31/react-setup-part1.html">Part I</a> and <a href="/2017/04/05/react-setup-part2.html">Part II</a> of my React tutorials if you haven’t already!</p>
 
 
 	</div>

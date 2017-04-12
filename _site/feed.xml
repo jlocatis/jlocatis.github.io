@@ -8,10 +8,85 @@
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Switching to a Jekyll Blog</title>
+        <description>&lt;p&gt;Shape up your online presence with ease! Move your existing online blog (or create a new one) to Jekyll. The framework that powers this very site you are reading is a great platform for any developer.&lt;/p&gt;
+
+&lt;div class=&quot;img-container&quot;&gt;&lt;img src=&quot;/assets/images/jekyll/logo.png&quot; alt=&quot;Facepalm&quot; class=&quot;article-image&quot; /&gt;&lt;/div&gt;
+
+&lt;p&gt;Ajay Karwal wrote a wonderful article on &lt;a href=&quot;zhttps://dev.to/ajaykarwal/switching-from-a-cms-to-jekyll&quot; target=&quot;_blank&quot;&gt;Switching from a CMS to Jekyll&lt;/a&gt; powered blog. Check it out! There can be a sharp learning curve, especially if you are new to software development. But once you have it up and running keeping your site updated with new content is an absolute breeze!&lt;/p&gt;
+</description>
+        <pubDate>Tue, 11 Apr 2017 00:00:00 -0500</pubDate>
+        <link>http://localhost:4000//2017/04/11/jekyll-blog.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2017/04/11/jekyll-blog.html</guid>
+      </item>
+    
+      <item>
         <title>Hello World From React</title>
         <description>&lt;p&gt;Learn how to build a simple Hello World app in React!&lt;/p&gt;
 
+&lt;p&gt;If you haven’t already make sure you read &lt;a href=&quot;/2017/03/31/react-setup-part1.html&quot;&gt;Part I&lt;/a&gt; and &lt;a href=&quot;/2017/04/05/react-setup-part2.html&quot;&gt;Part II&lt;/a&gt; of my Setting Up a React Dev Environment tutorials. If you have everything setup and ready to go let’s dive in!&lt;/p&gt;
+
 &lt;div class=&quot;img-container&quot;&gt;&lt;img src=&quot;/assets/preview_images/reactjshw.jpg&quot; alt=&quot;ReactJS Logo&quot; class=&quot;article-image&quot; /&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;lets-do-this&quot;&gt;Let’s do this&lt;/h3&gt;
+
+&lt;p&gt;In your root directory containing your new React program, create a new file &lt;code class=&quot;highlighter-rouge&quot;&gt;index.html&lt;/code&gt;. This should be a simple page, give it a title if you want. The only thing it really needs for this is one &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;&lt;/code&gt; element. You don’t even have to put anything inside of it! Do give it an id of &lt;code class=&quot;highlighter-rouge&quot;&gt;app&lt;/code&gt;. Your page should look something like this:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;lang=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;en&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;Hello World from React!&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- Our empty div! React will work it's magic here. --&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;app&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Next make an empty file named &lt;code class=&quot;highlighter-rouge&quot;&gt;index.js&lt;/code&gt;. Inside of that dump the following code:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// Import React into your app.&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'react'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// Import the React DOM into your app.&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ReactDOM&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'react-dom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// React is designed to a modular way of creating JavaScript based websites. Below we create a class called Hello World, which will render our Hello World HTML code. The code below is a mix of JavaScript and JSX.&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;HelloWorld&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;React&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;createClass&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// Notice below the JSX syntax on the break HTML tag. All tags in JSX must be closed!&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;h1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Hello&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;World&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/h1&amp;gt;&amp;lt;br /&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// I'm sure you're wondering what this.props.name is. Read on for an explanation!&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;h2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;From&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;props&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/h2&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/div&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;gt;
+&lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// Call the React DOM to render our HelloWorld component to the DOM on our app div we created.&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;ReactDOM&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;HelloWorld&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Jamie&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'app'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;If you followed the instructions from the previous two tutorials, everything should be ready to work! Remember in our file &lt;code class=&quot;highlighter-rouge&quot;&gt;webpack.config.js&lt;/code&gt; we defined our entry JavaScript file as &lt;code class=&quot;highlighter-rouge&quot;&gt;index.js&lt;/code&gt; in our directory’s root folder, and our HTML template was also defined as &lt;code class=&quot;highlighter-rouge&quot;&gt;index.html&lt;/code&gt; in the root folder. If you wanted these to be located in different places you would simply need to go back to the Webpack config file and change these locations. At this point you should be able to run &lt;code class=&quot;highlighter-rouge&quot;&gt;npm run start&lt;/code&gt; at your command line to start the server and see Hello World in action!&lt;/p&gt;
+
+&lt;div class=&quot;note_box&quot;&gt;&lt;strong&gt;Note:&lt;/strong&gt; Webpack's default location is localhost:8080. This means it runs on port 8080 of your computer when running the server.&lt;/div&gt;
+
+&lt;h3 id=&quot;howd-that-work&quot;&gt;How’d that work?&lt;/h3&gt;
+
+&lt;p&gt;Let’s walk through the React code and breakdown what happened. The first two lines (as noted in the comments) are required to import the React and ReactDOM libraries into your file. As you build bigger apps that span multiple files, you will be requiring these imports in every file (well at least React, you won’t need ReactDOM except for anywhere you are actually writing something to the DOM).&lt;/p&gt;
+
+&lt;p&gt;Next we use &lt;code class=&quot;highlighter-rouge&quot;&gt;React.createClass&lt;/code&gt; on a variable named &lt;code class=&quot;highlighter-rouge&quot;&gt;HelloWorld&lt;/code&gt;. This is creating a React class, or more often referred to as a component, named HelloWorld! Inside of this component we write an anonymous render function that returns some JSX. Doesn’t like look HTML? Why yes, it does! JSX is mostly HTML in JavaScript, making the writing of components like these a breeze. I did mention in the comments that I would explain what &lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;this.props.name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt; is doing…&lt;/p&gt;
+
+&lt;p&gt;Notice at the bottom of our React code where we actually call the ReactDOM to render our HelloWorld component. I wrote &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;HelloWorld name=&quot;Jamie&quot; /&amp;gt;&lt;/code&gt;, instead we could have just called &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;HelloWorld /&amp;gt;&lt;/code&gt; and that would have still done everything contained inside of the HelloWorld component. But where &lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;this.props.name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt; is, it would be blank! A prop is an item you can pass into a React component. This makes these components super modular and very scalable, as you can reuse them over and over again as you pass in different prop objects (or props, it can get confusing I know!).&lt;/p&gt;
+
+&lt;p&gt;The last line does almost exactly what it reads like, it calls on ReactDOM to render an object to something in the DOM. ReactDOM will always take two parameters, the first is your React component you are passing in, the second is where it needs to connect it. In the case above we connect it to the single &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;&lt;/code&gt; we created in our HTML page. Imagine chaining lots of these React components together for one simple ReactDOM render! That’s the magic of React.&lt;/p&gt;
+
+&lt;p&gt;Above I mentioned how our HelloWorld component was moduler and reusable. It is important when desigining React apps to break down the objects within your site in this way. This article in the official Facebook docs on React, &lt;a href=&quot;https://facebook.github.io/react/docs/thinking-in-react.html&quot; target=&quot;_blank&quot;&gt;Thinking in React&lt;/a&gt;, is a great entry into the idea of what React should be used for.&lt;/p&gt;
+
+&lt;h3 id=&quot;thats-it&quot;&gt;That’s it!&lt;/h3&gt;
+
+&lt;p&gt;You’ve just built a simple Hello World toy application in React from the ground up! Exciting right!? Go back and read &lt;a href=&quot;/2017/03/31/react-setup-part1.html&quot;&gt;Part I&lt;/a&gt; and &lt;a href=&quot;/2017/04/05/react-setup-part2.html&quot;&gt;Part II&lt;/a&gt; of my React tutorials if you haven’t already!&lt;/p&gt;
 </description>
         <pubDate>Fri, 07 Apr 2017 00:00:00 -0500</pubDate>
         <link>http://localhost:4000//2017/04/07/react-hello-world.html</link>
@@ -20,7 +95,7 @@
     
       <item>
         <title>Setting Up A React Dev Environment, Part II</title>
-        <description>&lt;p&gt;In this tutorial I will cover getting your React site up and running from a server so you can begin serving your react code to your browser. I will also give you the tools you need to finish creating the near &lt;em&gt;perfect&lt;/em&gt; dev environment for your React apps.&lt;/p&gt;
+        <description>&lt;p&gt;In this tutorial I will cover getting your React site up and running from a server so you can begin serving your react code to a browser. I will also give you the tools you need to finish creating the near &lt;em&gt;perfect&lt;/em&gt; dev environment for your React apps.&lt;/p&gt;
 
 &lt;div class=&quot;img-container&quot;&gt;&lt;img src=&quot;/assets/preview_images/reactjspt2.jpg&quot; alt=&quot;ReactJS Logo&quot; class=&quot;article-image&quot; /&gt;&lt;/div&gt;
 
@@ -42,13 +117,13 @@
     &lt;span class=&quot;na&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'transformed.js'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
     &lt;span class=&quot;na&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;__dirname&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'/build'&lt;/span&gt;
   &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;loaders&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[{&lt;/span&gt;
       &lt;span class=&quot;na&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;sr&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\.&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;js$/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
       &lt;span class=&quot;na&quot;&gt;exclude&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;sr&quot;&gt;/node_modules/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
       &lt;span class=&quot;na&quot;&gt;loader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'babel-loader'&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}]&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;  
 &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;The entry line will be our &lt;em&gt;entry&lt;/em&gt; file that will serve our app. React is mostly designed to work with SPA’s (Single Page Applications), which is why in the case above all of our React and JavaScript will be funnelled through one file, &lt;code class=&quot;highlighter-rouge&quot;&gt;/index.js&lt;/code&gt; above. Using &lt;code class=&quot;highlighter-rouge&quot;&gt;__dirname&lt;/code&gt; is a method of Node.js, which will set the root directory before the &lt;code class=&quot;highlighter-rouge&quot;&gt;/&lt;/code&gt;.&lt;/p&gt;
@@ -68,7 +143,7 @@
 &lt;p&gt;Almost done getting it setup. We need to configure Webpack’s HTMLWebpackPlugin. As we are developing our files will be located where they need to be. But when we build these files for deployment using the Webpack settings above, it will only be building the &lt;code class=&quot;highlighter-rouge&quot;&gt;transformed.js&lt;/code&gt; file. Can’t get to that without some good old HTML. Using the HTMLWebpackPlugin will build the accompanying HTML with our new .js file. Add this to the top of your &lt;code class=&quot;highlighter-rouge&quot;&gt;webpack.config.js&lt;/code&gt; file:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;HTMLWebpackPlugin&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'html-webpack-plugin'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;HTMLWebpackPlugin&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;HTMLWebpackPlugin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;HTMLWebpackPluginConfig&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;HTMLWebpackPlugin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
   &lt;span class=&quot;na&quot;&gt;template&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;__dirname&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'/index.html'&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
@@ -95,7 +170,7 @@
 
 &lt;h3 id=&quot;ready-to-go&quot;&gt;Ready to go!&lt;/h3&gt;
 
-&lt;p&gt;You should be ready to begin coding in React. In the next tutorial we will create a simple Hello World app using React!&lt;/p&gt;
+&lt;p&gt;You should be ready to begin coding in React. In the &lt;a href=&quot;/2017/04/07/react-hello-world.html&quot;&gt;next tutorial&lt;/a&gt; we will create a simple Hello World app using React!&lt;/p&gt;
 </description>
         <pubDate>Wed, 05 Apr 2017 00:00:00 -0500</pubDate>
         <link>http://localhost:4000//2017/04/05/react-setup-part2.html</link>
@@ -861,69 +936,6 @@ is defined below */&lt;/span&gt;
         <pubDate>Fri, 24 Feb 2017 00:00:00 -0600</pubDate>
         <link>http://localhost:4000//2017/02/24/build-wheres-waldo.html</link>
         <guid isPermaLink="true">http://localhost:4000//2017/02/24/build-wheres-waldo.html</guid>
-      </item>
-    
-      <item>
-        <title>Navigating the DOM</title>
-        <description>&lt;p&gt;The DOM, short for Document Object Model, gives you some much needed dynamic power to build better, more interactive websites. Using the DOM you are able to navigate through HTML code as if it were tree of interconnected objects. You can dynamically add, remove, or alter these objects as your user interfaces with your website.&lt;/p&gt;
-
-&lt;h3 id=&quot;what-is-the-dom&quot;&gt;What is the DOM?&lt;/h3&gt;
-
-&lt;div class=&quot;img-container&quot;&gt;&lt;img src=&quot;/assets/images/DOM/pic_html_tree.gif&quot; alt=&quot;DOM Tree&quot; class=&quot;article-image&quot; /&gt;&lt;/div&gt;
-&lt;div class=&quot;img-container img-caption&quot;&gt;Visual Example of navigating the HTML DOM Tree&lt;/div&gt;
-
-&lt;p&gt;In the above example you can see how the DOM can be traversed. HTML is structered so that elements or tags are always associated with a parent element (all the way to the top of the page, beginning at the &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;body&amp;gt;&lt;/code&gt; or  &lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;&lt;/code&gt; tag). Objects on your page (text, images, forms, etc…) are all connected to each other in a hierarchical tree structure. All of these objects are considered “nodes” of the DOM, pieces of the document model.&lt;/p&gt;
-
-&lt;h3 id=&quot;how-can-this-be-used&quot;&gt;How can this be used?&lt;/h3&gt;
-
-&lt;p&gt;Let’s talk about using the DOM and Javascript together. With JavaScript you have a powerful tool with which to manipulate your website. When writing HTML you’ll find it’s completely static, the web browser simply runs through the code from top to bottom and prints out your website for the user typically in that exact order. Hence the term &lt;em&gt;markup language&lt;/em&gt; in HTML. Any interaction with the website is extremely limited to only what you have asked it to show. You can do so much more by bringing out languages into the mix, such as Javascript. In the below example a visitor to the site can click a button and suddenly, without reloading the page, it’s entire structure can be re-written.&lt;/p&gt;
-
-&lt;div class=&quot;img-container&quot;&gt;&lt;img src=&quot;/assets/images/DOM/comments1.png&quot; alt=&quot;Replies Closed&quot; class=&quot;article-image&quot; /&gt;&lt;/div&gt;
-&lt;div class=&quot;img-container img-caption&quot;&gt;Example comments HTML page&lt;/div&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;div class=&quot;img-container&quot;&gt;&lt;img src=&quot;/assets/images/DOM/comments2.png&quot; alt=&quot;Replies Open&quot; class=&quot;article-image&quot; /&gt;&lt;/div&gt;
-&lt;div class=&quot;img-container img-caption&quot;&gt;Using Javascript and the DOM to expand Bob's replies&lt;/div&gt;
-
-&lt;p&gt;Above we have this commenting system built in plain HTML. By using Javascript and the DOM to dynamically alter the page based on user input, you can see we change the page in the second image when a user has clicked on something. In the example the user has clicked a link to see the 4 replies to Bob, and without reloading the page, the replies appear.&lt;/p&gt;
-
-&lt;h3 id=&quot;client-vs-server-and-the-doms-place-in-it-all&quot;&gt;Client vs. Server and the DOM’s place in it all&lt;/h3&gt;
-
-&lt;p&gt;There is an important but easy distinction between “client-side” and “server-side” web development, and yes it’s written right into their descriptors. Anything developed to happen “client-side” is code that is entirely managed and processed on your personal computer. You send a request to a website (by typing in &lt;em&gt;jamielocatis.com&lt;/em&gt; for example), and the server sends back all of the code needed to make that website work. All of the processing of that code happens on your computer, inside of your web browser. HTML happens completely on the “client-side”. JavaScript is also “client-side”, but we can use it to communicate with the server to request and receive new data for the page (without having to do any reloading).&lt;/p&gt;
-
-&lt;p&gt;Opposite to this is “server-side” development, where portions of the code are processed completely on the server, and the server sends back to your computer only the HTML needed to display whatever it is you were requesting. Than using a language such as JavaScript, we can actively update the DOM with our new information.&lt;/p&gt;
-
-&lt;p&gt;Let’s say the example above was something as robust as &lt;em&gt;Facebook&lt;/em&gt;. On your initial page load, your computer would only need the code for the top image to load right? Why waste time and bandwidth sending everything else! When the user hits the link to show Bob’s replies, a language like JavaScript would send an AJAX request to the server for that information. In response the server sends the requestsed code back, and the HTML DOM is updated to display all of the replies.&lt;/p&gt;
-
-&lt;div class=&quot;note_box&quot;&gt;&lt;strong&gt;Note:&lt;/strong&gt; I haven't talked about AJAX just yet. If you aren't sure what this is, check out my &quot;Build Your First Game for the Web&quot; tutorial!&lt;/div&gt;
-
-&lt;h3 id=&quot;what-are-events&quot;&gt;What are events?&lt;/h3&gt;
-
-&lt;p&gt;We have talked about how using the DOM and Javascript can be a great way to add some true dynamic functionality to your website. “Events” are exactly how they sound, coded events that will tell the computer when “this” happens go do “that”. In the comments example from above a Javascript event was coded to a DOM node (in this case the ‘4 replies’ link) that said when clicked, do everything needed to get the 4 replies for Bob.&lt;/p&gt;
-
-&lt;h3 id=&quot;what-are-event-listeners-how-are-they-used-in-web-development&quot;&gt;What are event listeners? How are they used in web development?&lt;/h3&gt;
-
-&lt;p&gt;So what triggers these events? How do we tell computer that “this” has happened. In Javascript it’s called an event listener.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;repliesArray&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementsByClassName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;reply_click&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;repliesArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;repliesArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;click&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;showReplies&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;There are several different ways of creating an event listener. In the above example we wait for a “click” on the ‘4 Replies’ link, and than run the function ‘showReplies’. We can even create groups of events through loops, which is done in the above code. It creates an event listener for every defined ‘reply_click’ link it finds in the DOM. When one of these are clicked, the &lt;code class=&quot;highlighter-rouge&quot;&gt;showReplies&lt;/code&gt; function does it’s thing.&lt;/p&gt;
-
-&lt;h3 id=&quot;get-to-know-the-dom&quot;&gt;Get to know the DOM&lt;/h3&gt;
-
-&lt;p&gt;Understanding the DOM is important to good web development. Play around with it and see the power it has to offer you. Updating websites without reloading them is significant when you think about how your user will be interacting with what you build.&lt;/p&gt;
-
-&lt;div class=&quot;img-container&quot;&gt;&lt;img src=&quot;/assets/images/DOM/console_example.jpg&quot; alt=&quot;Inspecting a Page&quot; class=&quot;article-image&quot; /&gt;&lt;/div&gt;
-&lt;div class=&quot;img-container img-caption&quot;&gt;Inspecting a page through the browser&lt;/div&gt;
-
-&lt;p&gt;One tip for seeing how webpages are structured in this hierarchical structure is to inspect any page through your browser’s developer tools. You will begin to see how all this fits together!&lt;/p&gt;
-</description>
-        <pubDate>Tue, 03 Jan 2017 00:00:00 -0600</pubDate>
-        <link>http://localhost:4000//2017/01/03/navigating-the-dom.html</link>
-        <guid isPermaLink="true">http://localhost:4000//2017/01/03/navigating-the-dom.html</guid>
       </item>
     
   </channel>
