@@ -29,7 +29,7 @@ module.exports = {
     path: __dirname + '/build'
   },
   module: {
-    [{
+    loaders: [{
       test: /\.js$/,
       exclude: /node_modules/,
       loader: 'babel-loader'
