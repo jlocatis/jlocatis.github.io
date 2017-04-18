@@ -1,9 +1,11 @@
 ---
 title: Setting up Administrate in Rails
-image: placeholder.jpg
+image: ruby_on_rails.png
 ---
 
 Flexible and powerful admin dashboards for any Ruby on Rails application! The Administrate gem is an easy to setup framework for giving your application some much needed robust administration capabilities.
+
+<div class="img-container"><img src="{{ "/assets/images/administrate/administrate_installed.png" | relative_url }}" class="article-image"></div>
 
 ### Get Rails Started
 
@@ -27,9 +29,13 @@ That will run the database migration that was created as part of the model. Agai
 
 ### Let's Administrate
 
+<div class="img-container"><img src="{{ "/assets/images/administrate/Gemfile_unedited.png" | relative_url }}" class="article-image"></div>
+<div class="img-container img-caption">Unedited Gemfile</div>
+
 First add the Administrate gem to your Rail application's Gemfile (should be located in the `admin_test` root directory). Your Gemfile should now look like the one below.
 
-SCREENSHOT HERE
+<div class="img-container"><img src="{{ "/assets/images/administrate/Gemfile_edited.png" | relative_url }}" class="article-image"></div>
+<div class="img-container img-caption">Edited Gemfile</div>
 
 Go back to your terminal and run:
 
@@ -43,10 +49,9 @@ That will setup your initial Administrate dashboards with default settings. Go a
 
 `rails s`
 
-With your Rails server running successfully, point your browser to http://localhost:3000/admin and you should see a basic Administrate dashboard for the User model like below!
+With your Rails server running successfully, point your browser to http://localhost:3000/admin (3000 is the Rails' default local port) and you should see a basic Administrate dashboard for the User model like below!
 
-SCREENSHOT HERE
-
-<div class="note_box"><strong>Note:</strong> Rails defaults to running locally on port 3000.</div>
+<div class="img-container"><img src="{{ "/assets/images/administrate/administrate_dashboard.png" | relative_url }}" class="article-image"></div>
+<div class="img-container img-caption">Sample Administrate Dashboard</div>
 
 That's it! You can now add Users to your Users table using Administrate. Along with the power of Ruby on Rails, you can now build a strong administration interface for any web application.
