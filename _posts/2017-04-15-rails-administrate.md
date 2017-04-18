@@ -54,4 +54,4 @@ With your Rails server running successfully, point your browser to http://localh
 <div class="img-container"><img src="{{ "/assets/images/administrate/administrate_dashboard.png" | relative_url }}" class="article-image"></div>
 <div class="img-container img-caption">Sample Administrate Dashboard</div>
 
-That's it! You can now add Users to your Users table using Administrate. Along with the power of Ruby on Rails, you can now build a strong administration interface for any web application.
+That's it! You can now add Users to your Users table using Administrate. Along with the power of Ruby on Rails, you can now build a strong administration interface for any web application. Check out the <a href="https://github.com/thoughtbot/administrate" target="_blank">offical Administrate GitHub repo</a> to get started with more!
