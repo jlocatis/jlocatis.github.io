@@ -9,7 +9,11 @@
     
       <item>
         <title>Setting up Administrate in Rails</title>
-        <description>
+        <description>&lt;p&gt;Flexible and powerful admin dashboards for any Rails application! The Administrate gem is an easy to setup framework for giving your application some much needed robust administration capabilities.&lt;/p&gt;
+
+&lt;h3 id=&quot;get-rails-started&quot;&gt;Get Rails Started&lt;/h3&gt;
+
+&lt;p&gt;If you already know how to put together a basic Rails application, skip this part. Otherwise, consider this a quick tutorial on setting Rails up.&lt;/p&gt;
 </description>
         <pubDate>Sat, 15 Apr 2017 00:00:00 -0500</pubDate>
         <link>http://localhost:4000//2017/04/15/rails-administrate.html</link>
