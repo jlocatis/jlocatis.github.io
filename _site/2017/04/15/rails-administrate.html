@@ -81,11 +81,53 @@
 	<hr>
 	<div class="article-content">
 
-<p>Flexible and powerful admin dashboards for any Rails application! The Administrate gem is an easy to setup framework for giving your application some much needed robust administration capabilities.</p>
+<p>Flexible and powerful admin dashboards for any Ruby on Rails application! The Administrate gem is an easy to setup framework for giving your application some much needed robust administration capabilities.</p>
 
 <h3 id="get-rails-started">Get Rails Started</h3>
 
-<p>If you already know how to put together a basic Rails application, skip this part. Otherwise, consider this a quick tutorial on setting Rails up.</p>
+<p>If you already know how to put together a basic Rails application, skip this part. Otherwise, consider this a <em>quick</em> tutorial on setting Rails up. I’m going to just throw a bunch of code out here. I suggest reading up on Rails in this <a href="http://guides.rubyonrails.org/getting_started.html" target="_blank">great starter tutorial</a> for greater detail about what you’re doing.</p>
+
+<p>Make sure you have Rails installed. At your command line type the following:</p>
+
+<p><code class="highlighter-rouge">gem install rails</code></p>
+
+<p><code class="highlighter-rouge">rails new admin_test</code></p>
+
+<p>Above we installed Rails, and created a new Rails application in the directory <code class="highlighter-rouge">admin_test</code>, which should now be inside of whatever directory you were at in your command line. Rails will scaffold a lot of files into that directory. For testing out Administrate let’s create a quick User model to play with. Move into your new directory and type this:</p>
+
+<p><code class="highlighter-rouge">rails generate model User username:string password:string</code></p>
+
+<p>The above will create all of the new files associated with the User model, and also create a database migration to create a Users table with the columns username and password. Run the following next:</p>
+
+<p><code class="highlighter-rouge">bundle exec rake db:migrate</code></p>
+
+<p>That will run the database migration that was created as part of the model. Again for more detail on all of the above terminology, please see some basic Rails tutorials!</p>
+
+<h3 id="lets-administrate">Let’s Administrate</h3>
+
+<p>First add the Administrate gem to your Rail application’s Gemfile (should be located in the <code class="highlighter-rouge">admin_test</code> root directory). Your Gemfile should now look like the one below.</p>
+
+<p>SCREENSHOT HERE</p>
+
+<p>Go back to your terminal and run:</p>
+
+<p><code class="highlighter-rouge">bundle install</code></p>
+
+<p>This will look through your Gemfile and check to ensure everything you have required is installed. At this point you should see Administrate installed within all of the commands bundle ran. Next we need to actually install administrate for use within our app. Go ahead and type this:</p>
+
+<p><code class="highlighter-rouge">rails generate administrate:install</code></p>
+
+<p>That will setup your initial Administrate dashboards with default settings. Go ahead and run your Rails server using:</p>
+
+<p><code class="highlighter-rouge">rails s</code></p>
+
+<p>With your Rails server running successfully, point your browser to http://localhost:3000/admin and you should see a basic Administrate dashboard for the User model like below!</p>
+
+<p>SCREENSHOT HERE</p>
+
+<div class="note_box"><strong>Note:</strong> Rails defaults to running locally on port 3000.</div>
+
+<p>That’s it! You can now add Users to your Users table using Administrate. Along with the power of Ruby on Rails, you can now build a strong administration interface for any web application.</p>
 
 
 	</div>
