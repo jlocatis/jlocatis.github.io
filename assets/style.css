@@ -470,7 +470,7 @@ pre {
 
 	.top-bar {
 		float: left;
-		width: 42%;
+		width: 45%;
 		background-color: #c4c4c4;
 	}
 
@@ -480,9 +480,9 @@ pre {
 
 	.menu-bar {
 		float: right;
-		position: relative;
 		opacity: 1;
-		width: 58%;
+		width: 55%;
+		left: 45%;
 		height: 100px;
 		top: 0;
 	}
