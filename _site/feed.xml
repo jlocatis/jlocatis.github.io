@@ -4,8 +4,23 @@
     <title>Jamie Locatis, Web Developer</title>
     <description>The adventures of a retail manager turned web developer! Posting ideas relating to HTML, CSS, Ruby, PHP, JavaScript, and much more.
 </description>
-    <link>http://0.0.0.0:4000</link>
-    <atom:link href="http://0.0.0.0:4000/feed.xml" rel="self" type="application/rss+xml" />
+    <link>http://localhost:4000</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+    
+      <item>
+        <title>Enumeration Performance in .NET</title>
+        <description>&lt;p&gt;Read more into enumeration and performance of different methods in .NET.&lt;/p&gt;
+
+&lt;p&gt;More often than not I find myself writing code without regard to it’s actual performance (good and bad, well mostly bad probably). You have a goal in front of you, the application needs to do something. If the perceived output performance of the code feels acceptable, most likely you move on. You don’t always think about the minute details of how it actually performs.&lt;/p&gt;
+
+&lt;h3 id=&quot;antão-almadas-excellent-dive-into-net-enumeration&quot;&gt;Antão Almada’s Excellent Dive Into .NET Enumeration&lt;/h3&gt;
+
+&lt;p&gt;Read more into &lt;a href=&quot;https://blog.usejournal.com/enumeration-in-net-d5674921512e&quot; target=&quot;_blank&quot;&gt;Antão Almada’s blog on .NET enumeration performance&lt;/a&gt;. His deep dive into IEnumerable() vs. IQueryable() is of particular interest. The big takeaway, if searching an IEnumerable() object, always use Any() to see if it contains what you’re looking for. &lt;em&gt;this is italic&lt;/em&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sun, 18 Jun 2017 00:00:00 -0500</pubDate>
+        <link>http://localhost:4000//2017/06/18/dotnet-enumeration.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2017/06/18/dotnet-enumeration.html</guid>
+      </item>
     
       <item>
         <title>Setting up Administrate in Rails</title>
@@ -63,8 +78,8 @@
 &lt;p&gt;That’s it! You can now add Users to your Users table using Administrate. Along with the power of Ruby on Rails, you can now build a strong administration interface for any web application. Check out the &lt;a href=&quot;https://github.com/thoughtbot/administrate&quot; target=&quot;_blank&quot;&gt;offical Administrate GitHub repo&lt;/a&gt; to get started with more!&lt;/p&gt;
 </description>
         <pubDate>Sat, 15 Apr 2017 00:00:00 -0500</pubDate>
-        <link>http://0.0.0.0:4000//2017/04/15/rails-administrate.html</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000//2017/04/15/rails-administrate.html</guid>
+        <link>http://localhost:4000//2017/04/15/rails-administrate.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2017/04/15/rails-administrate.html</guid>
       </item>
     
       <item>
@@ -76,8 +91,8 @@
 &lt;p&gt;Ajay Karwal wrote a wonderful article on &lt;a href=&quot;zhttps://dev.to/ajaykarwal/switching-from-a-cms-to-jekyll&quot; target=&quot;_blank&quot;&gt;Switching from a CMS to Jekyll&lt;/a&gt; powered blog. Check it out! There can be a sharp learning curve, especially if you are new to software development. But once you have it up and running keeping your site updated with new content is an absolute breeze!&lt;/p&gt;
 </description>
         <pubDate>Tue, 11 Apr 2017 00:00:00 -0500</pubDate>
-        <link>http://0.0.0.0:4000//2017/04/11/jekyll-blog.html</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000//2017/04/11/jekyll-blog.html</guid>
+        <link>http://localhost:4000//2017/04/11/jekyll-blog.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2017/04/11/jekyll-blog.html</guid>
       </item>
     
       <item>
@@ -149,8 +164,8 @@
 &lt;p&gt;You’ve just built a simple Hello World toy application in React from the ground up! Exciting right!? Go back and read &lt;a href=&quot;/2017/03/31/react-setup-part1.html&quot;&gt;Part I&lt;/a&gt; and &lt;a href=&quot;/2017/04/05/react-setup-part2.html&quot;&gt;Part II&lt;/a&gt; of my React tutorials if you haven’t already!&lt;/p&gt;
 </description>
         <pubDate>Fri, 07 Apr 2017 00:00:00 -0500</pubDate>
-        <link>http://0.0.0.0:4000//2017/04/07/react-hello-world.html</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000//2017/04/07/react-hello-world.html</guid>
+        <link>http://localhost:4000//2017/04/07/react-hello-world.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2017/04/07/react-hello-world.html</guid>
       </item>
     
       <item>
@@ -233,8 +248,8 @@
 &lt;p&gt;You should be ready to begin coding in React. In the &lt;a href=&quot;/2017/04/07/react-hello-world.html&quot;&gt;next tutorial&lt;/a&gt; we will create a simple Hello World app using React!&lt;/p&gt;
 </description>
         <pubDate>Wed, 05 Apr 2017 00:00:00 -0500</pubDate>
-        <link>http://0.0.0.0:4000//2017/04/05/react-setup-part2.html</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000//2017/04/05/react-setup-part2.html</guid>
+        <link>http://localhost:4000//2017/04/05/react-setup-part2.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2017/04/05/react-setup-part2.html</guid>
       </item>
     
       <item>
@@ -246,8 +261,8 @@
 &lt;p&gt;It’s a simple idea, code should explain WHAT is happening while comments should explain WHY the code is happening. It’s a good read! Here’s to actually practicing what I’m preaching…&lt;/p&gt;
 </description>
         <pubDate>Sun, 02 Apr 2017 00:00:00 -0500</pubDate>
-        <link>http://0.0.0.0:4000//2017/04/02/good-comments-are-good.html</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000//2017/04/02/good-comments-are-good.html</guid>
+        <link>http://localhost:4000//2017/04/02/good-comments-are-good.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2017/04/02/good-comments-are-good.html</guid>
       </item>
     
       <item>
@@ -291,8 +306,8 @@
 &lt;p&gt;Whew! Take some time to go over what just happened above. Your directory should now be full of files and folders. In &lt;a href=&quot;/2017/04/05/react-setup-part2.html&quot;&gt;Part II&lt;/a&gt; of Setting Up a React Dev Environment we will finish getting everything ready to go for your React app!&lt;/p&gt;
 </description>
         <pubDate>Fri, 31 Mar 2017 00:00:00 -0500</pubDate>
-        <link>http://0.0.0.0:4000//2017/03/31/react-setup-part1.html</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000//2017/03/31/react-setup-part1.html</guid>
+        <link>http://localhost:4000//2017/03/31/react-setup-part1.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2017/03/31/react-setup-part1.html</guid>
       </item>
     
       <item>
@@ -337,8 +352,8 @@
 &lt;p&gt;&lt;em&gt;Credit:&lt;/em&gt; &lt;a href=&quot;https://hackernoon.com/how-to-master-the-art-of-git-68e1050f3147&quot; target=&quot;_blank&quot;&gt;How to master the art of Git by Adnan Rahić&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Fri, 31 Mar 2017 00:00:00 -0500</pubDate>
-        <link>http://0.0.0.0:4000//2017/03/31/master-git.html</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000//2017/03/31/master-git.html</guid>
+        <link>http://localhost:4000//2017/03/31/master-git.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2017/03/31/master-git.html</guid>
       </item>
     
       <item>
@@ -360,8 +375,8 @@
 &lt;p&gt;Build a blog interface with React and use Roger’s tutorial to quickly wrap a  framework around it! Roger’s tutorial pointed me in the direction of Next.js, an easy way to serve your React apps (removing the steps of grabbing and setting up a webpack server on your own, which Next.js uses and does for you). Next.js also includes everything you need to use Babel (important in React to translate your JSX to plain JS). Lastly his tutorial introduced me to ButterCMS, which can initally be used for free. You can manage your blog content through a nice WordPress-style web API, and serve it to your website through the language of your choice!&lt;/p&gt;
 </description>
         <pubDate>Mon, 27 Mar 2017 00:00:00 -0500</pubDate>
-        <link>http://0.0.0.0:4000//2017/03/27/react-blog.html</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000//2017/03/27/react-blog.html</guid>
+        <link>http://localhost:4000//2017/03/27/react-blog.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2017/03/27/react-blog.html</guid>
       </item>
     
       <item>
@@ -465,203 +480,8 @@ is defined below */&lt;/span&gt;
 &lt;p&gt;That’s it! Have fun with it. Put it on every website you make, together let’s make the internet great again! Star Wars crawls everywhere!&lt;/p&gt;
 </description>
         <pubDate>Fri, 17 Mar 2017 00:00:00 -0500</pubDate>
-        <link>http://0.0.0.0:4000//2017/03/17/starwars-crawl-css.html</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000//2017/03/17/starwars-crawl-css.html</guid>
-      </item>
-    
-      <item>
-        <title>Explaining CSS Floats and Positions</title>
-        <description>&lt;p&gt;Let’s talk about floats and positions. Often a headache for beginning web developers, taking a moment to understand how they work can make a huge difference. Floats and positions can be used for many things, from applying text wrap to an image, to controlling the &lt;em&gt;flow&lt;/em&gt; of your content, to building a well structered page layout. A basic understanding of how these work is necessary to becoming a solid web developer.&lt;/p&gt;
-
-&lt;h3 id=&quot;what-is-a-float&quot;&gt;What is a float&lt;/h3&gt;
-
-&lt;p&gt;The basic concept behind a float, and it’s purpose, is found in everyday centuries-old publishing. We are accustomed to looking at a newspaper, or reading a magazine, and seeing pictures with text. Usually, that text is neatly wrapped around an image in some manner that flows with the rest of the page. In some ways this saves space, allowing for more content to be shuffled onto the page. Although it can also make something look more appealing to the eye, and grab your attention. Floats are a result of the need to accomplish this on the internet through HTML. This is the simple idea of why we have floats in CSS. We can use this tool to position and layout our web pages how we see fit.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/floats/print-layout_example.png&quot; alt=&quot;Print Layout Example&quot; width=&quot;200px&quot; style=&quot;float: left&quot; /&gt;To the left you can see an example of using floats in everday print. The text is wrapped around the images, hence the term “text-wrap”. By wrapping the images with text, we are integrating them into the pages’ &lt;em&gt;flow&lt;/em&gt;. We wouldn’t want the text of a printed page to just run over the image, that would defeat the purpose of the image right? A lot goes into designing the flow of content, and being able to place an image where the author or page designer wants it is essential.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/floats/web-text-wrap.png&quot; alt=&quot;Web Text Wrap Example&quot; width=&quot;200px&quot; style=&quot;float: right&quot; /&gt;To the right you can see another example of floating images, only this time we have done it for a website. Looks similiar doesn’t it? That’s becuase it is this same idea. We are integrating images into the flow of our page when we &lt;code class=&quot;highlighter-rouge&quot;&gt;float&lt;/code&gt; them. We could just let our text run over the top of the image, but that would make the image rather useless if it was an integral part of our page content. We could also just let the image sit on it’s own line, which is what HTML would do by default. Maybe this is how your content is designed to &lt;em&gt;flow&lt;/em&gt;. But by using floats as a web developer you at least have much greater control over what you can do. The two images embedded in the content above had the &lt;code class=&quot;highlighter-rouge&quot;&gt;float: left&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;float: right&lt;/code&gt; CSS style applied to them.&lt;/p&gt;
-
-&lt;div class=&quot;note_box&quot;&gt;&lt;strong&gt;Note: &lt;/strong&gt;When you float an element it automatically has a few default CSS properties, including &lt;em&gt;display: block&lt;/em&gt;.&lt;/div&gt;
-
-&lt;h3 id=&quot;cool-now-how-can-i-use-this-thing&quot;&gt;Cool, now how can I use this thing?&lt;/h3&gt;
-
-&lt;p&gt;Like above, you can use this thing to wrap text around your images. But what else can it do? How about control the flow of your website’s entire layout? Of course it can! Use the &lt;code class=&quot;highlighter-rouge&quot;&gt;float&lt;/code&gt; property on your page’s &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;&lt;/code&gt; containers so you can float them next to each other.&lt;/p&gt;
-
-&lt;div class=&quot;img-container&quot;&gt;&lt;img src=&quot;/assets/images/floats/web-layout_example.png&quot; alt=&quot;Web Layout Example&quot; class=&quot;article-image&quot; /&gt;&lt;/div&gt;
-
-&lt;p&gt;In the above image you see a simple example where two containers have used &lt;code class=&quot;highlighter-rouge&quot;&gt;float: left&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;float: right&lt;/code&gt; to create a nice layout and flow for the page. Let’s write some simple code doing this in action! Paste the code below into an empty HTML file:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text/css&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;float_sample.css&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;Example CSS floats page&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
-
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;top&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;I'm the top box&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;left&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;I'm a left box&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;right&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;I'm a right box&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;clear&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;bottom&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;I'm the bottom!&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Now paste the accompanying CSS code into an empty CSS file:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.top&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;40px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;text-align&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;center&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;border&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1px&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;solid&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;black&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;margin-bottom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;5px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;nc&quot;&gt;.left&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;40px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;float&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;border&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1px&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;solid&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;black&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;25%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;nc&quot;&gt;.right&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;40px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;float&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;border&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1px&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;solid&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;black&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;74%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;nc&quot;&gt;.bottom&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;40px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;text-align&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;center&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;border&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1px&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;solid&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;black&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;margin-top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;5px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;nc&quot;&gt;.clear&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;clear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;both&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Here is what you it will look like:&lt;/p&gt;
-
-&lt;div class=&quot;img-container&quot;&gt;&lt;img src=&quot;/assets/images/floats/floats_example.jpg&quot; alt=&quot;Example CSS floats page&quot; class=&quot;article-image&quot; /&gt;&lt;/div&gt;
-&lt;div class=&quot;img-container img-caption&quot;&gt;CSS Layout Example&lt;/div&gt;
-
-&lt;h3 id=&quot;clear-it-up&quot;&gt;Clear it up&lt;/h3&gt;
-
-&lt;p&gt;Examine the code, not much too it right? You might notice one piece of code in the HTML where I create an empty container with a class of clear. If you reference the CSS file you will see that I give the class of clear one property, &lt;code class=&quot;highlighter-rouge&quot;&gt;clear: both&lt;/code&gt;. To know why this needs to be there requires understanding of what floats actually do to your page’s flow in order to accomplish their goal. When we set the properties &lt;code class=&quot;highlighter-rouge&quot;&gt;float: left&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;float: right&lt;/code&gt; on their respective containers, we allowed them to &lt;em&gt;float&lt;/em&gt; next to each other, but what happens to the rest of the page? Unfortunately closing the floated containers does not end the &lt;code class=&quot;highlighter-rouge&quot;&gt;float&lt;/code&gt; CSS property. When you a declare a &lt;code class=&quot;highlighter-rouge&quot;&gt;float&lt;/code&gt; it breaks the page flow, forcing all proceeding content to conform the the &lt;code class=&quot;highlighter-rouge&quot;&gt;float&lt;/code&gt; rule. If we were just using this on an image, we might not even notice that the page is still trying to build itself around the image after it has already been initally wrapped by text, but it is. In the case of creating page layouts this will become noticeable. Look what happens in the image below. I have removed the &lt;code class=&quot;highlighter-rouge&quot;&gt;clear&lt;/code&gt; from the above CSS code to show you what happens to the bottom container:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/floats/bad_floats_example.png&quot; alt=&quot;Example of not clearing your floats&quot; width=&quot;100%&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Notice how the bottom container looks like it is now part of a middle container with the left/right boxes. The HTML code still says otherwise, but the browser is attempting to &lt;code class=&quot;highlighter-rouge&quot;&gt;float&lt;/code&gt; the bottom container around the right container, since the page is now set to &lt;code class=&quot;highlighter-rouge&quot;&gt;float: right&lt;/code&gt; around it. There are a few different tricks to &lt;code class=&quot;highlighter-rouge&quot;&gt;clear&lt;/code&gt; your floats, in the example code I just created an empty container after my floated content and used the property &lt;code class=&quot;highlighter-rouge&quot;&gt;clear: both&lt;/code&gt; to reset the page flow back to default. If you wanted, you could just use &lt;code class=&quot;highlighter-rouge&quot;&gt;clear: left&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;clear: right&lt;/code&gt; if you were only looking to clear one of the float properties.&lt;/p&gt;
-
-&lt;div class=&quot;note_box&quot;&gt;&lt;strong&gt;Note: &lt;/strong&gt;When calling &lt;em&gt;clear: both&lt;/em&gt; on an empty container like I did, the container needs to be a sibling node of the nodes containing the floats that you intend to clear.&lt;/div&gt;
-
-&lt;h3 id=&quot;lets-talk-about-positions&quot;&gt;Let’s talk about positions&lt;/h3&gt;
-
-&lt;p&gt;So now you can use floats to manipulate objects around each other, and even create entire page layouts. But what if you just want to tell something where it should be? This is where we can make use of the CSS property &lt;code class=&quot;highlighter-rouge&quot;&gt;position&lt;/code&gt;. Position can have four different values:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Static: The object is static and follows all of it’s default properties. (Default)&lt;/li&gt;
-  &lt;li&gt;Relative: You will now be able to move this object relative to it’s static position.&lt;/li&gt;
-  &lt;li&gt;Absolute: Moves the object onto it’s own &lt;em&gt;stack&lt;/em&gt;, or sometimes referred to as a layer. This object now essentially has it’s own flow completely removed from everything else on the page.&lt;/li&gt;
-  &lt;li&gt;Fixed: Same as absolute, except the object will be fixed to it’s position on the window. (An absolute object will still scroll with the page, a fixed object will not)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Take a look at the code example below where I create the two simple boxes:&lt;/p&gt;
-
-&lt;p&gt;HTML:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;CSS Positions Example&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text/css&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;styles.css&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
-
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;top-box&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;bottom-box&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
-
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;CSS:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;nf&quot;&gt;#top-box&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;400px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;lightblue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;nf&quot;&gt;#bottom-box&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;400px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;green&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;div class=&quot;img-container&quot;&gt;&lt;img src=&quot;/assets/images/floats/position_static.png&quot; alt=&quot;Static Position&quot; class=&quot;article-image&quot; /&gt;&lt;/div&gt;
-&lt;div class=&quot;img-container img-caption&quot;&gt;Static positioned boxes&lt;/div&gt;
-
-&lt;p&gt;Remember, by default both of those &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;div&amp;gt;&lt;/code&gt; boxes have a position of static. But if I set the bottom box to &lt;code class=&quot;highlighter-rouge&quot;&gt;position: relative&lt;/code&gt;, I can now move that box in any direction in relation to it’s default position in the HTML flow of the page (in this case, underneath the top box).&lt;/p&gt;
-
-&lt;p&gt;Updated CSS:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;nf&quot;&gt;#top-box&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;400px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;lightblue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;nf&quot;&gt;#bottom-box&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;400px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;green&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;relative&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;50px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;50px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;div class=&quot;img-container&quot;&gt;&lt;img src=&quot;/assets/images/floats/position_relative.png&quot; alt=&quot;Relative Position&quot; class=&quot;article-image&quot; /&gt;&lt;/div&gt;
-&lt;div class=&quot;img-container img-caption&quot;&gt;Relative positioned boxes&lt;/div&gt;
-
-&lt;p&gt;We can use the &lt;code class=&quot;highlighter-rouge&quot;&gt;top&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;right&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;bottom&lt;/code&gt;, and &lt;code class=&quot;highlighter-rouge&quot;&gt;left&lt;/code&gt; CSS properties to move the box. In the example I moved the green box &lt;code class=&quot;highlighter-rouge&quot;&gt;50px&lt;/code&gt; from the top and &lt;code class=&quot;highlighter-rouge&quot;&gt;50px&lt;/code&gt; from the left of it’s static position.&lt;/p&gt;
-
-&lt;p&gt;Now let’s go ahead and move the green box neatly on top of the blue using &lt;code class=&quot;highlighter-rouge&quot;&gt;position: absolute&lt;/code&gt;. Here are the changes:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;nf&quot;&gt;#top-box&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;400px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;lightblue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;nf&quot;&gt;#bottom-box&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;400px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;green&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;absolute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;50px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;50px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;div class=&quot;img-container&quot;&gt;&lt;img src=&quot;/assets/images/floats/position_absolute.png&quot; alt=&quot;Absolute Position&quot; class=&quot;article-image&quot; /&gt;&lt;/div&gt;
-&lt;div class=&quot;img-container img-caption&quot;&gt;Absolute positioned boxes&lt;/div&gt;
-
-&lt;p&gt;Because we set the box to &lt;code class=&quot;highlighter-rouge&quot;&gt;position: absolute&lt;/code&gt; it now exists on it’s own stack, with it’s own page flow. So moving the box &lt;code class=&quot;highlighter-rouge&quot;&gt;top: 50px&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;left: 50px&lt;/code&gt; will be in relation to the top corner of the page.&lt;/p&gt;
-
-&lt;h3 id=&quot;nice-now-what&quot;&gt;Nice, now what?!&lt;/h3&gt;
-
-&lt;p&gt;You have a better understanding of how to use the CSS properties &lt;code class=&quot;highlighter-rouge&quot;&gt;float&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;position&lt;/code&gt;. Take some time to play around the with the power they offer in web design.&lt;/p&gt;
-</description>
-        <pubDate>Sun, 26 Feb 2017 00:00:00 -0600</pubDate>
-        <link>http://0.0.0.0:4000//2017/02/26/explaining-css-floats.html</link>
-        <guid isPermaLink="true">http://0.0.0.0:4000//2017/02/26/explaining-css-floats.html</guid>
+        <link>http://localhost:4000//2017/03/17/starwars-crawl-css.html</link>
+        <guid isPermaLink="true">http://localhost:4000//2017/03/17/starwars-crawl-css.html</guid>
       </item>
     
   </channel>
