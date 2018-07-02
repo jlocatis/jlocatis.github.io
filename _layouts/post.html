@@ -9,7 +9,7 @@ layout: default
 		<div>
 			{% if page.tags != empty %}
 				{% for tag in page.tags %}
-					<a class="tag" href="/blog/tag.html/#{{ tag | slugify }}">{{ tag }}</a>
+					<a class="tag" href="/blog/tag.html#{{ tag | slugify }}">{{ tag }}</a>
 				{% endfor %}
 			{% endif %}
 		</div>
