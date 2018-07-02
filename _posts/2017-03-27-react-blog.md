@@ -1,6 +1,7 @@
 ---
 title: Easy Blog Setup Using React
 image: react.png
+tags: [react, javascript]
 ---
 
 I found this easy tutorial that brings together a few different technologies to create a quick SEO-friendly, CMS-powered blog. Take a look at what's involved and read the tutorial!

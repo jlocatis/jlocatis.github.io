@@ -4,7 +4,16 @@ layout: default
 
 <div class="page-body">
 	<h1 class="article-title">{{ page.title }}</h1>
-	<div id="posted-date">{{ page.date | date: "%b %-d, %Y" }}</div>
+	<div class="article-info-area">
+		<div id="posted-date">{{ page.date | date: "%b %-d, %Y" }}</div>
+		<div>
+			{% if page.tags != empty %}
+				{% for tag in page.tags %}
+					<a class="tag" href="/blog/tag/#{{ tag | slugify }}">{{ tag }}</a>
+				{% endfor %}
+			{% endif %}
+		</div>
+	</div>
 	<hr>
 	<div class="article-content">
 

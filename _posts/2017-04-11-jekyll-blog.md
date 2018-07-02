@@ -1,6 +1,7 @@
 ---
 title: Switching to a Jekyll Blog
 image: jekyll.png
+tags: [jekyll, blogging, ruby]
 ---
 
 Shape up your online presence with ease! Move your existing online blog (or create a new one) to Jekyll. The framework that powers this very site you are reading is a great platform for any developer.

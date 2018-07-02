@@ -1,6 +1,7 @@
 ---
 title: Setting Up A React Dev Environment, Part I
 image: react.png
+tags: [react, javascript]
 ---
 
 This quick setup tutorial will get you started on everything you need to begin coding with ReactJS! After just a few steps you will be ready to begin coding in this newer declarative, component-based JavaScript library.

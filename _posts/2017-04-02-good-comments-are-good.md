@@ -1,6 +1,7 @@
 ---
 title: Comments Should Be Good
 image: code_comments.jpg
+tags: [general]
 ---
 
 The idea of having good comments in code has come up almost daily in my coding adventure. But I'm here to tell you a truth, all of us who were talking about good comments have yet to write consistently good comments! Let's examine what _makes_ a comment *good*.

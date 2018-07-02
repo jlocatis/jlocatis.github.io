@@ -1,6 +1,7 @@
 ---
 title: Build Your First Game for the Web
 image: waldo_front.jpg
+tags: [javascript, ruby, sinatra]
 ---
 
 <p>This tutorial will walk you through the steps of creating an interactive Where's Waldo game for the web. You will be able to select you're own Where's Waldo image, and build your program around this image. Introducing some basic JavaScript and Ruby code with AJAX functionality.</p>

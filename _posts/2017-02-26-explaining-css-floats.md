@@ -1,6 +1,7 @@
 ---
 title: Explaining CSS Floats and Positions
 image: floats_meme.jpg
+tags: [css]
 ---
 
 Let's talk about floats and positions. Often a headache for beginning web developers, taking a moment to understand how they work can make a huge difference. Floats and positions can be used for many things, from applying text wrap to an image, to controlling the <em>flow</em> of your content, to building a well structered page layout. A basic understanding of how these work is necessary to becoming a solid web developer.

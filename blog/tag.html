@@ -1,0 +1,51 @@
+---
+layout: default
+title: Tag
+---
+
+<div class="page-body">
+  <div id="page-title">
+    <span>ARTICLES BY TAG</span>
+  </div>
+
+  {% assign rawtags = "" %}
+  {% for post in site.posts %}
+    {% assign ttags = post.tags | join:'|' | append:'|' %}
+    {% assign rawtags = rawtags | append:ttags %}
+  {% endfor %}
+
+  {% assign rawtags = rawtags | split:'|' | sort %}
+
+  {% assign tags = "" %}
+
+  {% for tag in rawtags %}
+    {% if tag != "" %}
+      {% if tags == "" %}
+        {% assign tags = tag | split:'|' %}
+      {% endif %}
+
+      {% unless tags contains tag %}
+        {% assign tags = tags | join:'|' | append:'|' | append:tag | split:'|' %}
+      {% endunless %}
+    {% endif %}
+  {% endfor %}
+
+  <div id="select-tag-title">Select a tag:</div>
+  {% for tag in tags %}
+    <a href="#{{ tag | slugify }}" class="tag"> {{ tag }} </a> &nbsp;&nbsp;
+  {% endfor %}
+
+  {% for tag in tags %}
+  <h3 id="{{ tag | slugify }}" class="article-title">{{ tag }}</h2>
+  <ul class="article-list">
+    {% for post in site.posts %}
+    {% if post.tags contains tag %}
+    <li>
+        <a href="{{ post.url }}">{{ post.title }}</a>
+        ({{ post.date | date: "%B %-d, %Y" }})
+    </li>
+    {% endif %}
+  {% endfor %}
+  </ul>
+  {% endfor %}
+</div>
