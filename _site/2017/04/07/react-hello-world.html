@@ -77,7 +77,18 @@
 
 	<div class="page-body">
 	<h1 class="article-title">Hello World From React</h1>
-	<div id="posted-date">Apr 7, 2017</div>
+	<div class="article-info-area">
+		<div id="posted-date">Apr 7, 2017</div>
+		<div>
+			
+				
+					<a class="tag" href="/blog/tag.html#react">react</a>
+				
+					<a class="tag" href="/blog/tag.html#javascript">javascript</a>
+				
+			
+		</div>
+	</div>
 	<hr>
 	<div class="article-content">
 
@@ -135,9 +146,9 @@
 
 <p>Let’s walk through the React code and breakdown what happened. The first two lines (as noted in the comments) are required to import the React and ReactDOM libraries into your file. As you build bigger apps that span multiple files, you will be requiring these imports in every file (well at least React, you won’t need ReactDOM except for anywhere you are actually writing something to the DOM).</p>
 
-<p>Next we use <code class="highlighter-rouge">React.createClass</code> on a variable named <code class="highlighter-rouge">HelloWorld</code>. This is creating a React class, or more often referred to as a component, named HelloWorld! Inside of this component we write an anonymous render function that returns some JSX. Doesn’t it like look HTML? Why yes, it does! JSX is mostly HTML in JavaScript, making the writing of components like these a breeze. I did mention in the comments that I would explain what <code class="highlighter-rouge"><span class="p">{</span><span class="err">this.props.name</span><span class="p">}</span></code> is doing…</p>
+<p>Next we use <code class="highlighter-rouge">React.createClass</code> on a variable named <code class="highlighter-rouge">HelloWorld</code>. This is creating a React class, or more often referred to as a component, named HelloWorld! Inside of this component we write an anonymous render function that returns some JSX. Doesn’t it like look HTML? Why yes, it does! JSX is mostly HTML in JavaScript, making the writing of components like these a breeze. I did mention in the comments that I would explain what <code class="highlighter-rouge">{this.props.name}</code> is doing…</p>
 
-<p>Notice at the bottom of our React code where we actually call the ReactDOM to render our HelloWorld component. I wrote <code class="highlighter-rouge">&lt;HelloWorld name="Jamie" /&gt;</code>, instead we could have just called <code class="highlighter-rouge">&lt;HelloWorld /&gt;</code> and that would have still done everything contained inside of the HelloWorld component. But where <code class="highlighter-rouge"><span class="p">{</span><span class="err">this.props.name</span><span class="p">}</span></code> is, it would be blank! A prop is an item you can pass into a React component. This makes these components super modular and very scalable, as you can reuse them over and over again as you pass in different prop objects (or props, it can get confusing I know!). Change where I send name in as a prop with HelloWorld to your own name.</p>
+<p>Notice at the bottom of our React code where we actually call the ReactDOM to render our HelloWorld component. I wrote <code class="highlighter-rouge">&lt;HelloWorld name="Jamie" /&gt;</code>, instead we could have just called <code class="highlighter-rouge">&lt;HelloWorld /&gt;</code> and that would have still done everything contained inside of the HelloWorld component. But where <code class="highlighter-rouge">{this.props.name}</code> is, it would be blank! A prop is an item you can pass into a React component. This makes these components super modular and very scalable, as you can reuse them over and over again as you pass in different prop objects (or props, it can get confusing I know!). Change where I send name in as a prop with HelloWorld to your own name.</p>
 
 <p>The last line does almost exactly what it reads like, it calls on ReactDOM to render an object to something in the DOM. ReactDOM will always take two parameters, the first is your React component you are passing in, the second is where it needs to connect it. In the case above we connect it to the single <code class="highlighter-rouge">&lt;div&gt;</code> we created in our HTML page. Imagine chaining lots of these React components together for one simple ReactDOM render! That’s the magic of React.</p>
 

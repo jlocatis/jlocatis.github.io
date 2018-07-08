@@ -1,6 +1,7 @@
 ---
 title: Setting Up A React Dev Environment, Part II
 image: react.png
+tags: [react, javascript]
 ---
 
 In this tutorial I will cover getting your React site up and running from a server so you can begin serving your react code to a browser. I will also give you the tools you need to finish creating the near _perfect_ dev environment for your React apps.

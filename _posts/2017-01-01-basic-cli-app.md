@@ -1,6 +1,7 @@
 ---
 title: Building Your First CLI App
 image: terminal.png
+tags: [command line, ruby]
 ---
 
 This is a basic introduction to writing command line applications, the fundamental core of every programmer's knowledge. This tutorial will navigate you through the basics of the CLI (Command Line Interface) and help you build a quick and useful application.

@@ -1,6 +1,7 @@
 ---
 title: Star Wars Opening Crawl in CSS
 image: crawl_example.jpg
+tags: [css]
 ---
 
 How about something cool and completely useful on every website? Let’s build a Star Wars opening crawl entirely using CSS. No JavaScript required!

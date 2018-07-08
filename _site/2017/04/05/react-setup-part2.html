@@ -77,7 +77,18 @@
 
 	<div class="page-body">
 	<h1 class="article-title">Setting Up A React Dev Environment, Part II</h1>
-	<div id="posted-date">Apr 5, 2017</div>
+	<div class="article-info-area">
+		<div id="posted-date">Apr 5, 2017</div>
+		<div>
+			
+				
+					<a class="tag" href="/blog/tag.html#react">react</a>
+				
+					<a class="tag" href="/blog/tag.html#javascript">javascript</a>
+				
+			
+		</div>
+	</div>
 	<hr>
 	<div class="article-content">
 
@@ -137,7 +148,7 @@
 
 <p>One last piece to make this work. Inside of <code class="highlighter-rouge">module.exports</code> after your loaders add:</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">plugins</span><span class="err">:</span> <span class="p">[</span><span class="nx">HTMLWebpackPluginConfig</span><span class="p">]</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">plugins</span><span class="p">:</span> <span class="p">[</span><span class="nx">HTMLWebpackPluginConfig</span><span class="p">]</span></code></pre></figure>
 
 <p>Make sure you add a comma after your loaders!</p>
 
@@ -145,8 +156,8 @@
 
 <p>The hardest part is <em>almost</em> over. We need to setup scripts so we have a way to run our app from the command line. In the root directory you should have a file name <code class="highlighter-rouge">package.json</code>, open it. Navigate to <code class="highlighter-rouge">"scripts":</code> and replace anything inside of it with the following:</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="s2">"build"</span><span class="err">:</span> <span class="s2">"webpack"</span>
-<span class="s2">"start"</span><span class="err">:</span> <span class="s2">"webpack-dev-server"</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="s2">"build"</span><span class="p">:</span> <span class="s2">"webpack"</span>
+<span class="s2">"start"</span><span class="p">:</span> <span class="s2">"webpack-dev-server"</span></code></pre></figure>
 
 <p>Now you can run <code class="highlighter-rouge">npm run start</code> to run your app in development mode. You will be doing this most of the time as you are coding. It will start a server at a specific port (Webpack usually runs on port 8080) where you can view your page! Another nice perk of Webpack is that it will refresh everytime you save a file, no need to refresh the page or restart the server. When you want to deploy your app, just run <code class="highlighter-rouge">npm run build</code> and your HTML and JavaScript files will be built for deployment without the need for a server!</p>
 

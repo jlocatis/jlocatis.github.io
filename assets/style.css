@@ -145,6 +145,10 @@ input[type=checkbox]:checked + div {
 	color: #585859;
 }
 
+.article-info-area {
+	display: flex;
+	justify-content: space-between;
+}
 
 .icon_link {
 	margin-right: 15px;
@@ -443,6 +447,29 @@ h1.article-title { /* come back and fix */
 
 .active {
 	font-weight: bold;
+}
+
+/* Paginator Styling */
+.paginator-area {
+	width: 100%;
+	text-align: center;
+}
+
+.paginator-direction {
+	font-weight: bold;
+}
+
+/* Tags */
+#select-tag-title {
+	margin: 5px 0 5px 0;
+	text-decoration: underline;
+}
+
+.tag {
+	background-color: #c4c4c4;
+	border-radius: 10px;
+	font-size: 0.5em;
+	padding: 4px;
 }
 
 /* Embedded Code Styling */

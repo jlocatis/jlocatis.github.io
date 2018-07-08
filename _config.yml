@@ -18,14 +18,16 @@ title: Jamie Locatis
 blurb: Web Developer
 email: jlocatis@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  The adventures of a retail manager turned web developer! Posting ideas relating to HTML, CSS, Ruby, PHP, JavaScript, and much more.
+  The adventures of a software (mostly web) developer! Posting ideas relating to C#, .NET, and a bunch of other random stuff.
 repository: jlocatis/jlocatis.github.com
 url: http://jlocatis.github.io
 
 # Build settings - DO NOT EDIT, UNLESS YOU KNOW WHAT YOU'RE DOING.
 markdown: kramdown
+paginate: 10
 gems:
   - jekyll-feed
+  - jekyll-paginate
 exclude:
   - Gemfile
   - Gemfile.lock

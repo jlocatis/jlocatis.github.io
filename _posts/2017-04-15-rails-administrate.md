@@ -1,6 +1,7 @@
 ---
 title: Setting up Administrate in Rails
 image: ruby_on_rails.png
+tags: [rails, ruby, administration]
 ---
 
 Flexible and powerful admin dashboards for any Ruby on Rails application! The Administrate gem is an easy to setup framework for giving your application some much needed robust administration capabilities.

@@ -1,6 +1,7 @@
 ---
 title: Master the Art of Git
 image: git-icon.png
+tags: [git]
 ---
 
 Using Git can be the easiest yet most frustrating part of becoming a developer. It's as simple as a quick tutorial to get into, yet I promise it will take a long time to perfect. But Git is a _need to know_ for every coder. Check out this great tutorial that breaks down mastering the art of Git. 

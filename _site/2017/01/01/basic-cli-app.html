@@ -77,7 +77,18 @@
 
 	<div class="page-body">
 	<h1 class="article-title">Building Your First CLI App</h1>
-	<div id="posted-date">Jan 1, 2017</div>
+	<div class="article-info-area">
+		<div id="posted-date">Jan 1, 2017</div>
+		<div>
+			
+				
+					<a class="tag" href="/blog/tag.html#command-line">command line</a>
+				
+					<a class="tag" href="/blog/tag.html#ruby">ruby</a>
+				
+			
+		</div>
+	</div>
 	<hr>
 	<div class="article-content">
 
@@ -126,7 +137,7 @@
     <span class="n">questions</span> <span class="o">&lt;&lt;</span> <span class="n">line</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
   <span class="k">end</span>
   <span class="n">questions</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">x</span><span class="o">|</span>
-    <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">.</span><span class="nf">.</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s2">""</span>
+    <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="o">..</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s2">""</span>
   <span class="k">end</span>
   <span class="k">return</span> <span class="n">questions</span>
 <span class="k">end</span></code></pre></figure>
