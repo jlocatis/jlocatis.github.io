@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+	<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+	<title>Jamie Locatis</title>
+	<link rel="stylesheet" href=/assets/style.css>
+  <link rel="stylesheet" type="text/css" href=/assets/highlight.css>
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<script type="text/javascript" src="/assets/scripts.js"></script>
+	<script src="https://use.fontawesome.com/28ea288129.js"></script>
+</head>
+
+<body>
+
+	
+  <div class="top-bar">
+    <div id="top-name">
+      <a href="/index.html" | relative_url }}">Jamie Locatis</a>
+    </div>
+    <div id="top-title">Web Developer</div>
+  </div>
+
+  <label for="menu--open" id="hamburger">
+    <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
+  </label>
+  <input type="checkbox" name="1" id="menu--open">
+  
+  <div class="menu-bar" id="menu-bar_fixed">
+    <div class="menu-items" id="menu--items">
+      <div id="nav-left">
+        <div id="left-container">
+          <span class="icon_link twitter">
+            <a href="https://twitter.com/JamieLocatis" target="_blank">
+              <span class="fa-stack">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </span>
+          <span class="icon_link github">
+            <a href="https://github.com/jlocatis" target="_blank">
+              <i class="fa fa-github fa-2x" aria-hidden="true"></i>
+            </a>
+          </span>
+          <span class="icon_link linkedin">
+            <a href="https://www.linkedin.com/in/jamie-locatis-a76428123/" target="_blank">          
+              <span class="fa-stack">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </span>
+          <span class="icon_link rss">
+            <a href="/feed.xml" | relative_url }}">          
+              <span class="fa-stack">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </span>
+        </div>
+      </div>
+
+      <div class="nav-right" id="nav--right">
+        <div id="right-container">
+          <a href="/articles" | relative_url }}" class="nav-link">ARTICLES</a>
+          <a href="/about" | relative_url }}" class="nav-link">ABOUT</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<div class="clear"></div>
+
+	<div class="page-body">
+	<h1 class="article-title">Stop Using Unsafe Strings to Refer to User Roles In Your ASP.NET Application</h1>
+	<div class="article-info-area">
+		<div id="posted-date">Jul 6, 2018</div>
+		<div>
+			
+				
+					<a class="tag" href="/blog/tag.html#asp-net-mvc">ASP.NET MVC</a>
+				
+					<a class="tag" href="/blog/tag.html#net">.NET</a>
+				
+					<a class="tag" href="/blog/tag.html#c">C#</a>
+				
+			
+		</div>
+	</div>
+	<hr>
+	<div class="article-content">
+
+<p>Switch your user role references throughout your code base to an enum, instead of using the base ASP.NET implementation of just referencing the string role name. This helps to guarantee you won’t have any code errors when the application compiles. Also, learn how to easily create a custom ASP.NET MVC authorization attribute that will allow you to make use of this enum.</p>
+
+<h3 id="introduction">Introduction</h3>
+
+<p>The base ASP.NET authorization attribute offers some robust access control throughout your application. This is important if you need to easily block certain users from seeing certain parts of your application. The base implementation of this can often cause problems, especially when working with a larger code base. Typically roles will be stored in your database with a name (a string), which can be referenced in code by the string that role has. When the application gets a user, it has a list of strings representing the roles the user is assigned. A standard Identity implementation will let you check a user role in a controller or in a view like so...</p>
+
+<figure class="highlight"><pre><code class="language-c#" data-lang="c#"><span class="kt">var</span> <span class="n">test</span> <span class="p">=</span> <span class="n">User</span><span class="p">.</span><span class="nf">IsInRole</span><span class="p">(</span><span class="s">"OtherTestRole"</span><span class="p">);</span></code></pre></figure>
+
+<p>These roles will probably look something like this in your database…</p>
+
+<div class="img-container">
+    <img src="/assets/images/asp_net_authorize/DB_Roles_Example.png" alt="ASP.NET Identity Roles Database Example" class="article-image" />
+</div>
+<div class="img-container img-caption">
+    ASP.NET Identity Roles Database Example
+</div>
+
+<h3 id="make-the-enum">Make the Enum</h3>
+
+<p>Let’s map those strings to an enum...</p>
+
+<figure class="highlight"><pre><code class="language-c#" data-lang="c#"><span class="k">public</span> <span class="k">enum</span> <span class="n">AuthorizeRoles</span>
+<span class="p">{</span>
+    <span class="n">Administrator</span><span class="p">,</span>
+    <span class="n">AnotherTestRole</span><span class="p">,</span>
+    <span class="n">OtherTestRole</span>
+<span class="p">}</span></code></pre></figure>
+
+<h3 id="check-user-role">Check User Role</h3>
+
+<p>There are a number of different ways you could override the current ASP.NET Identity User that you have access to, giving you a place to override the IsInRole method we used in the example above to check user role. To simplify this tutorial, let's just quickly create a User Helper that we can reference whenever we need to check user role. Inside of this new UserHelper class, let's write a quick method that gets the current HttpContext (so we can get to the current logged in User) and checks if they have any of our enum roles.</p>
+
+<figure class="highlight"><pre><code class="language-c#" data-lang="c#"><span class="k">public</span> <span class="kt">bool</span> <span class="nf">UserIsInRoles</span><span class="p">(</span><span class="k">params</span> <span class="n">AuthorizeRoles</span><span class="p">[]</span> <span class="n">roles</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">var</span> <span class="n">httpContext</span> <span class="p">=</span> <span class="n">HttpContext</span><span class="p">.</span><span class="n">Current</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">roles</span><span class="p">.</span><span class="nf">Any</span><span class="p">(</span><span class="n">r</span> <span class="p">=&gt;</span> <span class="n">httpContext</span><span class="p">.</span><span class="n">User</span><span class="p">.</span><span class="nf">IsInRole</span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="nf">ToString</span><span class="p">())))</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="k">true</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Now anywhere in our application we can just make a call like this to check user role...</p>
+
+<figure class="highlight"><pre><code class="language-c#" data-lang="c#"><span class="kt">var</span> <span class="n">hasRole</span> <span class="p">=</span> <span class="n">UserHelper</span><span class="p">.</span><span class="nf">UserIsInRoles</span><span class="p">(</span><span class="n">AuthorizeRoles</span><span class="p">.</span><span class="n">OtherTestRole</span><span class="p">,</span> <span class="n">AuthorizeRoles</span><span class="p">.</span><span class="n">AnotherTestRole</span><span class="p">);</span></code></pre></figure>
+
+<p>The above code would return true if the currently logged in user has either OtherTestRole or AnotherTestRole associated with their account. This is much safer than the built in alternative, where you would pass these roles in as strings. Any typo in those strings wouldn't break until someone actually executed that code, whereas a typo in any of your enums will break when you compile your code. Plus you will also have the benefit of IntelliSense in Visual Studio.</p>
+
+<h3 id="custom-authorization">Custom Authorization</h3>
+
+<p>Now let’s create our own custom authorize attribute that will do the same as above, check for given roles using the enum instead of a string...</p>
+
+<figure class="highlight"><pre><code class="language-c#" data-lang="c#"><span class="k">public</span> <span class="k">class</span> <span class="nc">CustomAuthorizeAttribute</span> <span class="p">:</span> <span class="n">AuthorizeAttribute</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="nf">CustomAuthorizeAttribute</span><span class="p">(</span><span class="k">params</span> <span class="n">AuthorizeRoles</span><span class="p">[]</span> <span class="n">roles</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">AuthorizedRoles</span> <span class="p">=</span> <span class="n">roles</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="n">AuthorizeRoles</span><span class="p">[]</span> <span class="n">AuthorizedRoles</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+
+    <span class="k">protected</span> <span class="k">override</span> <span class="kt">bool</span> <span class="nf">AuthorizeCore</span><span class="p">(</span><span class="n">HttpContextBase</span> 
+    <span class="n">httpContext</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">httpContext</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nf">ArgumentNullException</span><span class="p">(</span><span class="k">nameof</span><span class="p">(</span><span class="n">httpContext</span><span class="p">));</span>
+        <span class="p">}</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">AuthorizedRoles</span><span class="p">.</span><span class="nf">Any</span><span class="p">(</span><span class="n">r</span> <span class="p">=&gt;</span> 
+        <span class="n">httpContext</span><span class="p">.</span><span class="n">User</span><span class="p">.</span><span class="nf">IsInRole</span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="nf">ToString</span><span class="p">())))</span>
+        <span class="p">{</span>
+            <span class="k">return</span> <span class="k">true</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Our new attribute inherits from ASP.NET MVC’s <a href="https://docs.microsoft.com/en-us/previous-versions/aspnet/web-frameworks/dd460317(v=vs.118)" target="_blank">AuthroizeAttribute class</a>. It's constructor simply accepts an array of our attribute enum as it's parameters. By overriding the <a href="https://docs.microsoft.com/en-us/previous-versions/aspnet/web-frameworks/mt171834%28v%3dvs.118%29" target="_blank">AuthorizeCore method</a> of the AuthorizeAttribute, we can write our custom check to see if the user has any of the provided roles. Of course we are still just calling <em>.ToString()</em> on the enum, but at least it is <span style="text-decoration: underline;">only</span> happening here, greatly limiting the chance for any error (and again the compiler will catch a mistyped enum and throw an error, it won’t ever catch a mistyped string!).</p>
+
+<p>Now we can call this attribute wherever we could normally call the Authorize attribute like so...</p>
+
+<figure class="highlight"><pre><code class="language-c#" data-lang="c#"><span class="k">public</span> <span class="k">class</span> <span class="nc">TestController</span> <span class="p">:</span> <span class="n">Controller</span>
+<span class="p">{</span>
+    <span class="p">[</span><span class="nf">CustomAuthorize</span><span class="p">(</span><span class="n">AuthorizeRoles</span><span class="p">.</span><span class="n">OtherTestRole</span><span class="p">)]</span>
+    <span class="k">public</span> <span class="n">ActionResult</span> <span class="nf">Index</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nf">View</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Simple, easy, and safe!</p>
+
+
+	</div>
+	<div id="share_box">
+		<div><img src="/assets/images/twitter_logo.png" alt="Share on Twitter!" width="100"></div>
+		<div>If you liked this article and think others should read it, please <a href="https://twitter.com/share?text=Read+this+article&url=&text=by&via=jamielocatis&hashtags=webdevelopment" target="_blank">share it on Twitter!</a></div>
+	</div>
+</div>
+
+	<div class="page-footer">
+	<div id="footer">&copy;2017 Jamie Locatis</div>
+</div>
+
+</body>
+</html>
