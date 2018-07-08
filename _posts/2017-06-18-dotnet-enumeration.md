@@ -1,6 +1,7 @@
 ---
 title: Enumeration Performance in .NET
-image: placeholder.jpg
+image: dot-net.png
+tags: [.NET,C#]
 ---
 
 Read more into enumeration and performance of different methods in .NET.
