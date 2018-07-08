@@ -8,14 +8,13 @@ permalink: /articles/
   <div id="page-title">
     <span>ARTICLES</span>
   </div>
-
   {% for post in site.posts %}
-    {% assign currentDate = post.date | date: "%B" %}
-    {% if currentDate != myDate %}
+    {% assign currentMonth = post.date | date: "%B %Y" %}
+    {% if currentMonth != myDate %}
       {% unless forloop.first %}</ul>{% endunless %}
-      <h3 class="article-title">{{ currentDate }}</h3>
+      <h3 class="article-title">{{ currentMonth }}</h3>
       <ul class="article-list">
-      {% assign myDate = currentDate %}
+      {% assign myDate = currentMonth %}
     {% endif %}
     <li>
       <a href="{{ post.url }}">{{ post.title }}</a>
