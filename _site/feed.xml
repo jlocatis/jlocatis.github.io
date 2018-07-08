@@ -20,7 +20,7 @@
 &lt;p&gt;These roles will probably look something like this in your database…&lt;/p&gt;
 
 &lt;div class=&quot;img-container&quot;&gt;
-    &lt;img src=&quot;/assets/images/asp_net_authorize/DB_Roles_Example.png&quot; alt=&quot;ASP.NET Identity Roles Database Example&quot; class=&quot;article-image&quot; /&gt;
+    &lt;img src=&quot;/assets/images/asp_net_authorize/DB_Roles_Example.PNG&quot; alt=&quot;ASP.NET Identity Roles Database Example&quot; class=&quot;article-image&quot; /&gt;
 &lt;/div&gt;
 &lt;div class=&quot;img-container img-caption&quot;&gt;
     ASP.NET Identity Roles Database Example

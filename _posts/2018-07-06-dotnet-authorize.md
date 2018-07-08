@@ -17,7 +17,7 @@ var test = User.IsInRole("OtherTestRole");
 These roles will probably look something like this in your database...
 
 <div class="img-container">
-    <img src="{{ "/assets/images/asp_net_authorize/DB_Roles_Example.png" | relative_url }}" alt="ASP.NET Identity Roles Database Example" class="article-image">
+    <img src="{{ "/assets/images/asp_net_authorize/DB_Roles_Example.PNG" | relative_url }}" alt="ASP.NET Identity Roles Database Example" class="article-image">
 </div>
 <div class="img-container img-caption">
     ASP.NET Identity Roles Database Example
